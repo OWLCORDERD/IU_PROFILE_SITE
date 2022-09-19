@@ -118,7 +118,6 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li><a href = "#"><FaTwitterSquare/></a></li>
-                <h1>HGI</h1>
               </ul>
             </div>
 
