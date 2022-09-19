@@ -1,0 +1,83 @@
+.magazine-container .Popup_container{
+  position: fixed;
+  width : 100%;
+  height : 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}
+
+.Popup_container .Popup-close{
+  position: absolute;
+  right : 5rem;
+  top : 2rem;
+  width : 100px;
+  height : 100px;
+  cursor : pointer;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Popup-close span{
+  position: absolute;
+  display: block;
+  width : 50px;
+  height : 5px;
+  background-color: #000;
+}
+
+.Popup-close span:nth-child(1){
+  transform: rotate(45deg);
+}
+
+.Popup-close span:nth-child(2){
+  transform: rotate(-45deg);
+}
+
+.Popup_container .Popup-gridContainer{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.Popup-gridContainer .image-detail{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width : 45rem;
+  height : 55rem;
+  box-shadow: 2px 2px 10px rgba(0,0, 0, 0.5);
+  border : 10px solid #fff;
+}
+
+.image-detail img{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+.Popup-gridContainer .content-detail{
+  width : 50rem;
+  height : 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content-detail p{
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color : rgb(121, 121, 121);
+}

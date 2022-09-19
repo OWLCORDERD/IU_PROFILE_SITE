@@ -1,0 +1,450 @@
+.home-section{
+  display: inline-block;
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+}
+
+.home {
+  top : 0;
+  left : 0;
+  position: relative;
+  width: 100%;
+  height: 200vh;
+  overflow: hidden;
+}
+
+.home .home-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.home .character-box {
+  position: absolute;
+  width: 800px;
+  height: 100vh;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  top: 25%;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.home .character-box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-box .character-box-content {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .character-box p {
+  position: relative;
+  text-align: center;
+  font-size: 2.2rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 100;
+}
+
+.home .opacity-content{
+  position: absolute;
+  z-index: 1;
+  left : 0;
+  width : 50rem;
+  height : 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  bottom : 10vh;
+}
+
+.home .opacity-content h1{
+  color : rgba(255, 255, 255, 0.7);
+  font-size: 9rem;
+  letter-spacing: 1rem;
+  text-align: left;
+}
+
+.home .title {
+  position: absolute;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.home .title span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(font-family);
+  font-size: 18rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.home .sub-title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  z-index: 10;
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.home .sub-container {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100vh;
+  gap: 2rem;
+  place-items: center;
+  top: 0;
+  z-index: -1;
+}
+
+.home .image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.home .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .profile-content {
+  position: absolute;
+  width: 30rem;
+  height: max-content;
+  z-index: 100;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.home .profile-content h1 {
+  font-family: var(--font-family);
+  font-size: 2em;
+  color: rgb(36, 31, 31);
+}
+
+.home .profile-content span {
+  display: inline-block;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: var(font-family);
+  font-size: 9rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+.home .profile-content p {
+  font-family: var(--font-family);
+  font-weight: lighter;
+  font-size: 1.2em;
+  color: #fff;
+  word-break: normal;
+  width: 25rem;
+  margin-top: 5rem;
+  letter-spacing: 0.1rem;
+}
+
+.home .box-content-left {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 30%;
+  transform: translateY(-30%);
+  left: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.home .box-content-left h1 {
+  text-align: center;
+  font-size: 3rem;
+  transform: rotate(-90deg);
+}
+
+.home .box-content-right {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 30%;
+  transform: translateY(-30%);
+  right: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.home .box-content-right h1 {
+  text-align: center;
+  font-size: 3rem;
+  transform: rotate(90deg);
+}
+
+.home .scroll-down {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: #fff;
+  cursor: pointer;
+  animation: scroll 2s;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  bottom: 5rem;
+  z-index: 10;
+}
+
+.home .slide-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide-box .video-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slide-box .video-container::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.slide-box .video-container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(50px);
+    transition-duration: 0.5s;
+    transition-delay: 1s;
+  }
+  100% {
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+}
+
+@media screen and (max-width : 1050px){
+
+  .home{
+    height : 100vh;
+  }
+
+  .home-container{
+    padding : 2rem 0;
+  }
+  
+  .home .character-box {
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    overflow: hidden;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .home .character-box img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .character-box .character-box-content {
+    position: absolute;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .home .character-box p {
+    position: relative;
+    text-align: center;
+    font-size: 1.7rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .home .character-box h1 {
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .container .title {
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  
+  .container .title span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(font-family);
+    font-size: 9rem;
+    font-weight: bold;
+    margin: 0 1rem;
+  }
+  
+  .container .box-content-left {
+    position: absolute;
+    width: 100px;
+    height: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  .container .box-content-left h1 {
+    text-align: center;
+    font-size: 2rem;
+    transform: rotate(-90deg);
+  }
+  
+  .container .box-content-right {
+    position: absolute;
+    white-space: nowrap;
+    width: 100px;
+    height: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .container .box-content-right h1 {
+    text-align: center;
+    font-size: 2rem;
+    transform: rotate(90deg);
+  }
+  
+  .container .scroll-down {
+    display: none;
+  }
+
+  .slide-box .slide-txt {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    bottom :0;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    padding : 2rem 0 ;
+  }
+  
+}

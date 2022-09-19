@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Montserrat", cursive;
+  --font-family-Na: "Nanum Pen Script", cursive;
+  --font-family-Sun: "Sunflower", sans-serif;
+  --font-family-Go: "Gothic A1", sans-serif;
+  --font-family-Pa: "Pacifico", cursive;
+  --font-family-Co: "Courgette", cursive;
+  --font-family-Ol: "Oleo script", cursive;
+  --font-family-Ye: "Yellowtail", cursive;
+  --font-family-Lexend: "Lexend", sans-serif;
+
+  --container-width: 80%;
+  --white-color: #fff;
+  --white-opacity: rgba(255, 255, 255, 0.3);
+  --black-opacity: rgba(0, 0, 0, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: block;
+  width : 1rem;
+  background-color: #fff;
+}
+
+html::-webkit-scrollbar-thumb{
+  width : 1rem;
+  display: block;
+  background-color: #000;
+  border-radius: 10px;
+}

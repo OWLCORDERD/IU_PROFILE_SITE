@@ -1,0 +1,334 @@
+section {
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: var(--Lexend);
+}
+
+section .About-IYOU-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+.About-IYOU-container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  z-index: 10;
+}
+
+.About-IYOU-container .video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.About-IYOU-container .About-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
+.About-title h1 {
+  font-size: 8rem;
+  color: #fff;
+  font-family: var(--font-family);
+}
+
+.About-title p {
+  font-family: var(--font-family);
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.About-IYOU-container .View-button {
+  position: absolute;
+  width: 15rem;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 10;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.View-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.View-button .button-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  animation: ViewRadius 1.5s infinite;
+}
+
+@keyframes ViewRadius {
+  0% {
+    opacity: 0;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+/*Profile ViewMore Section*/
+#ProfileInfo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+/*컨텐츠 과시를 위한 어두운 명암 덮어씌우기 background*/
+#ProfileInfo-container::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#ProfileInfo-container .back-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 15vh;
+  height: 5rem;
+  z-index: 1000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#ProfileInfo-container .SNS-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 15vh;
+  height: 5rem;
+  z-index: 1000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.SNS-button h1 {
+  line-height: 5rem;
+  font-size: 1.5rem;
+}
+
+.back-button h1 {
+  line-height: 5rem;
+  font-size: 1.5rem;
+}
+
+/*video 화면 background 영역*/
+#ProfileInfo-container .video-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Profile View Navbar Menu 영역*/
+#ProfileInfo-container .Info-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 15vh;
+  padding: 2rem;
+  font-family: var(--font-family);
+}
+
+.Info-menu > ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Info-menu > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+
+.Info-menu > ul > li > a {
+  display: block;
+  width: max-content;
+  height: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+}
+
+.Info-menu > ul > li > a.active {
+  border-bottom: 5px solid #fff;
+}
+
+/*Profile 파트 아이유 소개 부모 section 영역*/
+#ProfileInfo-container .ProfileInfo-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 85vh;
+  z-index: 1000;
+  padding: 2rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.ProfileInfo-section .Profile-Img {
+  position: relative;
+  left: 0;
+  width: 28rem;
+  height: 38rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.Profile-Img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ProfileInfo-section .Information-contents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  font-family: var(--font-family-Sun);
+}
+
+.Information-contents .Name {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.Information-contents .sub-name {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.sub-name h1 {
+  font-size: 1.8rem;
+  margin-right: 2rem;
+}
+
+.sub-name p {
+  font-size: 1.5rem;
+}
+
+.Information-contents .About-IU-contents {
+  width: 100%;
+  line-break: auto;
+  font-size: 1.4rem;
+}
+
+.Information-contents .sub-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: relative;
+}
+
+.sub-info .born-date {
+  width: 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.sub-info .Singer-date {
+  width: 13rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.sub-info h1 {
+  font-size: 1.1rem;
+  color: #fff;
+}

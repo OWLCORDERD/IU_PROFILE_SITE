@@ -1,0 +1,243 @@
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 250vh;
+}
+
+.banner-container .slider-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150vh;
+}
+
+.slider-container .slider-background{
+  position: absolute;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 55vh;
+  background-color: #fff;
+  content : '';
+  opacity: 1;
+  transition : all 0.5s linear;
+  z-index: 100;
+}
+
+.slider-background .Welcome-content{
+  position: absolute;
+  width : 100%;
+  padding : 0 4rem;
+  bottom : 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.slider-background .IYOU-logo{
+  position: relative;
+  width : max-content;
+  height: max-content;
+}
+
+.IYOU-logo img{
+  width : 200px;
+}
+
+.slider-background .welcome-txt{
+  width : 70rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--font-family);
+}
+
+.welcome-txt p{
+  display: inline-block;
+  font-size: 6rem;
+  letter-spacing: 1rem;
+}
+
+.slider-background.active{
+  opacity: 0;
+}
+
+.slider-container .slider-image{
+  position: fixed;
+  width : 100%;
+  height : 30rem;
+  bottom : 0;
+  left : 50%;
+  transform: translateX(-50%);
+  transition: all 0.8s ease-in-out;
+}
+
+.slider-image::before{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  content : '';
+  top : 0;
+  left : 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.slider-image video{
+  position: absolute;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+.slider-image.active{
+  width : 100%;
+  height : 100vh;
+}
+
+.slider-image::before{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  top : 0;
+  left : 0;
+  background-color: rgba(0,0,0,0.5);
+  content : '';
+}
+
+.slider-image #Slider-contents {
+  position: absolute;
+  top : 0;
+  left : 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#Slider-contents.active{
+  opacity: 1;
+}
+
+#Slider-contents .inner-contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#Slider-contents .inner-Main-contents {
+  position: absolute;
+  top : 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding : 5rem;
+  height : max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--font-family-Lexend);
+}
+
+.inner-Main-contents .Scroll-Down{
+  position: relative;
+  bottom : 0;
+  width : max-content;
+  height : max-content;
+  color : #fff;
+  font-size: 3rem;
+  animation: ScrollEvent 1s infinite;
+}
+
+@keyframes ScrollEvent {
+  0%{
+    margin-top: 0;
+    opacity: 0;
+  }
+
+  100%{
+    margin-top: 2rem;
+    opacity: 1;
+  }
+}
+
+.inner-Main-contents .inner-title {
+  width: max-content;
+  font-size: 10rem;
+  font-weight: 100;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.inner-Main-contents .inner-sub-title {
+  width: max-content;
+  font-size: 2rem;
+  margin: 2rem 0;
+  font-family: var(--font-family);
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.banner-container .Introduce-container{
+  position: absolute;
+  bottom: 0;
+  width : 100%;
+  height : 100vh;
+  z-index: 10;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.Introduce-container.active{
+  opacity: 1;
+}
+
+.Introduce-container .Introduce-content{
+  position: absolute;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  width : 100%;
+  height : 40rem;
+  padding : 0 4rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color : #fff;
+}
+
+.Introduce-content .Introduce-title {
+  position: relative;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  font-family: var(--font-family-Lexend);
+  text-transform: uppercase;
+  text-align : center;
+}
+
+.Introduce-content .Introduce-SubTitle {
+  width: 100%;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  font-family: var(--font-family-Go);
+  font-weight: bold;
+  text-align: center;
+}
