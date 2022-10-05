@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
 import "./about.css";
-import Navbar from "../navbar/navbar";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import AboutVideo from "../../assets/video/introduce-video.mp4";
 import Loading from "../Loading/Loading";
@@ -73,7 +72,6 @@ const About = () => {
 
   return (
     <section>
-      <Navbar />
       {loading ? (
         <Loading loading={loading} />
       ) : (

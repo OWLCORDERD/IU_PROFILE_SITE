@@ -118,14 +118,18 @@ const ProfileInfo = ({ infoSetOpen, infoOpen }) => {
             떠올랐다. 매력적인 음색과 뛰어난 작사 <br></br>작곡 능력을 바탕으로
             아이돌이자 아티스트로서 십수 년째 사랑 받고 있으며, <br></br>2012년
             이래로 매년 대규모 콘서트를 진행하며 공연자로서도 활발히 활동
-            중이다.<br></br>
-            <br></br> 가수 활동 외에도 각종 예능 프로그램에 출연했으며,
-            제이에스티나&뉴발란스 <br></br> 심지어 우리은행 광고까지 다수의 광고
-            모델로도 활약 중이다. <br></br>
-            2011년에 연기자로 데뷔한 후에는 드림하이부터 인기작 호텔델루나
-            나의아저씨 이후 영화 브로커까지 다양한 드라마와 영화에서 연기 활동에
-            관하여 화재가 되었다.
+            중이다.
+            <br></br>
+            .
+            <br></br>
+            .
+            <br></br>
+            출처 : 나무위키
           </motion.div>
+
+          <a href = "https://namu.wiki/w/%EC%95%84%EC%9D%B4%EC%9C%A0" className = "Profile-button" target="_blank">
+            <h1>+ VIEW MORE INFORMATION</h1>
+            </a>
         </motion.div>
       </motion.div>
 

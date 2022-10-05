@@ -16,7 +16,7 @@ const Navbar = () => {
   window.addEventListener('scroll', function(){
     const navActive = document.querySelector('.navbar');
     let NavScroll = window.scrollY;
-    if(NavScroll > 50){
+    if(NavScroll < 50){
       navActive.classList.add('active');
     }else{
       navActive.classList.remove('active');

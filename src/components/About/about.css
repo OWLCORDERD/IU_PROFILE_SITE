@@ -1,7 +1,8 @@
 section {
+  position: relative;
   top: 0;
   left: 0;
-  position: relative;
+  display: block;
   width: 100%;
   height: 100vh;
   font-family: var(--Lexend);
@@ -229,9 +230,10 @@ section .About-IYOU-container {
   width: max-content;
   height: 100%;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   letter-spacing: 0.5rem;
   font-weight: bold;
+  font-family: var(--font-family-Ol);
 }
 
 .Info-menu > ul > li > a.active {
@@ -268,7 +270,7 @@ section .About-IYOU-container {
 
 .ProfileInfo-section .Information-contents {
   width: 100%;
-  height: 100%;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -331,4 +333,18 @@ section .About-IYOU-container {
 .sub-info h1 {
   font-size: 1.1rem;
   color: #fff;
+}
+
+.Information-contents .Profile-button{
+  width : 100%;
+  height : 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: var(--font-family-Ol);
+  border : 3px solid #fff;
+  background-color: rgb(0, 0, 0);
+  color : #fff;
 }
