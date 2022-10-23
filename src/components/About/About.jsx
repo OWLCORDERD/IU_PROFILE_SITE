@@ -3,10 +3,9 @@ import "./about.css";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import AboutVideo from "../../assets/video/introduce-video.mp4";
 import Loading from "../Loading/Loading";
-import ProfileInfo from "./ProfileInfo";
+import {Link} from "react-router-dom"
 
 const About = () => {
-  const [infoOpen, infoSetOpen] = useState(false);
   const innerwidth = {
     width: "50%",
     height: "50%"
@@ -65,9 +64,9 @@ const About = () => {
   useEffect(() => {
     setLoading(!loading);
 
-    setTimeout(() => {
-      setLoading(loading);
-    }, 3000);
+  setTimeout(() => {
+    setLoading(loading);
+  },3000)
   }, []);
 
   return (
@@ -76,6 +75,7 @@ const About = () => {
         <Loading loading={loading} />
       ) : (
         <div className="About-IYOU-container">
+
           <motion.div
             variants={aboutMotion}
             initial="initial"
@@ -84,6 +84,7 @@ const About = () => {
           >
             <video src={AboutVideo} autoPlay muted loop />
           </motion.div>
+
           <motion.div
             variants={container}
             initial="initial"
@@ -97,20 +98,32 @@ const About = () => {
               LATEST NEWS and VARIOUS INFORMATION <br></br>
               YOU CAN CHECK IT ON IYOU.
             </motion.p>
+
           </motion.div>
 
-          <div className="View-button" onClick={() => infoSetOpen(!infoOpen)}>
-            <div className="button-animation"></div>
-            <h1>VIEW MORE</h1>
+
+          <div className = "About-buttons">
+
+            <Link to = "/">
+              <div className = "Back-button">
+                <div className="button-animation"></div>
+                <h1>Home</h1>
+              </div>
+            </Link>
+
+            <Link to = "/Profile">
+              <div className="View-button">
+                <div className="button-animation"></div>
+                <h1>VIEW MORE</h1>
+              </div>
+            </Link>
+
           </div>
 
-          {infoOpen && (
-            <ProfileInfo infoOpen={infoOpen} infoSetOpen={infoSetOpen} />
-          )}
         </div>
       )}
     </section>
   );
 };
-
+  
 export default About;

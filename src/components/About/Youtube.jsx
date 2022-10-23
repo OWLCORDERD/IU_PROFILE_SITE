@@ -18,16 +18,21 @@ const Youtube = () => {
       autoplaySpeed: 5000,
     };
 
-    const [categoryClick, setCategoryClick] = useState(null);
+    const [categoryClick, setCategoryClick] = useState('IU_TV');
     
 
     return (
 
       <div className = "Youtube-container">
-
-      <div className = "Youtube-title">
-      <h1>YOUTUBE</h1>
-    </div>
+        <nav className="Info-menu">
+        <ul>
+          <li>
+            <a href="#">
+              YOUTUBE
+            </a>
+          </li>
+        </ul>
+      </nav>
 
     <ul className = "Youtube-category">
       <li><a href = "#IU_TV" onClick={() => setCategoryClick('IU_TV')} className = {categoryClick === 'IU_TV' ? 'active' : ''}>IU TV</a></li>

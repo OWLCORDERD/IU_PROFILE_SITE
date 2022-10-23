@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
 import './magazine.css'
-import Data from "../ImageData.json"
 import Popup from "../Popup/Popup"
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
-
+import UseFetch from '../hooks/UseFetch'
+import Data from "../ImageData.json"
+ 
 const Magazine = () => {
+
+  const server = UseFetch("http://localhost:3001/VogueData");
 
   const [filter, onFilter] = useState("#vogue");
 
@@ -39,13 +42,13 @@ const Magazine = () => {
         <AnimateSharedLayout>
         <div id = "magazine-imageBox" className={filter === "#vogue" ? "active" : ''}>
 
-          {Data.VogueData.map((item) => {
+          {server.map((vogue) => {
             return(
           <div className = "magazine-item">
-          <img src = {item.img_url} alt = "" layoutId = {item.id}/>
+          <img src = {vogue.img_url} alt = "" layoutId = {vogue.id}/>
           <div className = "magazine-detail">
-            <img src = {item.title} alt = ""/>
-            <input type = "submit" value = "VIEW MORE" className= "View_button"  onClick={()=> poper(item.id)}/>
+            <img src = {vogue.title} alt = ""/>
+            <input type = "submit" value = "VIEW MORE" className= "View_button"  onClick={()=> poper(vogue.id)}/>
           </div>
           </div>
             )

@@ -7,8 +7,14 @@ import { motion } from "framer-motion";
 import { FaBaby } from "react-icons/fa";
 import { BiStreetView } from "react-icons/bi";
 import { AiFillFastForward } from "react-icons/ai";
+import {Link} from "react-router-dom"
+import { useState } from "react";
+import Social from "./Social";
 
-const ProfileInfo = ({ infoSetOpen, infoOpen }) => {
+const ProfileInfo = () => {
+
+  const [socialOpen, setSocialOpen] = useState(false);
+
   const dynamicBox = {
     initial: {
       opacity: 1
@@ -57,32 +63,44 @@ const ProfileInfo = ({ infoSetOpen, infoOpen }) => {
   return (
     <motion.div
       id="ProfileInfo-container"
-      className={infoOpen === !infoOpen ? "active" : ""}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
     >
       <div className="video-background">
         <video src={ProfileVideo} autoPlay muted loop />
       </div>
 
-      <nav className="Info-menu">
+      <nav className="Info-menu" id = {socialOpen === !false ? "active" : ''}>
         <ul>
           <li>
-            <a href="#" className="active">
+            <a href="#">
               PROFILE
             </a>
           </li>
         </ul>
       </nav>
-      <motion.div className="ProfileInfo-section">
+
+      <Link to = "/About">
+      <div className="back-button">
+        <AiFillFastBackward />
+        <h1>Home</h1>
+      </div>
+      </Link>
+
+      <div className="Next-button" id = {socialOpen === !false ? "active" : ''} onClick={()=>setSocialOpen(!false)}>
+        <h1>SOCIAL</h1>
+        <AiFillFastForward />
+      </div>
+
+      <div id="ProfileInfo-section" className = {socialOpen === !false ? "active" : ''}>
+
         <motion.div
           className="Profile-Img"
           variants={ShowImg}
           initial="initial"
           animate="animate"
         >
+
           <img src={ProfileImg} alt="" />
+
         </motion.div>
 
         <motion.div
@@ -91,9 +109,11 @@ const ProfileInfo = ({ infoSetOpen, infoOpen }) => {
           initial="initial"
           animate="animate"
         >
+
           <motion.h1 variants={ShowContent} className="Name">
             IU
           </motion.h1>
+
           <motion.div className="sub-name" variants={ShowContent}>
             <h1>(아이유, 이지은)</h1>
             <p>가수, 텔런트</p>
@@ -131,17 +151,13 @@ const ProfileInfo = ({ infoSetOpen, infoOpen }) => {
             <h1>+ VIEW MORE INFORMATION</h1>
             </a>
         </motion.div>
-      </motion.div>
-
-      <div className="back-button" onClick={() => infoSetOpen(!infoOpen)}>
-        <AiFillFastBackward />
-        <h1>Home</h1>
       </div>
 
-      <div className="SNS-button">
-        <h1>SOCIAL</h1>
-        <AiFillFastForward />
-      </div>
+      
+    {socialOpen && (
+    <Social setSocialOpen = {setSocialOpen} socialOpen = {socialOpen} />
+    )}
+
     </motion.div>
   );
 };

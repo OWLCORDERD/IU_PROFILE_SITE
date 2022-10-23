@@ -7,30 +7,6 @@ import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom'
 
 const Category = () => {
-    window.addEventListener('scroll', function(){
-        let scroll = window.scrollY;
-        const profile = document.querySelector('.CTG-Profile');
-        const music = document.querySelector('.CTG-Music');
-        const Gallary = document.querySelector('.CTG-Gallary');
-
-        if(scroll > 1200 & scroll < 3000){
-            profile.classList.add('active');
-        }else{
-            profile.classList.remove('active');
-        }
-
-        if(scroll > 2850 & scroll < 3500){
-            music.classList.add('active');
-        }else{
-            music.classList.remove('active');
-        }
- 
-        if(scroll > 3500){
-            Gallary.classList.add('active');
-        }else{
-            Gallary.classList.remove('active');
-        }
-    })
     
   return (
     <div className = "Category-container">

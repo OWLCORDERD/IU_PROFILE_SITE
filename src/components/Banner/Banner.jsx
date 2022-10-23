@@ -15,7 +15,7 @@ const Banner = () => {
     const innerContent = document.querySelector('#Slider-contents');
     const introduceCtn = document.querySelector('.Introduce-container');
 
-    if(scrolls > 50){
+    if(scrolls > 100){
       bannerBack.classList.add('active');
       imageBack.classList.add('active');
     }else{

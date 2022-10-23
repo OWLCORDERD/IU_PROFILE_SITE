@@ -16,7 +16,7 @@ const Navbar = () => {
   window.addEventListener('scroll', function(){
     const navActive = document.querySelector('.navbar');
     let NavScroll = window.scrollY;
-    if(NavScroll < 50){
+    if(NavScroll > 150){
       navActive.classList.add('active');
     }else{
       navActive.classList.remove('active');
@@ -77,7 +77,7 @@ const Navbar = () => {
                 <h1>Introduce</h1>
               </div>
               <li>
-                <Link to="/Profile">Profile</Link>
+                <Link to="/About">Profile</Link>
               </li>
 
               <li>

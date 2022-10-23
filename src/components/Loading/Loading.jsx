@@ -2,8 +2,7 @@ import React from 'react'
 import "./Loading.css"
 import ClipLoader from "react-spinners/ClipLoader"
 import { css } from 'styled-components';
-import {motion} from "framer-motion"
-import 프로필 from "../../assets/image/Banner-background.jpg"
+import {motion} from "framer-motion";
 
 const Loading = (props) => {
 
@@ -69,26 +68,14 @@ const Loading = (props) => {
         <motion.span variants={dynamicTxt}>U</motion.span>
         </motion.div>
 
-        <div className = "loading-state">
+        <motion.div className = "loading-state" initial = {{opacity : 0}} animate = {{opacity : 1}} transition = {{delay : 2}}>
            <ClipLoader color = {"#fff"} size = {150} loading = {props.loading} css = {detail} />
-           </div>
+           </motion.div>
 
         <motion.p initial = {{opacity : 0, y : 50}} animate = {{opacity : 1, y : 0}} transition = {{delay : 1.2, duration  : 1}}>THE PROFILE SITE</motion.p>
 
       
 
-      </div>
-
-      <div className = "contents-left">
-        <motion.h1 variants={dynamicSubTxt} initial = "initial" animate = "animated">PROFILE</motion.h1>
-      </div>
-
-      <div className = "loading-image">
-        <img src = {프로필} alt = ""/>
-      </div>
-
-      <div className = "contents-right">
-        <motion.h1  variants={dynamicSubTxt} initial = "initial" animate = "animated">MUSIC</motion.h1>
       </div>
 
     </div>

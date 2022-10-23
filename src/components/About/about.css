@@ -58,33 +58,44 @@ section .About-IYOU-container {
 }
 
 .About-title h1 {
-  font-size: 8rem;
+  font-size: 6rem;
   color: #fff;
   font-family: var(--font-family);
 }
 
 .About-title p {
   font-family: var(--font-family);
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #fff;
 }
 
-.About-IYOU-container .View-button {
+.About-IYOU-container .About-buttons{
   position: absolute;
+  width : 40rem;
+  height : 10rem;
+  bottom : 5%;
+  left : 50%;
+  transform: translate(-50%, -5%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+.About-buttons .View-button {
+  position: relative;
   width: 15rem;
   height: 5rem;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
-  z-index: 10;
-  bottom: 10rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-family);
 }
 
 .View-button:hover {
@@ -93,6 +104,37 @@ section .About-IYOU-container {
 }
 
 .View-button .button-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  animation: ViewRadius 1.5s infinite;
+}
+
+.About-buttons .Back-button {
+  position: relative;
+  width: 15rem;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-family);
+}
+
+.Back-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.Back-button .button-animation {
   position: absolute;
   top: 0;
   left: 0;
@@ -144,38 +186,44 @@ section .About-IYOU-container {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  width: 15vh;
+  width: 20vh;
   height: 5rem;
-  z-index: 1000;
+  z-index: 1200;
   color: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 1.8rem;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
-#ProfileInfo-container .SNS-button {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 15vh;
-  height: 5rem;
-  z-index: 1000;
-  color: #fff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-.SNS-button h1 {
+.back-button h1 {
   line-height: 5rem;
   font-size: 1.5rem;
 }
 
-.back-button h1 {
+#ProfileInfo-container .Next-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 20vh;
+  height: 5rem;
+  z-index: 1000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.Next-button#active {
+  display: none;
+}
+
+.Next-button h1 {
   line-height: 5rem;
   font-size: 1.5rem;
 }
@@ -207,6 +255,11 @@ section .About-IYOU-container {
   height: 15vh;
   padding: 2rem;
   font-family: var(--font-family);
+  text-transform: uppercase;
+}
+
+.Info-menu#active{
+  display: none;
 }
 
 .Info-menu > ul {
@@ -234,14 +287,16 @@ section .About-IYOU-container {
   letter-spacing: 0.5rem;
   font-weight: bold;
   font-family: var(--font-family-Ol);
+  border-bottom: 5px solid #fff;
+  text-transform: uppercase;
 }
 
-.Info-menu > ul > li > a.active {
-  border-bottom: 5px solid #fff;
+.Info-menu#hidden{
+  display: none;
 }
 
 /*Profile 파트 아이유 소개 부모 section 영역*/
-#ProfileInfo-container .ProfileInfo-section {
+#ProfileInfo-container #ProfileInfo-section {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -253,11 +308,19 @@ section .About-IYOU-container {
   place-items: center;
 }
 
-.ProfileInfo-section .Profile-Img {
+#ProfileInfo-section.active .Profile-Img{
+  display: none;
+}
+
+#ProfileInfo-section.active .Information-contents{
+  display: none;
+}
+
+#ProfileInfo-section .Profile-Img {
   position: relative;
   left: 0;
-  width: 28rem;
-  height: 38rem;
+  width: 23rem;
+  height: 30rem;
   background-color: #fff;
   overflow: hidden;
 }
@@ -268,9 +331,9 @@ section .About-IYOU-container {
   object-fit: cover;
 }
 
-.ProfileInfo-section .Information-contents {
+#ProfileInfo-section .Information-contents {
   width: 100%;
-  height: 45rem;
+  height: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -279,7 +342,7 @@ section .About-IYOU-container {
 }
 
 .Information-contents .Name {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -288,22 +351,22 @@ section .About-IYOU-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .sub-name h1 {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   margin-right: 2rem;
 }
 
 .sub-name p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .Information-contents .About-IU-contents {
   width: 100%;
   line-break: auto;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .Information-contents .sub-info {
@@ -331,7 +394,7 @@ section .About-IYOU-container {
 }
 
 .sub-info h1 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #fff;
 }
 
@@ -341,10 +404,145 @@ section .About-IYOU-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   font-family: var(--font-family-Ol);
   border : 3px solid #fff;
   background-color: rgb(0, 0, 0);
   color : #fff;
 }
+
+#Social-container{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100vh;
+  z-index: 1000;
+  display: none;
+}
+
+#Social-container.active{
+  display: block;
+}
+
+#Social-container .Social-section{
+  position: relative;
+  top : 0;
+  width : 100%;
+  height : 100vh;
+}
+
+.Social-section#hidden{
+  display: none;
+}
+
+.Social-section ul{
+  position: relative;
+  width : 100%;
+  height : 70vh;
+  top : 50%;
+  transform: translateY(-50%);
+}
+
+.Social-section ul li{
+  display: inline-block;
+  width : 33.3%;
+  height : 100%;
+}
+
+.Social-section ul li .Social-type{
+  position: relative;
+  width : 100%;
+  height : 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Social-type .Social-icon{
+  font-size: 2rem;
+}
+
+.Social-type .Social-name{
+  font-size: 1.5rem;
+  font-family: var(--font-family-Ol);
+  text-transform: uppercase;
+}
+
+.Social-section ul li .Social-profile{
+  position: relative;
+  width : 100%; 
+  height : 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Social-profile .Social-image{
+  width : 8rem;
+  height : 8rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.Social-image img{
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+.Social-profile .Social-id{
+  width : 100%;
+  height : 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Social-id h1{
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family-Sun);
+}
+
+.Social-id p {
+  font-size: 1.2rem;
+  font-family: var(--font-family-Sun);
+  font-weight: bold;
+}
+
+.Social-profile .Social-follower{
+  font-size: 0.7rem;
+  font-family: var(--font-family-Sun);
+}
+
+.Social-section ul li .Social-button{
+  display: block;
+  position: relative;
+  left : 50%;
+  transform: translateX(-50%);
+  width : 12rem;
+  height : 3rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--font-family-Ol);
+  color : #000;
+  background-color: #fff;
+  border : 2px solid transparent;
+  border-radius: 0.5rem;
+  cursor : pointer;
+}
+
+.Social-section ul li .Social-button:hover{
+  background-color: transparent;
+  border : 2px solid #fff;
+  color : #fff;
+  transition: all 0.5s ease-in-out;
+}
+
