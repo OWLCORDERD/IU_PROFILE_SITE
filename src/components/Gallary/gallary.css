@@ -1,143 +1,76 @@
-/* section 100vh 단위 맞추며 container 부모 영역 생성*/
+.Gallary-container{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100vh;
+  background-image: url('../../assets/image/J.ASTINA/2022\ JASTINA_7.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
-section .Gallary-container{
-    position: relative;
-    width : 100%;
-    height : 120vh;
-  }
+.Gallary-container::before{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  content : '';
+  top : 0;
+  left : 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
-  .Gallary-container .Gallary-box{
-    position: relative;
-    width : 100%;
-    height : 120vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-  }
+.Gallary-container .Gallary-contents{
+  position: relative;
+  top : 50%;
+  transform: translateY(-50%);
+  width : 100%;
+  height : 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-  .Gallary-box .Gallary-item{
-    position: relative;
-    width : 100%;
-    height : 100%;
-  }
+.Gallary-contents .Gallary-subTitle{
+  font-size: 1rem;
+  color : #fff;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+}
 
-  .Gallary-box .Gallary-mainbox{
-    position: relative;
-    width : 90%;
-    height : 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin : 0 2rem;
-  }
+.Gallary-contents .Gallary-title{
+  font-size: 2.5rem;
+  color : #fff;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-family: var(--font-family);
+}
 
-  .Gallary-box .Gallary-mainbox::before{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    content : '';
-  }
+.Gallary-container .Gallary-buttons{
+  position: absolute;
+  width : 50rem;
+  bottom : 5rem;
+  left : 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-  .Gallary-mainbox img{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    object-fit: cover;
-  }
+.Gallary-container .View-button{
+  width : 13rem;
+  height : 4rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+}
 
-  .Gallary-mainbox .Gallary-video{
-    position: relative;
-    width : 50rem;
-    height : 30rem;
-    z-index: 10;
-  }
+.Gallary-container .View-button:hover{
+  background-color: rgb(252, 157, 157);
+  cursor: pointer;
+  color : #fff;
+  border : #fff;
+}
 
-  .Gallary-video iframe{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    object-fit: cover;
-  }
-
-  .Gallary-title{
-    position: relative;
-    top : 0;
-    width : 100%;
-    height : 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    color : #fff;
-  }
-
-  .Gallary-title h1{
-    font-size: 3.5rem;
-    font-weight: 200;
-  }
-
-  .Gallary-sub-title{
-    position: relative;
-    width : 100%;
-    height : 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-    color : #fff;
-  }
-
-  .Gallary-sub-title h1{
-    font-weight: bold;
-    font-size: 5rem;
-  }
-
-  
-  .Gallary-sub-title p{
-    font-weight: 100;
-    font-size: 2rem;
-  }
-
-  .Gallary-sub-title .JESTINA{
-    display: block;
-    width : 180px;
-    height : 60px;
-    background-color: transparent;
-    color : #fff;
-    border : 5px solid #fff;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor : pointer;
-  }
-
-  .Gallary-item .Gallary-list{
-    position: relative;
-    left : 50%;
-    transform: translateX(-50%);
-    width : 100%;
-    height : 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    gap : 3rem;
-    padding : 0 2rem;
-  }
-
-  .Gallary-list .Gallary-sub-img{
-    position: relative;
-    width : 100%;
-    height : 100%;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .Gallary-sub-img img{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    object-fit: cover;
-  }

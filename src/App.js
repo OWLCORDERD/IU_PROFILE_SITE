@@ -4,6 +4,7 @@ import About from "./components/About/About";
 import ProfileInfo from "./components/About/ProfileInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Magazine from "./components/Magazine/Magazine";
+import Gallary from "./components/Gallary/Gallary";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/About" element={<About />}></Route>
           <Route path="/Profile" element={<ProfileInfo/>}></Route>
           <Route path="/Megazine" element={<Magazine/>}></Route>
+          <Route path="/Gallary" element={<Gallary/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

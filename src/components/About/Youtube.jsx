@@ -3,12 +3,15 @@ import "./youtube.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import data from "../ImageData.json";
 import {AiFillPlayCircle} from "react-icons/ai"
+import UseFetch from "../hooks/UseFetch"
 
 
 const Youtube = () => {
-    
+    const IUTV = UseFetch("http://localhost:3001/IU_TV");
+
+    const IUCLIP = UseFetch("http://localhost:3001/IU_CLIP");
+
     const settings = {
       infinite: true,
       slidesToShow: 3,
@@ -43,10 +46,10 @@ const Youtube = () => {
     </ul>
     
 
-      <div id = "IU_TV_slide-container" className = {categoryClick === 'IU_TV' ? 'active' : ''}>
+      <div id = "slide-container" className = {categoryClick === 'IU_TV' ? 'active' : ''}>
 
         <Slider {...settings}>
-          {data.IU_TV.map((item, index) => {
+          {IUTV.map((item, index) => {
             return (
           <div className = "slide-box" key = {index}>
             <div className = "play-video">
@@ -64,10 +67,10 @@ const Youtube = () => {
         
       </div>
 
-      <div id = "IU_CLIP_slide-container" className = {categoryClick === 'IU_CLIP' ? 'active' : ''}>
+      <div id = "slide-container" className = {categoryClick === 'IU_CLIP' ? 'active' : ''}>
         
         <Slider {...settings}>
-          {data.IU_CLIP.map((item, index) => {
+          {IUCLIP.map((item, index) => {
             return (
           <div className = "slide-box" key = {index}>
             <div className = "play-video">
