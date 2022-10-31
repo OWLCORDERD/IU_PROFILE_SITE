@@ -4,31 +4,39 @@
   left : 0;
   width : 100%;
   height : 100vh;
-  background-image: url('../../assets/image/J.ASTINA/2022\ JASTINA_7.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: #000;
 }
 
-.Gallary-container::before{
+.Gallarty-container .Gallary-background{
   position: absolute;
   width : 100%;
   height : 100%;
-  content : '';
   top : 0;
   left : 0;
-  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.Gallary-background img{
+  position: absolute;
+  top : 50%;
+  transform: translate(-50%,-50%);
+  left : 50%;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
 }
 
 .Gallary-container .Gallary-contents{
-  position: relative;
+  position: absolute;
   top : 50%;
-  transform: translateY(-50%);
+  transform : translateY(-50%);
   width : 100%;
   height : 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 100;
 }
 
 .Gallary-contents .Gallary-subTitle{
@@ -56,6 +64,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 100;
 }
 
 .Gallary-container .View-button{
@@ -74,3 +83,333 @@
   border : #fff;
 }
 
+/*Gallary Part List container css*/
+
+.GList-container{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  height : 100vh;
+}
+
+.GList-container .GList-header{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.GList-header .GList-title{
+  position: relative;
+  width : 20rem;
+  height : 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color : #000;
+}
+
+.GList-title h1{
+  font-size: 3.5rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.GList-title p{
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+/*select years option boxs 부모 css*/
+.GList-header .select-years-container{
+  position: relative;
+  width : 10rem;
+  height : 5rem;
+  z-index: 1000;
+}
+
+/*각 select-years box css */
+.GList-header .select-years{
+  position: absolute;
+  display: block;
+  width : 10rem;
+  height : 3rem;
+}
+
+/*select-years box input box css 
+(select option 박스들을 input box로 대체하여 css 디자인)*/
+.select-years > li > input[type=text]{
+  display: block;
+  padding : 1rem;
+  border : 5px solid #000;
+  width : 10rem;
+  height : 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: var(--font-family);
+  color : #000;
+}
+
+/*select-years box input box hover*/
+.select-years > li > input[type=text]:hover{
+  cursor: pointer;
+}
+
+/*toggleClick 클릭시 state 함수 true일 시 li 3번째 input text block*/
+.select-years > li:nth-child(3).active > input[type=text]{
+  display: block;
+  border : none;
+  border: 5px solid transparent;
+}
+
+/*toggleClick 클릭시 state 함수 true일 시 li 4번째 input text block*/
+.select-years > li:nth-child(4).active > input[type=text]{
+  display: block;
+  border : none;
+  border : 5px solid transparent;
+}
+
+/*toggleClick 재 클릭시&remove 할시 li 3번째 input text none*/
+.select-years > li:nth-child(3) > input[type=text]{
+  display: none;
+}
+
+/*toggleClick 재 클릭시&remove 할시 li 4번째 input text none*/
+.select-years > li:nth-child(4) > input[type=text]{
+  display: none;
+}
+
+/*toggleClick 버튼 css */
+.select-years > li > .toggle-button{
+  position: absolute;
+  top : 50%;
+  transform: translateY(-50%);
+  margin-left: 11rem;
+  font-size: 1.5rem;
+  color : #000;
+  cursor : pointer;
+}
+
+/*clickYear #2022 년도가 아닐시 2022 포커스 select 된 select-years display none*/
+.select-years:first-child{
+  display: none;
+}
+
+/*clickYear #2022 년도 일시 2022 포커스 select 된 select-years display*/
+.select-years:first-child#active{
+  display: block;
+}
+
+.select-years:nth-child(2){
+  display: none;
+}
+
+.select-years:nth-child(2)#active{
+  display: block;
+}
+
+.select-years:nth-child(3){
+  display: none;
+}
+
+.select-years:nth-child(3)#active{
+  display: block;
+}
+
+/*GallaryList item 부모 box css*/
+.GList-container .GallaryList-box{
+  position: relative;
+  width : 60rem;
+  height : 100%;
+  overflow-y: auto;
+  padding : 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap : 2rem;
+  place-items: center;
+}
+
+.GallaryList-box::-webkit-scrollbar{
+  width : 1rem;
+  background-color: #fff;
+}
+
+.GallaryList-box::-webkit-scrollbar-thumb{
+  background-color: #000;
+}
+
+.GallaryList-box .GallaryList-item{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 25rem;
+  height : 100%;
+  border : 5px solid transparent;
+  cursor: pointer;
+}
+
+.GallaryList-item::before{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  content : '';
+  background-color: rgba(0, 0, 0, 0.5);
+  top : 0;
+  left : 0;
+  z-index: 10;
+}
+
+.GallaryList-item .GallaryList-imgbox{
+  position: relative;
+  width : 100%;
+  height : 100%;
+  overflow: hidden;
+}
+
+.GallaryList-item:hover{
+  border : 5px solid #fff;
+}
+
+.GallaryList-item:hover img{
+  transform: scale(1.2);
+  transition: all 0.5s ease-out;
+}
+
+.GallaryList-imgbox img{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+.GallaryList-imgbox .imgbox-title{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color : #fff;
+  z-index: 10;
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+}
+
+/*GListItem container css*/
+.GList-container .GListItem-container{
+  position: absolute;
+  width : 100%;
+  height : 100vh;
+  top : 0;
+  left : 0;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.GListItem-container .GListItem-header{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.GListItem-header .GListItem-title{
+  position: relative;
+  width : 100%;
+  height : 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color : #000;
+}
+
+.GListItem-title h1{
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.GListItem-title p{
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+/*GallaryList item 부모 box css*/
+.GListItem-container .GListItem-box{
+  position: relative;
+  width : 100%;
+  height : max-content;
+  padding : 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap : 2rem;
+  place-items: center;
+}
+
+.GListItem-box .GListItem-item{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 30rem;
+  border : 5px solid transparent;
+  cursor: pointer;
+}
+
+.GListItem-item .GListItem-imgbox{
+  position: relative;
+  width : 100%;
+  height : 100%;
+  overflow: hidden;
+}
+
+.GListItem-item:hover{
+  border : 5px solid #fff;
+}
+
+.GListItem-item:hover img{
+  transform: scale(1.2);
+  transition: all 0.5s ease-out;
+}
+
+.GListItem-imgbox img{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  object-fit: contain;
+}
+
+.GListItem-imgbox .imgbox-title{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color : #fff;
+  z-index: 10;
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+}

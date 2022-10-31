@@ -5,6 +5,7 @@ import ProfileInfo from "./components/About/ProfileInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Magazine from "./components/Magazine/Magazine";
 import Gallary from "./components/Gallary/Gallary";
+import GallaryList from "./components/Gallary/GallaryList";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Profile" element={<ProfileInfo/>}></Route>
           <Route path="/Megazine" element={<Magazine/>}></Route>
           <Route path="/Gallary" element={<Gallary/>}></Route>
+          <Route path="/GallaryList" element={<GallaryList/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
