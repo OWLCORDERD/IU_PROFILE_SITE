@@ -142,7 +142,7 @@ const GallaryList = () => {
         })}
         </motion.div>
 
-        {itemClick&&<GListItem layoutId = {layoutId} popup = {popup} data = {filtering}/>}
+        {itemClick&&<GListItem layoutId = {layoutId} popup = {popup} data = {filtering} setItemClick = {setItemClick} itemClick = {itemClick}/>}
 
     </div>
   )

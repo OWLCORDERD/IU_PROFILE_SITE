@@ -311,61 +311,91 @@
 /*GListItem container css*/
 .GList-container .GListItem-container{
   position: absolute;
-  width : 100%;
-  height : 100vh;
-  top : 0;
-  left : 0;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  width : 80%;
+  height : 90vh;
   background-color: #fff;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 }
 
 .GListItem-container .GListItem-header{
   position: relative;
   top : 0;
   left : 0;
+  width : 40%;
+  height : 100%;
+}
+
+.GListItem-header img{
+  position: absolute;
   width : 100%;
-  height : 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  height : 100%;
+  top : 0;
+  left : 0;
+  object-fit: cover;
 }
 
 .GListItem-header .GListItem-title{
-  position: relative;
+  position: absolute;
   width : 100%;
-  height : 15rem;
+  height : 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   color : #000;
+  z-index: 100;
+}
+
+.GListItem-header .GListItem-title::before{
+  position: absolute;
+  top : 0;
+  left : 0;
+  content : '';
+  width : 100%;
+  height : 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
 }
 
 .GListItem-title h1{
-  font-size: 4rem;
+  font-size: 3rem;
   letter-spacing: 0.2rem;
   font-family: var(--font-family);
   text-align: center;
+  color : #fff;
 }
 
 .GListItem-title p{
+  width : 25rem;
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
   font-family: var(--font-family);
   text-align: center;
+  color : #fff;
 }
 
 /*GallaryList item 부모 box css*/
 .GListItem-container .GListItem-box{
   position: relative;
-  width : 100%;
-  height : max-content;
-  padding : 5rem;
+  width : 60%;
+  height : 100%;
+  overflow-y: auto;
+  padding : 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap : 2rem;
   place-items: center;
+}
+
+.GListItem-box::-webkit-scrollbar{
+  display: none;
 }
 
 .GListItem-box .GListItem-item{
@@ -412,4 +442,19 @@
   z-index: 10;
   font-family: var(--font-family);
   font-size: 1.2rem;
+}
+
+.GListItem-header .close-btn{
+  position: absolute;
+  top : 2rem;
+  left : 2rem;
+  width : 3rem;
+  height : 3rem;
+  z-index: 100;
+  color : #fff;
+}
+
+.close-btn:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }

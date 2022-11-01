@@ -1,24 +1,29 @@
 import React from 'react'
 import UseFetch from '../hooks/UseFetch';
 import './gallary.css'
+import {AiFillCloseCircle} from "react-icons/ai";
 
-const GListItem = ({layoutId, popup, data}) => {
+const GListItem = ({layoutId, data, setItemClick, itemClick}) => {
 
-    const filterVogue = data.filter(data=> data.Compony === layoutId);
+    const filterCompony = data.filter(data=> data.Compony === layoutId);
+    const filterBannerImg = filterCompony.find((item)=>item.id === 1);
 
   return (
     <div className = "GListItem-container">
         <header className = "GListItem-header">
+            <img src = {filterCompony[0].img_url} alt = ""/>
             <div className = "GListItem-title">
             <h1>{layoutId}</h1>
-            <p>Scroll through the year selection box to check the various pictorials by year.</p>
+            <p>Scroll to View More the various pictorials</p>
             </div>
+
+            <AiFillCloseCircle className = "close-btn" onClick={()=>setItemClick(!itemClick)}/>
 
         </header>
 
         <div className = "GListItem-box">
             
-            {filterVogue.map((item)=> {
+            {filterCompony.map((item)=> {
                 return(
                 <div className = "GListItem-item">
 
