@@ -1,109 +1,94 @@
 import {React, useEffect , useState} from 'react'
 import './gallary.css'
-import UseFetch from '../hooks/UseFetch'
-import { Link } from 'react-router-dom'
-import Loading from '../Loading/Loading'
+import GallaryBanner from './GallaryBanner'
+import GallaryList from './GallaryList'
 import {motion} from "framer-motion"
-import Background from "../../assets/image/J.ASTINA/2022\ JASTINA_7.jpg"
+import Loading from '../Loading/Loading'
 
 const Gallary = () => {
+  const [toggleclick, setToggleClick] = useState(false);
+  const [clickYear, setClickYear] = useState("#2022");
+  const [loading, setLoading] = useState(false);
 
-  const [loding, setLoding] = useState(false);
-
-  useEffect(()=> {
-
-    setLoding(!loding);
+  useEffect(()=>{
+    setLoading(!loading);
 
     setTimeout(()=>{
-    setLoding(loding)
-    },3000)
+      setLoading(loading);
+    },[3000])
   },[])
 
-  const innerwidth = {
-    width : "50%",
-    height : "50%"
-  };
-
-  const animationback = {
-    initial : {
-      opacity : 0,
-      width : innerwidth.width,
-      height : innerwidth.height,
-    },
-
-    animate : {
-      opacity : 1,
-      width : ["50%", "100%", "100%"],
-      height : ["50%", "50%", "100%"],
-      transition : {
-        duration : 1.5
-      }
-    }
-  }
-
-  const animationBox = {
-    initial : {
-      opacity : 1
-    },
-
-    animate : {
-      opacity : 1,
-      transition : {
-        staggerChildren : 0.5,
-        delayChildren : 0.8
-      }
-    }
-  }
-
-  const animationItem = {
-    initial : {
-      opacity : 0
-    },
-
-    animate : {
-      opacity : 1,
-      transition : {
-        duration : 1
-      }
-    }
-  }
   return (
     <>
-    {loding ? (
-    <Loading loading = {loding}/>
-    ) : (
-    <motion.div className = "Gallary-container" variants={animationBox} initial = "initial" animate = "animate">
-
-      <div className = "Gallary-background">
-        <motion.img src = {Background} alt = "" variants={animationback}/>
+    {loading ? (
+    <Loading loading = {loading}/>
+    )
+    : (
+    <section>
+    <header className = "GList-header">
+      <div className = "Gallary-hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
+        <div className = "GList-title">
+          <h1>MEGAZINE</h1>
+          <p>Scroll through the year selection box to check the various pictorials by year.</p>
+        </div>
 
-      <div className = "Gallary-contents">
-        <motion.div className = "Gallary-subTitle" variants={animationItem}>
-          <h1>2022 new iu collection</h1>
-        </motion.div>
+          <div className = "select-years-container">
+            <ul className = "select-years" id = {clickYear === "#2022" ? "active" : ""} >
+                <li>
+                <h1 className = "toggle-button" onClick={()=>setToggleClick(!toggleclick)}>▼</h1>
+                </li>
 
-        <motion.div className = "Gallary-title" variants={animationItem}>
-          <h1>New Megazine</h1>
-        </motion.div>
-      </div>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2022"></input>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2020" onClick={()=>setClickYear("#2020") & setToggleClick(false)}></input>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2021" onClick={()=>setClickYear("#2021") & setToggleClick(false)}></input>
+                </li>
+            </ul>
 
-      <motion.div className = "Gallary-buttons" variants={animationItem}>
-      <Link to = "/">
-      <button className = "View-button">
-        Home
-      </button>
-      </Link>
+            <ul className = "select-years" id = {clickYear === "#2021" ? "active" : ""}>
+                <li>
+                <h1 className = "toggle-button" onClick={()=>setToggleClick(!toggleclick)}>▼</h1>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2021"></input>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2020" onClick={()=>setClickYear("#2020") & setToggleClick(false)}></input>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2022" onClick={()=>setClickYear("#2022") & setToggleClick(false)}></input>
+                </li>
+            </ul>
 
-      <Link to = "/GallaryList">
-      <button className = "View-button">
-        View more
-      </button>
-      </Link>
-      
-      </motion.div>
+            <ul className = "select-years" id = {clickYear === "#2020" ? "active" : ""}>
+                <li>
+                <h1 className = "toggle-button" onClick={()=>setToggleClick(!toggleclick)}>▼</h1>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2020"></input>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2021" onClick={()=>setClickYear("#2021") & setToggleClick(false)}></input>
+                </li>
+                <li className = {toggleclick === !false ? "active" : ''}>
+                    <input type = "text" value = "2022" onClick={()=>setClickYear("#2022") & setToggleClick(false)}></input>
+                </li>
+            </ul>
+            </div>
 
-    </motion.div>
+        </header>
+
+      <GallaryBanner/>
+      <GallaryList/>
+    </section>
     )}
     </>
   )

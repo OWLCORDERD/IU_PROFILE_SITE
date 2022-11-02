@@ -1,8 +1,15 @@
-.Gallary-container{
+section{
+  position: relative;
+  display: inline-block;
+  width : 100%;
+  height : 100%;
+}
+
+section .Gallary-container{
   position: relative;
   top : 0;
   left : 0;
-  width : 100%;
+  width : 75%;
   height : 100vh;
   background-color: #000;
 }
@@ -26,10 +33,21 @@
   object-fit: cover;
 }
 
-.Gallary-container .Gallary-contents{
+.Gallary-container .Gallary-content-box{
   position: absolute;
+  left : 0;
   top : 50%;
-  transform : translateY(-50%);
+  transform: translateY(-50%);
+  width : 100%;
+  height : 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Gallary-container .Gallary-contents{
+  position: relative;
   width : 100%;
   height : 20rem;
   display: flex;
@@ -55,11 +73,8 @@
 }
 
 .Gallary-container .Gallary-buttons{
-  position: absolute;
+  position: relative;
   width : 50rem;
-  bottom : 5rem;
-  left : 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -83,29 +98,36 @@
   border : #fff;
 }
 
-/*Gallary Part List container css*/
-
-.GList-container{
-  position: relative;
+.GList-header{
+  position: fixed;
   top : 0;
-  left : 0;
-  width : 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
-  height : 100vh;
-}
-
-.GList-container .GList-header{
-  position: relative;
-  top : 0;
-  left : 0;
-  width : 100%;
-  height : 50rem;
+  right : 0;
+  width : 25%;
+  height : 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.GList-header .Gallary-hamburgerMenu{
+  position: absolute;
+  display: inline-block;
+  top : 2rem;
+  right : 2rem;
+  width : 3rem;
+  height : 10rem;
+  cursor: pointer;
+}
+
+.Gallary-hamburgerMenu span{
+  display: block;
+  width : 3rem;
+  height : 0.5rem;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
 }
 
 .GList-header .GList-title{
@@ -116,7 +138,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color : #000;
+  color : #fff;
 }
 
 .GList-title h1{
@@ -154,7 +176,7 @@
 .select-years > li > input[type=text]{
   display: block;
   padding : 1rem;
-  border : 5px solid #000;
+  border : 5px solid #fff;
   width : 10rem;
   height : 3rem;
   font-size: 1.2rem;
@@ -199,7 +221,7 @@
   transform: translateY(-50%);
   margin-left: 11rem;
   font-size: 1.5rem;
-  color : #000;
+  color : #fff;
   cursor : pointer;
 }
 
@@ -229,15 +251,30 @@
   display: block;
 }
 
+
+/*Gallary Part List container css*/
+
+.GList-container{
+  position: relative;
+  top : 0;
+  right : 0;
+  width : 75%;
+  height : 100vh;
+  background-color: #000;
+}
+
 /*GallaryList item 부모 box css*/
 .GList-container .GallaryList-box{
-  position: relative;
-  width : 60rem;
+  position: absolute;
+  top : 0;
+  left : 50%;
+  width : max-content;
   height : 100%;
+  transform: translateX(-50%);
   overflow-y: auto;
-  padding : 2rem;
+  padding : 2rem 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap : 2rem;
   place-items: center;
 }
@@ -428,7 +465,7 @@
   position: absolute;
   width : 100%;
   height : 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .GListItem-imgbox .imgbox-title{
