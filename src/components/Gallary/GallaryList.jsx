@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import UseFetch from "../hooks/UseFetch"
 import {motion} from "framer-motion"
-import GListItem from './GListItem'
+import GListBox from './GListBox'
 
 const GallaryList = () => {
 
@@ -85,7 +85,7 @@ const GallaryList = () => {
         })}
         </motion.div>
 
-        {itemClick&&<GListItem layoutId = {layoutId} popup = {popup} data = {filtering} setItemClick = {setItemClick} itemClick = {itemClick}/>}
+        {itemClick&&<GListBox layoutId = {layoutId} popup = {popup} data = {filtering} setItemClick = {setItemClick} itemClick = {itemClick}/>}
 
     </div>
   )

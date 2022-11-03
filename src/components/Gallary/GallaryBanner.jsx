@@ -1,12 +1,15 @@
 import {React, useEffect , useState} from 'react'
 import './gallary.css'
 import { Link } from 'react-router-dom'
-import Loading from '../Loading/Loading'
 import {motion} from "framer-motion"
-import Background from "../../assets/image/J.ASTINA/2022\ JASTINA_7.jpg"
+import UseFetch from '../hooks/UseFetch'
 
 const GallaryBanner = () => {
+  
 
+  const gallaryData = UseFetch("http://localhost:3001/Gallary");
+
+  const Datafilter = gallaryData.filter(gallaryData => gallaryData.date === "2022.10.31");
 
   const innerwidth = {
     width : "50%",
@@ -56,22 +59,27 @@ const GallaryBanner = () => {
       }
     }
   }
+
   return (
-    <>
     <motion.div className = "Gallary-container" variants={animationBox} initial = "initial" animate = "animate">
+      {Datafilter.map((item)=>{
+        return(
+        <div className = "Gallary-background">
+          <motion.img src = {item.img_url} alt = "" variants={animationItem}/>
+        </div>
+        )
+      })}
 
-      <div className = "Gallary-background">
-        <motion.img src = {Background} alt = "" variants={animationback}/>
-      </div>
-
+      {Datafilter.map((item)=>{
+      return(
       <div className = "Gallary-content-box">
       <div className = "Gallary-contents">
         <motion.div className = "Gallary-subTitle" variants={animationItem}>
-          <h1>2022 new iu collection</h1>
+          <h1>{item.title}</h1>
         </motion.div>
 
         <motion.div className = "Gallary-title" variants={animationItem}>
-          <h1>New Megazine</h1>
+          <h1>{item.Compony}</h1>
         </motion.div>
       </div>
 
@@ -85,9 +93,10 @@ const GallaryBanner = () => {
       
       </motion.div>
       </div>
+      )
+      })}
 
     </motion.div>
-    </>
   )
 }
 

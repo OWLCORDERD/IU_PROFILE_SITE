@@ -5,104 +5,12 @@ section{
   height : 100%;
 }
 
-section .Gallary-container{
-  position: relative;
-  top : 0;
-  left : 0;
-  width : 75%;
-  height : 100vh;
-  background-color: #000;
-}
-
-.Gallarty-container .Gallary-background{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  top : 0;
-  left : 0;
-  overflow: hidden;
-}
-
-.Gallary-background img{
-  position: absolute;
-  top : 50%;
-  transform: translate(-50%,-50%);
-  left : 50%;
-  width : 100%;
-  height : 100%;
-  object-fit: cover;
-}
-
-.Gallary-container .Gallary-content-box{
-  position: absolute;
-  left : 0;
-  top : 50%;
-  transform: translateY(-50%);
-  width : 100%;
-  height : 40rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.Gallary-container .Gallary-contents{
-  position: relative;
-  width : 100%;
-  height : 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 100;
-}
-
-.Gallary-contents .Gallary-subTitle{
-  font-size: 1rem;
-  color : #fff;
-  text-transform: uppercase;
-  font-family: var(--font-family);
-}
-
-.Gallary-contents .Gallary-title{
-  font-size: 2.5rem;
-  color : #fff;
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-  font-family: var(--font-family);
-}
-
-.Gallary-container .Gallary-buttons{
-  position: relative;
-  width : 50rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 100;
-}
-
-.Gallary-container .View-button{
-  width : 13rem;
-  height : 4rem;
-  background-color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-family: var(--font-family);
-}
-
-.Gallary-container .View-button:hover{
-  background-color: rgb(252, 157, 157);
-  cursor: pointer;
-  color : #fff;
-  border : #fff;
-}
-
+/*Gallary Component aside header css */
 .GList-header{
   position: fixed;
   top : 0;
   right : 0;
-  width : 25%;
+  width : 20%;
   height : 100%;
   display: flex;
   flex-direction: column;
@@ -110,6 +18,7 @@ section .Gallary-container{
   align-items: center;
   z-index: 1000;
   background-color: #000;
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 .GList-header .Gallary-hamburgerMenu{
@@ -142,14 +51,14 @@ section .Gallary-container{
 }
 
 .GList-title h1{
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   letter-spacing: 0.2rem;
   font-family: var(--font-family);
   text-align: center;
 }
 
 .GList-title p{
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.2rem;
   font-family: var(--font-family);
   text-align: center;
@@ -251,14 +160,118 @@ section .Gallary-container{
   display: block;
 }
 
+/*Gallary Component Banner Component css */
+section .Gallary-container{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 80%;
+  height : 100vh;
+  background-color: #000;
+}
+
+.Gallary-container .Gallary-background{
+  position: absolute;
+  width : 80%;
+  height : 100%;
+  top : 0;
+  left : 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.Gallary-background::before{
+  position: absolute;
+  top : 0;
+  left: 0;
+  content : '';
+  width : 100%;
+  height : 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.Gallary-background img{
+  position: absolute;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+.Gallary-container .Gallary-content-box{
+  position: absolute;
+  left : 0;
+  top : 50%;
+  transform: translateY(-50%);
+  width : 100%;
+  height : 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+.Gallary-container .Gallary-contents{
+  position: relative;
+  width : 100%;
+  height : 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 100;
+}
+
+.Gallary-contents .Gallary-subTitle{
+  font-size: 1.2rem;
+  color : #fff;
+  text-transform: uppercase;
+  font-family: var(--font-family-Ol);
+}
+
+.Gallary-contents .Gallary-title{
+  font-size: 3.5rem;
+  color : #fff;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-family: var(--font-family-Ol);
+}
+
+.Gallary-container .Gallary-buttons{
+  position: relative;
+  width : 50rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 100;
+}
+
+.Gallary-container .View-button{
+  width : 13rem;
+  height : 4rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+}
+
+.Gallary-container .View-button:hover{
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+  color : #fff;
+  border : #fff;
+}
 
 /*Gallary Part List container css*/
-
 .GList-container{
   position: relative;
   top : 0;
   right : 0;
-  width : 75%;
+  width : 80%;
   height : 100vh;
   background-color: #000;
 }
@@ -346,13 +359,12 @@ section .Gallary-container{
 }
 
 /*GListItem container css*/
-.GList-container .GListItem-container{
-  position: absolute;
-  top : 50%;
-  left : 50%;
-  transform: translate(-50%, -50%);
-  width : 80%;
-  height : 90vh;
+.GList-container .GListBox-container{
+  position: fixed;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100vh;
   background-color: #fff;
   z-index: 1000;
   display: flex;
@@ -361,7 +373,7 @@ section .Gallary-container{
   overflow: hidden;
 }
 
-.GListItem-container .GListItem-header{
+.GListBox-container .GListBox-header{
   position: relative;
   top : 0;
   left : 0;
@@ -369,7 +381,7 @@ section .Gallary-container{
   height : 100%;
 }
 
-.GListItem-header img{
+.GListBox-header img{
   position: absolute;
   width : 100%;
   height : 100%;
@@ -378,7 +390,7 @@ section .Gallary-container{
   object-fit: cover;
 }
 
-.GListItem-header .GListItem-title{
+.GListBox-header .GListBox-title{
   position: absolute;
   width : 100%;
   height : 100%;
@@ -390,7 +402,7 @@ section .Gallary-container{
   z-index: 100;
 }
 
-.GListItem-header .GListItem-title::before{
+.GListBox-header .GListBox-title::before{
   position: absolute;
   top : 0;
   left : 0;
@@ -401,7 +413,7 @@ section .Gallary-container{
   z-index: -1;
 }
 
-.GListItem-title h1{
+.GListBox-title h1{
   font-size: 3rem;
   letter-spacing: 0.2rem;
   font-family: var(--font-family);
@@ -409,7 +421,7 @@ section .Gallary-container{
   color : #fff;
 }
 
-.GListItem-title p{
+.GListBox-title p{
   width : 25rem;
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
@@ -419,7 +431,7 @@ section .Gallary-container{
 }
 
 /*GallaryList item 부모 box css*/
-.GListItem-container .GListItem-box{
+.GListBox-container .GListBox-mapBox{
   position: relative;
   width : 60%;
   height : 100%;
@@ -431,11 +443,11 @@ section .Gallary-container{
   place-items: center;
 }
 
-.GListItem-box::-webkit-scrollbar{
+.GListBox-mapBox::-webkit-scrollbar{
   display: none;
 }
 
-.GListItem-box .GListItem-item{
+.GListBox-mapBox .mapBox-item{
   position: relative;
   top : 0;
   left : 0;
@@ -445,30 +457,45 @@ section .Gallary-container{
   cursor: pointer;
 }
 
-.GListItem-item .GListItem-imgbox{
+.mapBox-item .mapBox-imgbox{
   position: relative;
   width : 100%;
   height : 100%;
   overflow: hidden;
 }
 
-.GListItem-item:hover{
+.mapBox-imgbox h1{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  top : 0;
+  left : 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  color : #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.mapBox-imgbox:hover{
   border : 5px solid #fff;
 }
 
-.GListItem-item:hover img{
+.mapBox-imgbox:hover img{
   transform: scale(1.2);
   transition: all 0.5s ease-out;
 }
 
-.GListItem-imgbox img{
+.mapBox-imgbox img{
   position: absolute;
   width : 100%;
   height : 100%;
   object-fit: cover;
 }
 
-.GListItem-imgbox .imgbox-title{
+.mapBox-imgbox .imgbox-title{
   position: absolute;
   width : 100%;
   height : 100%;
@@ -481,7 +508,7 @@ section .Gallary-container{
   font-size: 1.2rem;
 }
 
-.GListItem-header .close-btn{
+.GListBox-header .close-btn{
   position: absolute;
   top : 2rem;
   left : 2rem;
@@ -494,4 +521,116 @@ section .Gallary-container{
 .close-btn:hover{
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.GListItem-container{
+  position: relative;
+  width : 100%;
+  height : 100vh;
+  background-color: #fff;
+}
+
+/* Gallary Component [header, GallaryBanner, GallaryList] 반응형 리뉴얼 디자인 */
+@media screen and (max-width : 1200px) {
+
+/*Gallary Component aside header css */
+section .GList-header{
+  position: relative;
+  width : 100%;
+  height : 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: #000;
+  border-left: none;
+}
+
+.GList-header .Gallary-hamburgerMenu{
+  position: relative;
+  top : 3.5rem;
+  left : 2rem;
+  display: inline-block;
+  width : 3rem;
+  height : 10rem;
+  cursor: pointer;
+}
+
+.Gallary-hamburgerMenu span{
+  display: block;
+  width : 3rem;
+  height : 0.5rem;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.GList-header .GList-title{
+  position: absolute;
+  left : 50%;
+  transform : translateX(-50%);
+  width : 10rem;
+  height : max-content;
+}
+
+.GList-title h1{
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.GList-title p{
+  display: none;
+}
+
+/*select years option boxs 부모 css*/
+.GList-header .select-years-container{
+  position: relative;
+  top : 1rem;
+  right : 2rem;
+  width : 10rem;
+  height : 5rem;
+  z-index: 1000;
+}
+
+/*select-years box input box css 
+(select option 박스들을 input box로 대체하여 css 디자인)*/
+.select-years > li > input[type=text]{
+  display: block;
+  width : 8rem;
+  height : 3rem;
+}
+
+/*toggleClick 버튼 css */
+.select-years > li > .toggle-button{
+  margin-left: 10rem;
+}
+
+/*Gallary Component Banner Component css */
+section .Gallary-container{
+  width : 100%;
+  height : 100vh;
+}
+
+/*Gallary Part List container css*/
+.GList-container{
+  width : 100%;
+  height : 100vh;
+}
+
+/*GallaryList item 부모 box css*/
+.GList-container .GallaryList-box{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.GallaryList-box::-webkit-scrollbar{
+  display: none;
+}
+
+.GallaryList-box .GallaryList-item{
+  width : 22rem;
+}
+
 }
