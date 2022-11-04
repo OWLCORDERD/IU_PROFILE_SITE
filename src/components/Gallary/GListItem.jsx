@@ -1,17 +1,27 @@
 import React from 'react'
+import {AiFillCloseCircle, AiOutlineConsoleSql} from "react-icons/ai";
 
-const GListItem = ({itemLayoutId, Gallarydb}) => {
+const GListItem = ({layoutId, filterings, itemClick, setItemClick}) => {
 
-    const textFliter = Gallarydb.filter(Gallarydb => Gallarydb.title === itemLayoutId);
+    const itemFilter = filterings.filter(filterings => filterings.title === layoutId);
   return (
     <div className = "GListItem-container">
-        {textFliter.map((item)=>{
-        return(
-        <div className = "GListItem-Box">
-            <img src = {item.img_url} alt = ""/>
+
+      <div className = "GListItem-header">
+        <AiFillCloseCircle className = "close-btn" onClick={()=>setItemClick(!itemClick)}/>        
+      </div>
+
+        <div className = "GListItem-mapBox">
+        {itemFilter.map((item)=>{
+          return(
+            <div className = "mapBox-item">
+              <div className = "mapBox-imgbox">
+                <img src = {item.img_url} alt = ""/>
+              </div>
+            </div>
+          )
+          })}
         </div>
-        )
-        })}
     </div>
   )
 }

@@ -5,6 +5,7 @@ import ProfileInfo from "./components/About/ProfileInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Gallary from "./components/Gallary/Gallary";
 import GallaryList from "./components/Gallary/GallaryList";
+import GListBox from "./components/Gallary/GListBox";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Profile" element={<ProfileInfo/>}></Route>
           <Route path="/Gallary" element={<Gallary/>}></Route>
           <Route path="/GallaryList" element={<GallaryList/>}></Route>
+          <Route path="/GallaryBox" element={<GListBox/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

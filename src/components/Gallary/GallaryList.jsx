@@ -3,21 +3,9 @@ import { useState } from 'react'
 import UseFetch from "../hooks/UseFetch"
 import {motion} from "framer-motion"
 import GListBox from './GListBox'
+import {Link} from "react-router-dom"
 
 const GallaryList = () => {
-
-    const [itemClick, setItemClick] = useState(false);
-    const [layoutId, setLayoutId] = useState(null);
-
-    const popup = (id) =>{
-        if(itemClick===false){
-            setItemClick(!itemClick);
-            setLayoutId(id);
-        }else{
-            setItemClick(!itemClick);
-            setLayoutId(null);
-        }
-    }
 
     const gallaryData = UseFetch("http://localhost:3001/Gallary");
 
@@ -73,19 +61,19 @@ const GallaryList = () => {
                 return(
                 <motion.div className = "GallaryList-item" variants={GallaryAniList}>
 
-                    <div className = "GallaryList-imgbox" onClick={()=>popup(item.Compony)}>
+                    <Link to = "/GallaryBox" state={{Compony : item.Compony ,Filter : filtering}}>
+                    <div className = "GallaryList-imgbox">
                         <img src = {item.img_url}/>
 
                         <div className = "imgbox-title">
                             <h1>{item.Compony}</h1>
                         </div>
                     </div>
+                    </Link>
                 </motion.div>
                 )
         })}
         </motion.div>
-
-        {itemClick&&<GListBox layoutId = {layoutId} popup = {popup} data = {filtering} setItemClick = {setItemClick} itemClick = {itemClick}/>}
 
     </div>
   )

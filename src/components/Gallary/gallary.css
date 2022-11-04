@@ -358,9 +358,9 @@ section .Gallary-container{
   font-size: 1.2rem;
 }
 
-/*GListItem container css*/
-.GList-container .GListBox-container{
-  position: fixed;
+/*Compony db column Filter GListBox container css*/
+.GListBox-container{
+  position: relative;
   top : 0;
   left : 0;
   width : 100%;
@@ -369,8 +369,6 @@ section .Gallary-container{
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
 }
 
 .GListBox-container .GListBox-header{
@@ -523,11 +521,79 @@ section .Gallary-container{
   transform: scale(1.1);
 }
 
-.GListItem-container{
+/**/
+.GListBox-container .GListItem-container{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  background-color: #fff;
+  top : 0;
+  left : 0;
+  z-index: 1000;
+}
+
+.GListItem-container .GListItem-header{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 20vh;
+}
+
+.GListItem-header .close-btn{
+  position: relative;
+  font-size: 3.5rem;
+  top : 3rem;
+  left : 3rem;
+}
+
+/*GallaryList item 부모 box css*/
+.GListItem-container .GListItem-mapBox{
   position: relative;
   width : 100%;
-  height : 100vh;
-  background-color: #fff;
+  height : 100%;
+  padding : 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap : 2rem;
+  place-items: center;
+}
+
+.GListItem-mapBox::-webkit-scrollbar{
+  display: none;
+}
+
+.GListItem-mapBox .mapBox-item{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 30rem;
+  border : 5px solid transparent;
+  cursor: pointer;
+}
+
+.mapBox-item .mapBox-imgbox{
+  position: relative;
+  width : 100%;
+  height : 100%;
+  overflow: hidden;
+}
+
+.mapBox-imgbox:hover{
+  border : 5px solid #fff;
+}
+
+.mapBox-imgbox:hover img{
+  transform: scale(1.2);
+  transition: all 0.5s ease-out;
+}
+
+.mapBox-imgbox img{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
 }
 
 /* Gallary Component [header, GallaryBanner, GallaryList] 반응형 리뉴얼 디자인 */
