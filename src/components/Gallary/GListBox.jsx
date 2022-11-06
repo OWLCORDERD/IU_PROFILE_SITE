@@ -46,7 +46,7 @@ const GListBox = () => {
                 return(
                 <div className = "mapBox-item">
 
-                    <div className = "mapBox-imgbox" onClick={()=>popup(item.title)}>
+                    <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
                         <img src = {item.img_url}/>
                         <h1>{item.Update}</h1>
                     </div>
@@ -58,7 +58,7 @@ const GListBox = () => {
                 return(
                 <div className = "mapBox-item">
 
-                    <div className = "mapBox-imgbox" onClick={()=>popup(item.title)}>
+                    <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
                         <img src = {item.img_url}/>
                         <h1>{item.Update}</h1>
                     </div>

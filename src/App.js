@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Gallary from "./components/Gallary/Gallary";
 import GallaryList from "./components/Gallary/GallaryList";
 import GListBox from "./components/Gallary/GListBox";
+import YoutubeData from "./components/YoutubeData";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/Gallary" element={<Gallary/>}></Route>
           <Route path="/GallaryList" element={<GallaryList/>}></Route>
           <Route path="/GallaryBox" element={<GListBox/>}></Route>
+          <Route path="/Youtube" element={<YoutubeData/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

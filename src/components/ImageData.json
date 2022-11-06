@@ -26,7 +26,9 @@
     "img_url" : "../Magazine/VOGUE/VOGUE 5월호_1.jpg",
     "Compony" : "VOGUE",
     "since" : "2022",
-    "Update" : "2022.05"
+    "Update" : "2022.05",
+    "ytbID" : "vwekEnIEN0s",
+    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg"
   },
   {
     "id": 2,
@@ -191,7 +193,9 @@
     "img_url" : "./Magazine/VOGUE/2022.10/1.jpg",
     "Compony" : "VOGUE",
     "since" : "2022",
-    "Update" : "2022.10"
+    "Update" : "2022.10",
+    "ytbID" : "vwekEnIEN0s",
+    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg"
   },
   {
     "id" : 25,
