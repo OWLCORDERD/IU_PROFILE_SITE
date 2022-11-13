@@ -1,8 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
 import UseFetch from "../hooks/UseFetch"
 import {motion} from "framer-motion"
-import GListBox from './GListBox'
 import {Link} from "react-router-dom"
 
 const GallaryList = () => {
@@ -11,7 +9,7 @@ const GallaryList = () => {
 
     const gallarySign = UseFetch("http://localhost:3001/GallarySign");
 
-    const filtering = gallaryData.filter(gallaryData => gallaryData.since === "2022");
+    const since2022 = gallaryData.filter(gallaryData => gallaryData.since === "2022");
 
     const GallaryAnibox = {
         initial : {
@@ -39,19 +37,6 @@ const GallaryList = () => {
         }
     }
 
-    const GallaryAniItem = {
-        initial : {
-            opacity : 0
-        },
-        animate : {
-            opacity : 1,
-            transition : {
-                delay : 0.2,
-                duration : 1
-            }
-        }
-    }
-
   return (
     <div className = "GList-container">
 
@@ -59,9 +44,9 @@ const GallaryList = () => {
             
             {gallarySign.map((item)=> {
                 return(
-                <motion.div className = "GallaryList-item" variants={GallaryAniList}>
+                <motion.div className = "GallaryList-item" variants={GallaryAniList} key = {item.id}>
 
-                    <Link to = "/GallaryBox" state={{Compony : item.Compony ,Filter : filtering}}>
+                    <Link to = "/GallaryBox" state={{Compony : item.Compony ,Filter : since2022}}>
                     <div className = "GallaryList-imgbox">
                         <img src = {item.img_url}/>
 

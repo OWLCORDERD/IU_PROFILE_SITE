@@ -2,18 +2,22 @@
 
 "GallarySign" : [
   {
+    "id" : 1,
     "Compony" : "VOGUE",
     "img_url" : "../Magazine/VOGUE/2022.10/1.jpg"
   },
   {
+    "id" : 2,
     "Compony" : "MARIE CLAIRE",
     "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_1.jpg"
   },
   {
+    "id" : 3,
     "Compony" : "J.ESTINA",
     "img_url" : "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-1.jpg"
   },
   {
+    "id" : 4,
     "Compony" : "NEW BLANCE",
     "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE.jpg"
   }
@@ -23,12 +27,14 @@
   {
     "id" : 1,
     "title" : "아이유X구찌 뷰티 5월 호",
+    "sub_title" : "아이유의 짜릿한 변신",
     "img_url" : "../Magazine/VOGUE/VOGUE 5월호_1.jpg",
     "Compony" : "VOGUE",
     "since" : "2022",
     "Update" : "2022.05",
     "ytbID" : "vwekEnIEN0s",
-    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg"
+    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg",
+    "logo" : "../Magazine/VOGUE/Vogue-logo.jpg"
   },
   {
     "id": 2,
@@ -85,7 +91,9 @@
     "since" : "2022",
     "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_1.jpg",
     "Compony" : "MARIE CLAIRE",
-    "Update" : "2022.05"
+    "Update" : "2022.05",
+    "ytbID" : "h8qQrnRzuTA",
+    "YtbThumbNail" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_비디오.jpg"
   },
   {
     "id" : 10,
@@ -157,7 +165,9 @@
     "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE.jpg",
     "Compony" : "NEW BLANCE",
     "since" : "2022",
-    "Update" : "2022.08"
+    "Update" : "2022.10",
+    "ytbID" : "qj3RxlC6dV0",
+    "YtbThumbNail" : "./Magazine/NEW BLANCE/NEW BLANCE_비디오.jpg" 
   },
   {
     "id" : 20,
@@ -189,66 +199,68 @@
   },
   {
     "id" : 24,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+    "sub_title" : "밀라노의 아이유. 그녀는 같을까 다를까",
     "img_url" : "./Magazine/VOGUE/2022.10/1.jpg",
     "Compony" : "VOGUE",
     "since" : "2022",
     "Update" : "2022.10",
     "ytbID" : "vwekEnIEN0s",
-    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg"
+    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg",
+    "logo" : "../Magazine/VOGUE/Vogue-logo.jpg"
   },
   {
     "id" : 25,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/2.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 26,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/3.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 27,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/4.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 28,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/5.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 29,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/6.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 30,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/7.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 31,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/8.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
   },
   {
     "id" : 32,
-    "title" : "../Magazine/VOGUE/VOGUE logo.png",
+    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
     "img_url" : "./Magazine/VOGUE/2022.10/9.jpg",
     "Compony" : "VOGUE",
     "since" : "2022"
@@ -260,7 +272,9 @@
     "Compony" : "J.ESTINA",
     "since" : "2022",
     "Update" : "2022.10",
-    "date" : "2022.10.31"
+    "date" : "2022.10.31",
+    "ytbID" : "UHShYbaTRrk",
+    "YtbThumbNail" : "./Magazine/J.ASTINA/2022 WINTER/JESTINA_비디오.jpg"
   },
   {
     "id" : 34,

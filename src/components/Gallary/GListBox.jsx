@@ -1,6 +1,5 @@
 import React from 'react'
 import './gallary.css'
-import {AiFillCloseCircle, AiOutlineConsoleSql} from "react-icons/ai";
 import { useState } from 'react';
 import GListItem from './GListItem';
 import { useLocation } from 'react-router-dom';
@@ -8,10 +7,10 @@ import { useLocation } from 'react-router-dom';
 const GListBox = () => {
 
     const location = useLocation();
-    const test = location.state.Compony;
-    const filterings = location.state.Filter;
+    const ComponyData = location.state.Compony;
+    const sinceFilter = location.state.Filter;
 
-    const filterCompony = filterings.filter(filterings=> filterings.Compony === test);
+    const filterCompony = sinceFilter.filter(sinceFilter=> sinceFilter.Compony === ComponyData);
     const updateFilter = filterCompony.filter(filterCompony => filterCompony.Update === "2022.05");
     const updateFilter2 = filterCompony.filter(filterCompony => filterCompony.Update === "2022.10");
 
@@ -44,7 +43,7 @@ const GListBox = () => {
             
             {updateFilter.map((item)=> {
                 return(
-                <div className = "mapBox-item">
+                <div className = "mapBox-item" key={item.id}>
 
                     <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
                         <img src = {item.img_url}/>
@@ -56,7 +55,7 @@ const GListBox = () => {
 
         {updateFilter2.map((item)=> {
                 return(
-                <div className = "mapBox-item">
+                <div className = "mapBox-item" key={item.id}>
 
                     <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
                         <img src = {item.img_url}/>
@@ -67,7 +66,7 @@ const GListBox = () => {
         })}
         </div>
 
-        {itemClick&&<GListItem filterings = {filterings} layoutId = {layoutId} itemClick = {itemClick} setItemClick = {setItemClick}/>}
+        {itemClick&&<GListItem filterCompony = {filterCompony} layoutId = {layoutId} itemClick = {itemClick} setItemClick = {setItemClick}/>}
     </div>
   )
 }

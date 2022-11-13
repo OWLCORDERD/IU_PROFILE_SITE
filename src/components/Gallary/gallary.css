@@ -455,7 +455,7 @@ section .Gallary-container{
   cursor: pointer;
 }
 
-.mapBox-item .mapBox-imgbox{
+.GListBox-mapBox .mapBox-item .mapBox-imgbox{
   position: relative;
   width : 100%;
   height : 100%;
@@ -506,105 +506,99 @@ section .Gallary-container{
   font-size: 1.2rem;
 }
 
-.GListBox-header .close-btn{
-  position: absolute;
-  top : 2rem;
-  left : 2rem;
-  width : 3rem;
-  height : 3rem;
-  z-index: 100;
-  color : #fff;
-}
-
-.close-btn:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 /**/
 .GListBox-container .GListItem-container{
   position: absolute;
   width : 100%;
-  height : 100%;
-  background-color: #fff;
+  height : max-content;
   top : 0;
   left : 0;
   z-index: 1000;
+  background-color: #000;
 }
 
 .GListItem-container .GListItem-header{
-  position: relative;
+  position: fixed;
   top : 0;
   left : 0;
-  width : 100%;
-  height : 20vh;
+  width : 10%;
+  height : 100vh;
+  z-index: 10;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.GListItem-header .close-btn{
-  position: relative;
-  font-size: 3.5rem;
-  top : 3rem;
-  left : 3rem;
-}
-
-/*GallaryList item 부모 box css*/
-.GListItem-container .GListItem-mapBox{
+.GListItem-header .logo{
   position: relative;
   width : 100%;
-  height : 100%;
-  padding : 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap : 2rem;
-  place-items: center;
+  height : max-content;
+  margin : 5rem 0;
 }
 
-.GListItem-mapBox::-webkit-scrollbar{
-  display: none;
-}
-
-.GListItem-mapBox .mapBox-item{
-  position: relative;
-  top : 0;
-  left : 0;
-  width : 100%;
-  height : 30rem;
-  border : 5px solid transparent;
-  cursor: pointer;
-}
-
-.mapBox-item .mapBox-imgbox{
-  position: relative;
-  width : 100%;
-  height : 100%;
-  overflow: hidden;
-}
-
-.mapBox-imgbox:hover{
-  border : 5px solid #fff;
-}
-
-.mapBox-imgbox:hover img{
-  transform: scale(1.2);
-  transition: all 0.5s ease-out;
-}
-
-.mapBox-imgbox img{
-  position: absolute;
+.logo img{
   width : 100%;
   height : 100%;
   object-fit: cover;
 }
 
-.GListItem-container .GListItem-Video{
+.GListItem-header .close-btn{
   position: relative;
-  width : 60rem;
-  height : 30rem;
-  overflow: hidden;
-  left : 50%;
-  transform: translateX(-50%);
+  font-size: 3.5rem;
+  color : #000;
+  z-index: 100;
+  cursor : pointer;
 }
 
+/*Iframe Video 재생버튼, 인트로 Img, Iframe 동영상 부모 컨테이너*/
+.GListItem-container .Video-contents{
+  position: absolute;
+  left : 80%;
+  transform: translateX(-80%);
+  width : 40rem;
+  height : 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+/*화보 Title css */
+.Video-contents .video-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width : 100%;
+  height : 5rem;
+  text-transform: uppercase;
+}
+
+.video-title h1{
+  font-size: 1.2rem;
+  font-family: var(--font-family-Go);
+}
+
+.video-title p{
+  font-size: 1.5rem;
+  font-family: var(--font-family-Lexend);
+  font-weight: bold;
+}
+
+/*Compony 대표 유튜브 동영상 부모 container*/
+.Video-contents .GListItem-Video{
+  position: relative;
+  width : 45rem;
+  height : 25rem;
+  overflow: hidden;
+  margin : 2rem 0;
+}
+
+/*유튜브 Thumbnail ImgBox css 
+layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
 .GListItem-Video .Video-Image{
   position: absolute;
   width : 100%;
@@ -620,9 +614,21 @@ section .Gallary-container{
   transition: all 1s ease-out;
 }
 
+/*버튼 클릭시 썸네일 이미지 활성화*/
 .Video-Image#active{
   opacity: 1;
   transition: all 0.5s ease-out;
+}
+
+.Video-Image::before{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  top : 0;
+  left : 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  content : '';
 }
 
 .Video-Image img{
@@ -634,17 +640,8 @@ section .Gallary-container{
   object-fit: cover;
 }
 
-.Video-Image::before{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  top : 0;
-  left : 0;
-  content : '';
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
+/*iframe 재생버튼 
+(해당 버튼 클릭 시 유튜브 api에서 가져온 영상 id값을 layoutdata에 저장함)*/
 .Video-Image .Video-playButton{
   position: relative;
   width : 5rem;
@@ -660,6 +657,7 @@ section .Gallary-container{
   transition: all 0.5s ease-in;
 }
 
+/*iframe 영상 위치값 container*/
 .GListItem-Video .Video-iframe{
   position: absolute;
   top : 0;
@@ -672,7 +670,181 @@ section .Gallary-container{
   width : 100%;
   height : 100%;
   object-fit: cover;
+  border-radius: 2rem;
 }
+
+/*GallaryList item 부모 box css*/
+.GListItem-container .GListItem-mapBox{
+  position: absolute;
+  top : 0;
+  right : 0;
+  width : 90%;
+  height : 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*mapBox 표지와 mapBox Slider 아이템 부모 container*/
+.GListItem-mapBox .mapBox-Slider{
+  position: relative;
+  width : 50%;
+  height : 100%;
+}
+
+/*mapBox Gallary 표지 부모 css*/
+.mapBox-Slider #mapItemBox-itemSign{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mapItemBox-itemSign .Sign-imgbox{
+  position: relative;
+  width : 100%;
+  height : 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sign-imgbox .Sign-title{
+  position: absolute;
+  width : 25rem;
+  text-align: center;
+  height : 20rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color : #fff;
+  font-size: 1.2rem;
+  font-family: var(--font-family-Go);
+  word-break: keep-all;
+}
+
+.Sign-imgbox::before{
+  position: absolute;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  content : '';
+}
+
+#mapItemBox-itemSign img{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+/*control 버튼 누를 시 Slider mapBox item들 중 해당 Slider active toggle*/
+#mapItemBox-item.active{
+  display: flex;
+  animation: animation 1s ease-in-out;
+}
+
+@keyframes animation {
+  0%{
+    display: flex;
+  }
+
+  100%{
+    display: none;
+  }
+}
+
+/*mapBox map items Slider css*/
+.mapBox-Slider #mapItemBox-item{
+  position: absolute;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#mapItemBox-item.active{
+  display: flex;
+}
+
+#mapItemBox-item .mapBox-imgbox{
+  position: relative;
+  width : 100%;
+  height : 100%;
+  overflow: hidden;
+}
+
+.mapBox-imgbox:hover img{
+  transform: scale(1.2);
+  transition: all 0.5s ease-out;
+}
+
+.mapBox-imgbox img{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+/*Slider control buttons & control page state css*/
+.GListItem-mapBox .Slider-control{
+  position: absolute;
+  right : 0;
+  bottom : 5rem;
+  width : 10rem;
+  height : 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  padding : 0 5rem;
+}
+
+.Slider-control .control-page{
+  font-size: 1rem;
+  color : #000;
+  letter-spacing: 0.5rem;
+  font-family: var(--font-family-Go);
+}
+
+.Slider-control .control-button{
+  width : 8rem;
+  height : max-content;
+  color :#000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.control-button .control-back{
+  width : 3rem;
+  height : 3rem;
+  cursor: pointer;
+}
+
+.control-button .control-next{
+  width : 3rem;
+  height : 3rem;
+  cursor: pointer;
+}
+
 
 /* Gallary Component [header, GallaryBanner, GallaryList] 반응형 리뉴얼 디자인 */
 @media screen and (max-width : 1200px) {

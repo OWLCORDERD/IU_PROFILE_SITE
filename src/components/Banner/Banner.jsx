@@ -3,7 +3,7 @@ import "../Banner/banner.css";
 import Navbar from "../navbar/navbar";
 import { motion } from "framer-motion";
 import {BsFillArrowDownCircleFill} from "react-icons/bs";
-import Lilac from '../../assets/video/[MV] IU(아이유)_LILAC(라일락)-수정본.mp4';
+import BannerImg from '../../assets/image/banner 배경/slider-banner.jpg';
 import logo from '../../assets/image/logo/I-YOU-unscreen.gif';
 
 const Banner = () => {
@@ -122,7 +122,7 @@ const Banner = () => {
           </div>
 
           <div className = "slider-image">
-            <video src = {Lilac} muted loop autoPlay />
+            <img src = {BannerImg} alt = ""/>
             <div id="Slider-contents">
               <motion.div variants={ContentsBox} initial = "initial" animate = "animated"
                 className="inner-Main-contents"

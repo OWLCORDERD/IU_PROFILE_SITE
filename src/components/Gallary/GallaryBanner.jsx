@@ -1,4 +1,4 @@
-import {React, useEffect , useState} from 'react'
+import {React} from 'react'
 import './gallary.css'
 import { Link } from 'react-router-dom'
 import {motion} from "framer-motion"
@@ -10,28 +10,6 @@ const GallaryBanner = () => {
   const gallaryData = UseFetch("http://localhost:3001/Gallary");
 
   const Datafilter = gallaryData.filter(gallaryData => gallaryData.date === "2022.10.31");
-
-  const innerwidth = {
-    width : "50%",
-    height : "50%"
-  };
-
-  const animationback = {
-    initial : {
-      opacity : 0,
-      width : innerwidth.width,
-      height : innerwidth.height,
-    },
-
-    animate : {
-      opacity : 1,
-      width : ["50%", "100%", "100%"],
-      height : ["50%", "50%", "100%"],
-      transition : {
-        duration : 1.5
-      }
-    }
-  }
 
   const animationBox = {
     initial : {
@@ -64,7 +42,7 @@ const GallaryBanner = () => {
     <motion.div className = "Gallary-container" variants={animationBox} initial = "initial" animate = "animate">
       {Datafilter.map((item)=>{
         return(
-        <div className = "Gallary-background">
+        <div className = "Gallary-background" key={item.id}>
           <motion.img src = {item.img_url} alt = "" variants={animationItem}/>
         </div>
         )
@@ -72,7 +50,7 @@ const GallaryBanner = () => {
 
       {Datafilter.map((item)=>{
       return(
-      <div className = "Gallary-content-box">
+      <div className = "Gallary-content-box" key={item.id}>
       <div className = "Gallary-contents">
         <motion.div className = "Gallary-subTitle" variants={animationItem}>
           <h1>{item.title}</h1>
@@ -85,7 +63,7 @@ const GallaryBanner = () => {
 
       <motion.div className = "Gallary-buttons" variants={animationItem}>
 
-      <Link to = "/GallaryList">
+      <Link to = "/GallaryBox" state={{Compony : item.Compony, Filter : Datafilter}}>
       <button className = "View-button">
         View More
       </button>
