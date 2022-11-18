@@ -477,15 +477,6 @@ section .Gallary-container{
   font-size: 2rem;
 }
 
-.mapBox-imgbox:hover{
-  border : 5px solid #fff;
-}
-
-.mapBox-imgbox:hover img{
-  transform: scale(1.2);
-  transition: all 0.5s ease-out;
-}
-
 .mapBox-imgbox img{
   position: absolute;
   width : 100%;
@@ -670,7 +661,6 @@ layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
   width : 100%;
   height : 100%;
   object-fit: cover;
-  border-radius: 2rem;
 }
 
 /*GallaryList item 부모 box css*/
@@ -704,6 +694,7 @@ layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 #mapItemBox-itemSign .Sign-imgbox{
@@ -788,10 +779,11 @@ layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
   width : 100%;
   height : 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .mapBox-imgbox:hover img{
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: all 0.5s ease-out;
 }
 
@@ -843,6 +835,159 @@ layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
   width : 3rem;
   height : 3rem;
   cursor: pointer;
+}
+
+/*댓글창 부모 컴포넌트 container css */
+.GListItem-container .GListItem-comment{
+  position: relative;
+  left : 10%;
+  bottom : -100vh;
+  width : 90%;
+  height : 100vh;
+  padding : 5rem;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.GListItem-comment .Comment-title{
+  width : 100%;
+  height : 3rem;
+}
+
+.Comment-title h1{
+  font-size: 1.8rem;
+  font-family: var(--font-family-Sun);
+}
+
+.GListItem-comment .Comment-box{
+  position: relative;
+  width : 100%;
+  height : max-content;
+  padding : 2rem;
+}
+
+.GListItem-comment .CommentCRA-box{
+  position: relative;
+  width : 40rem;
+  height : 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.CommentCRA-box .Comment-info{
+  width : 20rem;
+  height : 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CommentCRA-box .Comment-InputBox{
+  width : 100%;
+  height : max-content;
+  border : none;
+  border-bottom: 2px solid #000;
+  font-family: var(--font-family-Sun);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.CommentCRA-box .Name-InputBox{
+  width : 8rem;
+  height : max-content;
+  border: 2px solid #000;
+  font-family: var(--font-family-Sun);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.CommentCRA-box .Date-InputBox{
+  width : 9rem;
+  height : max-content;
+  border: 2px solid #000;
+  font-family: var(--font-family-Sun);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.CommentCRA-box .Comment-PostBox{
+  width : 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Comment-PostBox .post-button{
+  display: block;
+  width : 4rem;
+  padding : 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-family-Sun);
+  border : none;
+  background-color: rgb(136, 136, 136);
+  border-radius: 2rem;
+  color : #fff;
+  cursor: pointer;
+}
+
+.Comment-PostBox .Cancel-button{
+  display: block;
+  width : 4rem;
+  padding : 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-family-Sun);
+  border : none;
+  border-radius: 2rem;
+  background-color: rgb(250, 69, 69);
+  color : #fff;
+  cursor: pointer;
+}
+
+/*댓글 Preview 창 부모 css*/
+.GListItem-comment .CommentView-box{
+  position: relative;
+  width : max-content;
+  height : 10rem;
+  background-color: #000;
+  margin: 2rem 0;
+  border-radius: 2rem;
+}
+
+.CommentView-box .CommentView-info{
+  width : 20rem;
+  height : 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding : 0 2rem;
+  color : #fff;
+}
+
+.CommentView-info h1{
+  font-size: 1.2rem;
+  font-family: var(--font-family-Go);
+}
+
+.CommentView-info p{
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: var(--font-family-Go);
+}
+
+.CommentView-box .CommentView-textBox{
+  width : max-content;
+  height : 5rem;
+  padding: 0 2rem;
+  color : #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.CommentView-textBox h1{
+  font-size: 1.2rem;
+  font-family: var(--font-family-Go);
 }
 
 

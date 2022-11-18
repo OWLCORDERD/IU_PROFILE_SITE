@@ -5,6 +5,7 @@ import YoutubeData from '../YoutubeData'
 import {RiPlayCircleFill} from "react-icons/ri"
 import {IoIosArrowBack} from "react-icons/io"
 import {IoIosArrowForward} from "react-icons/io"
+import UseFetch from "../hooks/UseFetch"
 
 const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
 
@@ -14,8 +15,6 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
     const ytbData = YoutubeData(`${FilterUrl}`);
 
     const [layoutdata, setLayoutdata] = useState(null);
-
-    const [useOpen, setUseOpen] = useState(true);
 
     const videoData = (item) => {
       if(layoutdata === null){
@@ -66,6 +65,35 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
         Slide[i].classList.remove('active');
       }
       Slide[increments-1].classList.toggle('active');
+    }
+
+    const CommentDB = UseFetch('http://localhost:3001/Comment');
+
+    const [postData, setPostData] = useState({
+      name : "",
+      date : "",
+      text : ""
+    })
+
+    function ClickHandler(e){
+      e.preventDefault();
+      fetch('http://localhost:3001/Comment', {
+        method : 'POST',
+        headers : {"Content-Type" : "application/json"},
+        body : JSON.stringify({
+          name : postData.name,
+          date : postData.date,
+          text : postData.text
+        })
+      }).then(()=> {
+        console.log("add successfull");
+      })
+    }
+
+    function textHandler(e){
+      const newPostData = {...postData}
+      newPostData[e.target.id] = e.target.value
+      setPostData(newPostData)
     }
 
   return (
@@ -130,7 +158,41 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
             )
             })}
         </div>
+      </div>
 
+      <div className = "GListItem-comment">
+
+        <div className = "Comment-title">
+          <h1>댓글</h1>
+        </div>
+
+        <div className = "Comment-box">
+        <form className = "CommentCRA-box" onSubmit={(e)=>ClickHandler(e)}>
+        <div className = "Comment-info">
+        <input type = "text" className= "Name-InputBox" id = "name" onChange={(e)=>textHandler(e)} placeholder = "닉네임"/>
+        <input type = "date" className= "Date-InputBox" id = "date" onChange={(e)=>textHandler(e)}/>
+        </div>
+        <input type = "text" className= "Comment-InputBox" id = "text" onChange={(e)=>textHandler(e)} placeholder = "댓글 추가"/>
+        <div className = "Comment-PostBox">
+          <button className = "post-button">작성</button>
+          <button className = "Cancel-button">취소</button>
+        </div>
+        </form>
+
+        {CommentDB.map((item)=>{
+        return(
+        <div className = "CommentView-box" key={item.id}>
+          <div className = "CommentView-info">
+            <h1>{item.name}</h1>
+            <p>{item.date}</p>
+          </div>
+            <div className = "CommentView-textBox">
+              <h1>{item.text}</h1>
+            </div>
+        </div>
+        )
+        })}
+      </div>
       </div>
     
     </div>

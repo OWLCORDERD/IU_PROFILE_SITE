@@ -1,459 +1,471 @@
 {
-
-"GallarySign" : [
-  {
-    "id" : 1,
-    "Compony" : "VOGUE",
-    "img_url" : "../Magazine/VOGUE/2022.10/1.jpg"
-  },
-  {
-    "id" : 2,
-    "Compony" : "MARIE CLAIRE",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_1.jpg"
-  },
-  {
-    "id" : 3,
-    "Compony" : "J.ESTINA",
-    "img_url" : "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-1.jpg"
-  },
-  {
-    "id" : 4,
-    "Compony" : "NEW BLANCE",
-    "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE.jpg"
-  }
-],
-
-"Gallary" : [
-  {
-    "id" : 1,
-    "title" : "아이유X구찌 뷰티 5월 호",
-    "sub_title" : "아이유의 짜릿한 변신",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_1.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022",
-    "Update" : "2022.05",
-    "ytbID" : "vwekEnIEN0s",
-    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg",
-    "logo" : "../Magazine/VOGUE/Vogue-logo.jpg"
-  },
-  {
-    "id": 2,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_2.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id": 3,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_3.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id": 4,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_4.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id": 5,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_5.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id": 6,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_6.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id": 7,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_7.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id": 8,
-    "title": "아이유X구찌 뷰티 5월 호",
-    "img_url" : "../Magazine/VOGUE/VOGUE 5월호_8.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 9,
-    "title" : "MARIE CLAIRE",
-    "since" : "2022",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_1.jpg",
-    "Compony" : "MARIE CLAIRE",
-    "Update" : "2022.05",
-    "ytbID" : "h8qQrnRzuTA",
-    "YtbThumbNail" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_비디오.jpg"
-  },
-  {
-    "id" : 10,
-    "title": "MARIE CLAIRE",
-    "since" : "2022",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_2.jpg",
-    "Compony" : "MARIE CLAIRE"
-  },
-  {
-    "id" : 11,
-    "title": "MARIE CLAIRE",
-    "since" : "2022",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_3.jpg",
-    "Compony" : "MARIE CLAIRE"
-  },
-  {
-    "id" : 12,
-    "title": "MARIE CLAIRE",
-    "since" : "2022",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_4.jpg",
-    "Compony" : "MARIE CLAIRE"
-  },
-  {
-    "id" : 13,
-    "title": "MARIE CLAIRE",
-    "since" : "2022",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_5.jpg",
-    "Compony" : "MARIE CLAIRE"
-  },
-  {
-    "id" : 14,
-    "title": "MARIE CLAIRE",
-    "since" : "2022",
-    "img_url" : "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_6.jpg",
-    "Compony" : "MARIE CLAIRE"
-  },
-  {
-    "id" : 15,
-    "title" : "J.ESTINA X IU COLLECTION",
-    "img_url" : "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-1.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022",
-    "Update" : "2022.06"
-  },
-  {
-    "id" : 16,
-    "title" : "J.ESTINA X IU COLLECTION",
-    "img_url" : "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-2.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 17,
-    "title" : "J.ESTINA X IU COLLECTION",
-    "img_url" : "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-3.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 18,
-    "title" : "J.ESTINA X IU COLLECTION",
-    "img_url" : "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-4.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 19,
-    "title" : "IU X NEW BLANCE",
-    "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE.jpg",
-    "Compony" : "NEW BLANCE",
-    "since" : "2022",
-    "Update" : "2022.10",
-    "ytbID" : "qj3RxlC6dV0",
-    "YtbThumbNail" : "./Magazine/NEW BLANCE/NEW BLANCE_비디오.jpg" 
-  },
-  {
-    "id" : 20,
-    "title" : "IU X NEW BLANCE",
-    "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE_2.jpg",
-    "Compony" : "NEW BLANCE",
-    "since" : "2022"
-  },
-  {
-    "id" : 21,
-    "title" : "IU X NEW BLANCE",
-    "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE_3.jpg",
-    "Compony" : "NEW BLANCE",
-    "since" : "2022"
-  },
-  {
-    "id" : 22,
-    "title" : "IU X NEW BLANCE",
-    "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE_4.jpg",
-    "Compony" : "NEW BLANCE",
-    "since" : "2022"
-  },
-  {
-    "id" : 23,
-    "title" : "IU X NEW BLANCE",
-    "img_url" : "./Magazine/NEW BLANCE/IU X NEW BLANCE_5.jpg",
-    "Compony" : "NEW BLANCE",
-    "since" : "2022"
-  },
-  {
-    "id" : 24,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "sub_title" : "밀라노의 아이유. 그녀는 같을까 다를까",
-    "img_url" : "./Magazine/VOGUE/2022.10/1.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022",
-    "Update" : "2022.10",
-    "ytbID" : "vwekEnIEN0s",
-    "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_비디오.jpg",
-    "logo" : "../Magazine/VOGUE/Vogue-logo.jpg"
-  },
-  {
-    "id" : 25,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/2.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 26,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/3.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 27,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/4.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 28,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/5.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 29,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/6.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 30,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/7.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 31,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/8.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 32,
-    "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
-    "img_url" : "./Magazine/VOGUE/2022.10/9.jpg",
-    "Compony" : "VOGUE",
-    "since" : "2022"
-  },
-  {
-    "id" : 33,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_1.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022",
-    "Update" : "2022.10",
-    "date" : "2022.10.31",
-    "ytbID" : "UHShYbaTRrk",
-    "YtbThumbNail" : "./Magazine/J.ASTINA/2022 WINTER/JESTINA_비디오.jpg"
-  },
-  {
-    "id" : 34,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_2.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 35,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_3.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 36,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_4.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 37,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_5.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 38,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_6.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 39,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_7.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  },
-  {
-    "id" : 40,
-    "title" : "22 Winter Tiara Funk",
-    "img_url" : "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_8.jpg",
-    "Compony" : "J.ESTINA",
-    "since" : "2022"
-  }
-
-],
-
-"IU_TV" : [
-  {
-    "id" : 1,
-    "title" : "오늘의 생일자! 지은 네 컷",
-    "img_url" : "./Youtube/IU_TV/지은 네 컷.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 2,
-    "title" : "토요일 토요일은 아이유",
-    "img_url" : "./Youtube/IU_TV/토요일은 아이유.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 3,
-    "title" : "한 겨울의 라일락",
-    "img_url" : "./Youtube/IU_TV/한 겨울의 라일락.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 4,
-    "title" : "기상청이 그랬어 오늘 딸기 달 뜬다고",
-    "img_url" : "./Youtube/IU_TV/strawberry moon 비하인드.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 5,
-    "title" : "13주년 MD 디자인 정복기",
-    "img_url" : "./Youtube/IU_TV/13주년 MD디자인 정복기.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-
-  {
-    "id" : 6,
-    "title" : "분노의 시상식 (셀럽의 삶이란..)",
-    "img_url" : "./Youtube/IU_TV/(타임머신편)_분노의 시상식.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 7,
-    "title" : "아직도 남아 있는 너의 향기",
-    "img_url" : "./Youtube/IU_TV/(타임머신편)_아직 남은 너의 향기.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 8,
-    "title" : "전국구 이지금 vs 전라도 아귀",
-    "img_url" : "./Youtube/IU_TV/COIN 뮤비 비하인드.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 9,
-    "title" : "지금 웃어? 이지금의 금주먹이 우스워?",
-    "img_url" : "./Youtube/IU_TV/라일락 뮤비 비하인드.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 10,
-    "title" : "아빠를 위해 준비했어",
-    "img_url" : "./Youtube/IU_TV/아빠를 위해 준비했어.jpg",
-    "director" : "이지금 [IU Official]"
-  }
-],
-
-"IU_CLIP" : [
-  {
-    "id" : 1,
-    "title" : "겨울잠 (Winter Sleep) Live Clip",
-    "img_url" : "./Youtube/IU_CLIP/겨울잠_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 2,
-    "title" : "정거장 - 조각집 선공개 Live Clip",
-    "img_url" : "./Youtube/IU_CLIP/정거장_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 3,
-    "title" : "[MMA 2021] IU - Lilac",
-    "img_url" : "./Youtube/IU_CLIP/MMA_라일락 CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 4,
-    "title" : "[MMA 2021] IU - strawberry moon + Celebrity",
-    "img_url" : "./Youtube/IU_CLIP/StrawberryMoon_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 5,
-    "title" : "꿈빛 파티시엘 dlwlrma Clip",
-    "img_url" : "./Youtube/IU_CLIP/꿈빛 파티시엘.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-
-  {
-    "id" : 6,
-    "title" : "라일락(LILAC) DANCE PRACTICE",
-    "img_url" : "./Youtube/IU_CLIP/라일락 DANCE LIVE.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 7,
-    "title" : "내 손을 잡아(Hold My Hand) Live Clip (2019 IU Tour Concert'Love, Poem')",
-    "img_url" : "./Youtube/IU_CLIP/내손을잡아_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 8,
-    "title" : "시간의 바깥 (above the time) Live Clip",
-    "img_url" : "./Youtube/IU_CLIP/시간의 바깥_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 9,
-    "title" : "'Love poem' Live Clip",
-    "img_url" : "./Youtube/IU_CLIP/LOVE POEM_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  },
-  {
-    "id" : 10,
-    "title" : "'eight' Acoustic Ver. Live Clip",
-    "img_url" : "./Youtube/IU_CLIP/에잇_LIVE CLIP.jpg",
-    "director" : "이지금 [IU Official]"
-  }
-]
-
+  "GallarySign": [
+    {
+      "id": 1,
+      "Compony": "VOGUE",
+      "img_url": "../Magazine/VOGUE/2022.10/1.jpg"
+    },
+    {
+      "id": 2,
+      "Compony": "MARIE CLAIRE",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_1.jpg"
+    },
+    {
+      "id": 3,
+      "Compony": "J.ESTINA",
+      "img_url": "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-1.jpg"
+    },
+    {
+      "id": 4,
+      "Compony": "NEW BLANCE",
+      "img_url": "./Magazine/NEW BLANCE/IU X NEW BLANCE.jpg"
+    }
+  ],
+  "Gallary": [
+    {
+      "id": 1,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "sub_title": "아이유의 짜릿한 변신",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_1.jpg",
+      "Compony": "VOGUE",
+      "since": "2022",
+      "Update": "2022.05",
+      "ytbID": "vwekEnIEN0s",
+      "YtbThumbNail": "../Magazine/VOGUE/VOGUE_비디오.jpg",
+      "logo": "../Magazine/VOGUE/Vogue-logo.jpg"
+    },
+    {
+      "id": 2,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_2.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 3,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_3.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 4,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_4.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 5,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_5.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 6,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_6.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 7,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_7.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 8,
+      "title": "아이유X구찌 뷰티 5월 호",
+      "img_url": "../Magazine/VOGUE/VOGUE 5월호_8.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 9,
+      "title": "MARIE CLAIRE",
+      "since": "2022",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_1.jpg",
+      "Compony": "MARIE CLAIRE",
+      "Update": "2022.05",
+      "ytbID": "h8qQrnRzuTA",
+      "YtbThumbNail": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_비디오.jpg"
+    },
+    {
+      "id": 10,
+      "title": "MARIE CLAIRE",
+      "since": "2022",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_2.jpg",
+      "Compony": "MARIE CLAIRE"
+    },
+    {
+      "id": 11,
+      "title": "MARIE CLAIRE",
+      "since": "2022",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_3.jpg",
+      "Compony": "MARIE CLAIRE"
+    },
+    {
+      "id": 12,
+      "title": "MARIE CLAIRE",
+      "since": "2022",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_4.jpg",
+      "Compony": "MARIE CLAIRE"
+    },
+    {
+      "id": 13,
+      "title": "MARIE CLAIRE",
+      "since": "2022",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_5.jpg",
+      "Compony": "MARIE CLAIRE"
+    },
+    {
+      "id": 14,
+      "title": "MARIE CLAIRE",
+      "since": "2022",
+      "img_url": "../Magazine/MARIE CLAIRE/MARIE CLAIRE_5월호_6.jpg",
+      "Compony": "MARIE CLAIRE"
+    },
+    {
+      "id": 15,
+      "title": "J.ESTINA X IU COLLECTION",
+      "img_url": "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-1.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022",
+      "Update": "2022.06"
+    },
+    {
+      "id": 16,
+      "title": "J.ESTINA X IU COLLECTION",
+      "img_url": "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-2.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 17,
+      "title": "J.ESTINA X IU COLLECTION",
+      "img_url": "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-3.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 18,
+      "title": "J.ESTINA X IU COLLECTION",
+      "img_url": "./Magazine/J.ASTINA/HIP SUMMER/HIP SUMMER COLLECTION-4.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 19,
+      "title": "IU X NEW BLANCE",
+      "img_url": "./Magazine/NEW BLANCE/IU X NEW BLANCE.jpg",
+      "Compony": "NEW BLANCE",
+      "since": "2022",
+      "Update": "2022.10",
+      "ytbID": "qj3RxlC6dV0",
+      "YtbThumbNail": "./Magazine/NEW BLANCE/NEW BLANCE_비디오.jpg"
+    },
+    {
+      "id": 20,
+      "title": "IU X NEW BLANCE",
+      "img_url": "./Magazine/NEW BLANCE/IU X NEW BLANCE_2.jpg",
+      "Compony": "NEW BLANCE",
+      "since": "2022"
+    },
+    {
+      "id": 21,
+      "title": "IU X NEW BLANCE",
+      "img_url": "./Magazine/NEW BLANCE/IU X NEW BLANCE_3.jpg",
+      "Compony": "NEW BLANCE",
+      "since": "2022"
+    },
+    {
+      "id": 22,
+      "title": "IU X NEW BLANCE",
+      "img_url": "./Magazine/NEW BLANCE/IU X NEW BLANCE_4.jpg",
+      "Compony": "NEW BLANCE",
+      "since": "2022"
+    },
+    {
+      "id": 23,
+      "title": "IU X NEW BLANCE",
+      "img_url": "./Magazine/NEW BLANCE/IU X NEW BLANCE_5.jpg",
+      "Compony": "NEW BLANCE",
+      "since": "2022"
+    },
+    {
+      "id": 24,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "sub_title": "밀라노의 아이유. 그녀는 같을까 다를까",
+      "img_url": "./Magazine/VOGUE/2022.10/1.jpg",
+      "Compony": "VOGUE",
+      "since": "2022",
+      "Update": "2022.10",
+      "ytbID": "vwekEnIEN0s",
+      "YtbThumbNail": "../Magazine/VOGUE/VOGUE_비디오.jpg",
+      "logo": "../Magazine/VOGUE/Vogue-logo.jpg"
+    },
+    {
+      "id": 25,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/2.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 26,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/3.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 27,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/4.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 28,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/5.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 29,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/6.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 30,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/7.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 31,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/8.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 32,
+      "title": "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+      "img_url": "./Magazine/VOGUE/2022.10/9.jpg",
+      "Compony": "VOGUE",
+      "since": "2022"
+    },
+    {
+      "id": 33,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_1.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022",
+      "Update": "2022.10",
+      "date": "2022.10.31",
+      "ytbID": "UHShYbaTRrk",
+      "YtbThumbNail": "./Magazine/J.ASTINA/2022 WINTER/JESTINA_비디오.jpg"
+    },
+    {
+      "id": 34,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_2.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 35,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_3.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 36,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_4.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 37,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_5.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 38,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_6.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 39,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_7.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    },
+    {
+      "id": 40,
+      "title": "22 Winter Tiara Funk",
+      "img_url": "./Magazine/J.ASTINA/2022 WINTER/2022_TIARAFUNK_8.jpg",
+      "Compony": "J.ESTINA",
+      "since": "2022"
+    }
+  ],
+  "IU_TV": [
+    {
+      "id": 1,
+      "title": "오늘의 생일자! 지은 네 컷",
+      "img_url": "./Youtube/IU_TV/지은 네 컷.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 2,
+      "title": "토요일 토요일은 아이유",
+      "img_url": "./Youtube/IU_TV/토요일은 아이유.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 3,
+      "title": "한 겨울의 라일락",
+      "img_url": "./Youtube/IU_TV/한 겨울의 라일락.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 4,
+      "title": "기상청이 그랬어 오늘 딸기 달 뜬다고",
+      "img_url": "./Youtube/IU_TV/strawberry moon 비하인드.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 5,
+      "title": "13주년 MD 디자인 정복기",
+      "img_url": "./Youtube/IU_TV/13주년 MD디자인 정복기.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 6,
+      "title": "분노의 시상식 (셀럽의 삶이란..)",
+      "img_url": "./Youtube/IU_TV/(타임머신편)_분노의 시상식.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 7,
+      "title": "아직도 남아 있는 너의 향기",
+      "img_url": "./Youtube/IU_TV/(타임머신편)_아직 남은 너의 향기.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 8,
+      "title": "전국구 이지금 vs 전라도 아귀",
+      "img_url": "./Youtube/IU_TV/COIN 뮤비 비하인드.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 9,
+      "title": "지금 웃어? 이지금의 금주먹이 우스워?",
+      "img_url": "./Youtube/IU_TV/라일락 뮤비 비하인드.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 10,
+      "title": "아빠를 위해 준비했어",
+      "img_url": "./Youtube/IU_TV/아빠를 위해 준비했어.jpg",
+      "director": "이지금 [IU Official]"
+    }
+  ],
+  "IU_CLIP": [
+    {
+      "id": 1,
+      "title": "겨울잠 (Winter Sleep) Live Clip",
+      "img_url": "./Youtube/IU_CLIP/겨울잠_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 2,
+      "title": "정거장 - 조각집 선공개 Live Clip",
+      "img_url": "./Youtube/IU_CLIP/정거장_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 3,
+      "title": "[MMA 2021] IU - Lilac",
+      "img_url": "./Youtube/IU_CLIP/MMA_라일락 CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 4,
+      "title": "[MMA 2021] IU - strawberry moon + Celebrity",
+      "img_url": "./Youtube/IU_CLIP/StrawberryMoon_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 5,
+      "title": "꿈빛 파티시엘 dlwlrma Clip",
+      "img_url": "./Youtube/IU_CLIP/꿈빛 파티시엘.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 6,
+      "title": "라일락(LILAC) DANCE PRACTICE",
+      "img_url": "./Youtube/IU_CLIP/라일락 DANCE LIVE.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 7,
+      "title": "내 손을 잡아(Hold My Hand) Live Clip (2019 IU Tour Concert'Love, Poem')",
+      "img_url": "./Youtube/IU_CLIP/내손을잡아_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 8,
+      "title": "시간의 바깥 (above the time) Live Clip",
+      "img_url": "./Youtube/IU_CLIP/시간의 바깥_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 9,
+      "title": "'Love poem' Live Clip",
+      "img_url": "./Youtube/IU_CLIP/LOVE POEM_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    },
+    {
+      "id": 10,
+      "title": "'eight' Acoustic Ver. Live Clip",
+      "img_url": "./Youtube/IU_CLIP/에잇_LIVE CLIP.jpg",
+      "director": "이지금 [IU Official]"
+    }
+  ],
+  "Comment": [
+    {
+      "id": 1,
+      "name": "아이유눈나",
+      "text": "사랑해요 ㅠㅠㅠㅠㅠㅠ 너무 이뻥",
+      "date": "2022-10-30"
+    },
+    {
+      "name": "아",
+      "date": "2022-11-01",
+      "text": "ㅋ",
+      "id": 2
+    },
+    {
+      "name": "안녕",
+      "date": "2022-11-01",
+      "text": "시발섹스",
+      "id": 3
+    }
+  ]
 }
