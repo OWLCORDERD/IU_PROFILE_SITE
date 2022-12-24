@@ -179,19 +179,21 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
         </div>
         </form>
 
+        <div className = "CommentView-box">
         {CommentDB.map((item)=>{
         return(
-        <div className = "CommentView-box" key={item.id}>
-          <div className = "CommentView-info">
-            <h1>{item.name}</h1>
-            <p>{item.date}</p>
-          </div>
+          <div className = "CommentView-item" key={item.id}>
+            <div className = "CommentView-info">
+              <h1>{item.name}</h1>
+              <p>{item.date}</p>
+            </div>
             <div className = "CommentView-textBox">
               <h1>{item.text}</h1>
             </div>
-        </div>
+          </div>
         )
         })}
+        </div>
       </div>
       </div>
     
