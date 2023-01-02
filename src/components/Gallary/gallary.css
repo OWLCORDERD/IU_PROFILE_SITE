@@ -229,7 +229,7 @@ section .Gallary-container{
   font-size: 1.2rem;
   color : #fff;
   text-transform: uppercase;
-  font-family: var(--font-family-Ol);
+  font-family: var(--font-family-Go);
 }
 
 .Gallary-contents .Gallary-title{
@@ -237,33 +237,7 @@ section .Gallary-container{
   color : #fff;
   text-transform: uppercase;
   letter-spacing: 1rem;
-  font-family: var(--font-family-Ol);
-}
-
-.Gallary-container .Gallary-buttons{
-  position: relative;
-  width : 50rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 100;
-}
-
-.Gallary-container .View-button{
-  width : 13rem;
-  height : 4rem;
-  background-color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-family: var(--font-family);
-}
-
-.Gallary-container .View-button:hover{
-  background-color: rgb(0, 0, 0);
-  cursor: pointer;
-  color : #fff;
-  border : #fff;
+  font-family: var(--font-family-Lexend);
 }
 
 /*Gallary Part List container css*/

@@ -1,15 +1,17 @@
 import {React} from 'react'
 import './gallary.css'
-import { Link } from 'react-router-dom'
 import {motion} from "framer-motion"
 import UseFetch from '../hooks/UseFetch'
 
 const GallaryBanner = () => {
   
 
-  const gallaryData = UseFetch("http://localhost:3001/Gallary");
+  const gallaryData = UseFetch("http://localhost:4000/db");
+  
+  const latelyfilter = gallaryData.filter(gallaryData => gallaryData.sinceDate === '2022.10');
 
-  const Datafilter = gallaryData.filter(gallaryData => gallaryData.date === "2022.10.31");
+  const latelyCompony = latelyfilter.filter(latelyfilter => latelyfilter.Compony === 'VOGUE');
+
 
   const animationBox = {
     initial : {
@@ -40,7 +42,7 @@ const GallaryBanner = () => {
 
   return (
     <motion.div className = "Gallary-container" variants={animationBox} initial = "initial" animate = "animate">
-      {Datafilter.map((item)=>{
+      {latelyCompony.map((item)=>{
         return(
         <div className = "Gallary-background" key={item.id}>
           <motion.img src = {item.img_url} alt = "" variants={animationItem}/>
@@ -48,32 +50,23 @@ const GallaryBanner = () => {
         )
       })}
 
-      {Datafilter.map((item)=>{
-      return(
-      <div className = "Gallary-content-box" key={item.id}>
-      <div className = "Gallary-contents">
-        <motion.div className = "Gallary-subTitle" variants={animationItem}>
-          <h1>{item.title}</h1>
-        </motion.div>
+      {latelyCompony.map((item)=>{
+        return(
+        <div className = "Gallary-content-box" key={item.id}>
 
-        <motion.div className = "Gallary-title" variants={animationItem}>
-          <h1>{item.Compony}</h1>
-        </motion.div>
-      </div>
+          <div className = "Gallary-contents">
+            <motion.div className = "Gallary-subTitle" variants={animationItem}>
+              <h1>{item.title}</h1>
+            </motion.div>
 
-      <motion.div className = "Gallary-buttons" variants={animationItem}>
+            <motion.div className = "Gallary-title" variants={animationItem}>
+              <h1>{item.Compony}</h1>
+            </motion.div>
+          </div>
 
-      <Link to = "/GallaryBox" state={{Compony : item.Compony, Filter : Datafilter}}>
-      <button className = "View-button">
-        View More
-      </button>
-      </Link>
-      
-      </motion.div>
-      </div>
+        </div>
       )
       })}
-
     </motion.div>
   )
 }

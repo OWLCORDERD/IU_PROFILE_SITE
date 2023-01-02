@@ -12,7 +12,9 @@ const Gallary = () => {
 
   useEffect(()=>{
     setLoading(!loading);
+  },[])
 
+  useEffect(()=>{
     setTimeout(()=>{
       setLoading(loading);
     },[3000])

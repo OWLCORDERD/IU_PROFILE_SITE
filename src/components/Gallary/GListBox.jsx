@@ -11,8 +11,8 @@ const GListBox = () => {
     const sinceFilter = location.state.Filter;
 
     const filterCompony = sinceFilter.filter(sinceFilter=> sinceFilter.Compony === ComponyData);
-    const updateFilter = filterCompony.filter(filterCompony => filterCompony.Update === "2022.05");
-    const updateFilter2 = filterCompony.filter(filterCompony => filterCompony.Update === "2022.10");
+    const updateFilter = filterCompony.filter(filterCompony => filterCompony.sinceDate === "2022.05");
+    const updateFilter2 = filterCompony.filter(filterCompony => filterCompony.sinceDate === "2022.10");
 
     const [itemClick, setItemClick] = useState(false);
     const [layoutId, setLayoutId] = useState(null);
@@ -47,7 +47,7 @@ const GListBox = () => {
 
                     <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
                         <img src = {item.img_url}/>
-                        <h1>{item.Update}</h1>
+                        <h1>{item.sinceDate}</h1>
                     </div>
                 </div>
                 )
@@ -59,7 +59,7 @@ const GListBox = () => {
 
                     <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
                         <img src = {item.img_url}/>
-                        <h1>{item.Update}</h1>
+                        <h1>{item.sinceDate}</h1>
                     </div>
                 </div>
                 )

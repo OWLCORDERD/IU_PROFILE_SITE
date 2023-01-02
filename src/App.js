@@ -7,8 +7,11 @@ import Gallary from "./components/Gallary/Gallary";
 import GallaryList from "./components/Gallary/GallaryList";
 import GListBox from "./components/Gallary/GListBox";
 import YoutubeData from "./components/YoutubeData";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>

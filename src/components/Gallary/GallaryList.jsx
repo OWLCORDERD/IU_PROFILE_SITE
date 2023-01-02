@@ -5,11 +5,11 @@ import {Link} from "react-router-dom"
 
 const GallaryList = () => {
 
-    const gallaryData = UseFetch("http://localhost:3001/Gallary");
+    const gallaryData = UseFetch("http://localhost:4000/db");
 
-    const gallarySign = UseFetch("http://localhost:3001/GallarySign");
+    const gallarySign = UseFetch("http://localhost:4000/db2");
 
-    const since2022 = gallaryData.filter(gallaryData => gallaryData.since === "2022");
+    const since2022 = gallaryData.filter(gallaryData => gallaryData.since === 2022);
 
     const GallaryAnibox = {
         initial : {
