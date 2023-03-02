@@ -3,7 +3,7 @@ const app = express();
 const db = require('./config/db');
 const PORT = process.env.PORT || 4000;
 
-app.get('/db', (req, res) => {
+app.get('/Gallary', (req, res) => {
 
     res.header("Access-Control-Allow-Origin", "*");
 
@@ -11,13 +11,13 @@ app.get('/db', (req, res) => {
         if(err) {
             throw err;
         }else{
-            console.log('User info is :' , data);
+            console.log('Gallary info is :' , data);
         }
         res.send(data);
     })
 })
 
-app.get('/db2', (req, res) => {
+app.get('/GallarySign', (req, res) => {
 
     res.header("Access-Control-Allow-Origin", "*");
 
@@ -25,7 +25,21 @@ app.get('/db2', (req, res) => {
         if(err) {
             throw err;
         }else{
-            console.log('User info is :' , data);
+            console.log('GallarySign info is :' , data);
+        }
+        res.send(data);
+    })
+})
+
+app.get("/Youtube", (req, res) => {
+
+    res.header("Access-Control-Allow-Origin", "*");
+
+    db.query("select * from Youtube", (err, data) => {
+        if(err){
+            throw err;
+        }else{
+            console.log('Youtube Data is :', data)
         }
         res.send(data);
     })

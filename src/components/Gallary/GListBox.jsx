@@ -1,8 +1,6 @@
 import React from 'react'
 import './gallary.css'
-import { useState } from 'react';
-import GListItem from './GListItem';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const GListBox = () => {
 
@@ -11,21 +9,10 @@ const GListBox = () => {
     const sinceFilter = location.state.Filter;
 
     const filterCompony = sinceFilter.filter(sinceFilter=> sinceFilter.Compony === ComponyData);
-    const updateFilter = filterCompony.filter(filterCompony => filterCompony.sinceDate === "2022.05");
-    const updateFilter2 = filterCompony.filter(filterCompony => filterCompony.sinceDate === "2022.10");
-
-    const [itemClick, setItemClick] = useState(false);
-    const [layoutId, setLayoutId] = useState(null);
-
-    const popup = (id) =>{
-        if(itemClick===false){
-            setItemClick(!itemClick);
-            setLayoutId(id);
-        }else{
-            setItemClick(!itemClick);
-            setLayoutId(null);
-        }
-    }
+    const update2022 = filterCompony.filter(filterCompony => filterCompony.since === 2022);
+    const main2022 = update2022.filter(update2022 => update2022.logo !== null);
+    const update2023 = filterCompony.filter(filterCompony => filterCompony.since === 2023);
+    const main2023 = update2023.filter(update2023 => update2023.logo !== null);
 
 
   return (
@@ -41,32 +28,32 @@ const GListBox = () => {
 
         <div className = "GListBox-mapBox">
             
-            {updateFilter.map((item)=> {
+            {main2022.map((item)=> {
                 return(
                 <div className = "mapBox-item" key={item.id}>
 
-                    <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
+                <Link to = "/GallaryItem" state={{filter : filterCompony, layoutId : item}}>
+                    <div className = "mapBox-imgbox">
                         <img src = {item.img_url}/>
-                        <h1>{item.sinceDate}</h1>
                     </div>
+                </Link>
                 </div>
                 )
             })}
 
-        {updateFilter2.map((item)=> {
+        {main2023.map((item)=> {
                 return(
                 <div className = "mapBox-item" key={item.id}>
 
-                    <div className = "mapBox-imgbox" onClick={()=>popup(item)}>
+                    <Link to = "/GallaryItem" state={{filter : filterCompony, layoutId : item}}>
+                    <div className = "mapBox-imgbox">
                         <img src = {item.img_url}/>
-                        <h1>{item.sinceDate}</h1>
                     </div>
+                    </Link>
                 </div>
                 )
         })}
         </div>
-
-        {itemClick&&<GListItem filterCompony = {filterCompony} layoutId = {layoutId} itemClick = {itemClick} setItemClick = {setItemClick}/>}
     </div>
   )
 }

@@ -5,11 +5,9 @@ import {Link} from "react-router-dom"
 
 const GallaryList = () => {
 
-    const gallaryData = UseFetch("http://localhost:4000/db");
+    const gallaryData = UseFetch("http://localhost:4000/Gallary");
 
-    const gallarySign = UseFetch("http://localhost:4000/db2");
-
-    const since2022 = gallaryData.filter(gallaryData => gallaryData.since === 2022);
+    const gallarySign = UseFetch("http://localhost:4000/GallarySign");
 
     const GallaryAnibox = {
         initial : {
@@ -46,7 +44,7 @@ const GallaryList = () => {
                 return(
                 <motion.div className = "GallaryList-item" variants={GallaryAniList} key = {item.id}>
 
-                    <Link to = "/GallaryBox" state={{Compony : item.Compony ,Filter : since2022}}>
+                    <Link to = "/GallaryBox" state={{Compony : item.Compony ,Filter : gallaryData}}>
                     <div className = "GallaryList-imgbox">
                         <img src = {item.img_url}/>
 

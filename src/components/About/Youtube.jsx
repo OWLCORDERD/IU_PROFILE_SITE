@@ -8,9 +8,10 @@ import UseFetch from "../hooks/UseFetch"
 
 
 const Youtube = () => {
-    const IUTV = UseFetch("http://localhost:3001/IU_TV");
+    const Youtube = UseFetch("http://localhost:4000/Youtube");
 
-    const IUCLIP = UseFetch("http://localhost:3001/IU_CLIP");
+    const IUTV = Youtube.filter(Youtube => Youtube.title === "IU TV");
+    const IUCLIP = Youtube.filter(Youtube => Youtube.title === "IU CLIP");
 
     const settings = {
       infinite: true,
@@ -49,16 +50,16 @@ const Youtube = () => {
       <div id = "slide-container" className = {categoryClick === 'IU_TV' ? 'active' : ''}>
 
         <Slider {...settings}>
-          {IUTV.map((item, index) => {
+          {IUTV.map((item) => {
             return (
-          <div className = "slide-box" key = {index}>
+          <div className = "slide-box" key={item.id}>
             <div className = "play-video">
               <AiFillPlayCircle className = "play-button"/>
             </div>
-           <img src = {item.img_url} alt = "" key={item.id}/>
+           <img src = {item.img_url} alt = ""/>
            <div className = "slide-title">
-             <h1 key={item.id}>{item.title}</h1>
-             <p key={item.id}>{item.director}</p>
+             <h1>{item.VideoName}</h1>
+             <p>{item.director}</p>
            </div>
           </div>
         )
@@ -70,16 +71,16 @@ const Youtube = () => {
       <div id = "slide-container" className = {categoryClick === 'IU_CLIP' ? 'active' : ''}>
         
         <Slider {...settings}>
-          {IUCLIP.map((item, index) => {
+          {IUCLIP.map((item) => {
             return (
-          <div className = "slide-box" key = {index}>
+          <div className = "slide-box" key={item.id}>
             <div className = "play-video">
               <AiFillPlayCircle className = "play-button"/>
             </div>
-           <img src = {item.img_url} alt = "" key={item.id}/>
+           <img src = {item.img_url} alt = ""/>
            <div className = "slide-title">
-             <h1 key={item.id}>{item.title}</h1>
-             <p key={item.id}>{item.director}</p>
+             <h1>{item.VideoName}</h1>
+             <p>{item.director}</p>
            </div>
           </div>
         )

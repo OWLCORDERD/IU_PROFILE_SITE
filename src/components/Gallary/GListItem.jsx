@@ -1,31 +1,36 @@
 import React from 'react'
 import { useState } from 'react'
-import {AiFillCloseCircle} from "react-icons/ai"
 import YoutubeData from '../YoutubeData'
 import {RiPlayCircleFill} from "react-icons/ri"
 import {IoIosArrowBack} from "react-icons/io"
 import {IoIosArrowForward} from "react-icons/io"
-import UseFetch from "../hooks/UseFetch"
+import { useLocation } from 'react-router-dom'
 
-const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
+const GListItem = () => {
+
+    const location = useLocation();
+
+    const filterCompony = location.state.filter;
+    const layoutId = location.state.layoutId;
 
     const itemFilter = filterCompony.filter(filterCompony => filterCompony.title === layoutId.title);
 
     const FilterUrl = `https://www.googleapis.com/youtube/v3/videos?id=${layoutId.YtbID}&key=AIzaSyBxekmjRZk5vAzGjzmQ3jFKY9ay-kVtA_U&part=snippet,statistics`;
     const ytbData = YoutubeData(`${FilterUrl}`);
 
-    const [layoutdata, setLayoutdata] = useState(null);
+    const [youtubeData, setYoutubeData] = useState(null);
 
     const videoData = (item) => {
-      if(layoutdata === null){
-        setLayoutdata(item);
+      if(youtubeData === null){
+        setYoutubeData(item);
       }else{
-        setLayoutdata(null);
+        setYoutubeData(null);
       }
     }
-    const iframeSrc = `https://www.youtube.com/embed/${layoutdata}?autoplay=1&mute=0&amp;loop=1;controls=0;playlist=${layoutdata}`;
+    const iframeSrc = `https://www.youtube.com/embed/${youtubeData}?autoplay=1&mute=0&amp;loop=1;controls=0;playlist=${youtubeData}`;
 
     let increments = 0
+    
     function Slide_Next(e){
       Page(increments += e);
     }
@@ -33,38 +38,34 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
       Page(increments += e);
     }
 
+    const slideIdx = document.querySelectorAll('#mapItemBox-item');
+
     function Page(e){
-      let i;
 
-      const Slide = document.querySelectorAll('#mapItemBox-item')
-      const SlideButton = document.querySelector('.control-next')
-      let ControlCount = document.querySelector('.control-page h1')
+      const slide = document.querySelectorAll('#mapItemBox-item')
+      let controlCount = document.querySelector('.control-page h1')
 
-      if(e < 9){
+      if(e <= slide.length){
         let number = e;
 
-        ControlCount.innerHTML = `${number}/8`
+        controlCount.innerHTML = `${number}/${slide.length}`
       }
       
-      if(e > 8){
-        let Renumber = 1;
+      if(e > slide.length){
 
-        ControlCount.innerHTML = `${Renumber}/8`
-      }
+        increments = 1;
 
-
-      if(e > Slide.length){
-        increments = 1
+        controlCount.innerHTML = `${increments}/${slide.length}`
       }
 
       if(e < 1){
-        increments = Slide.length
+        increments = slide.length
       }
 
-      for(i = 0; i < Slide.length; i++){
-        Slide[i].classList.remove('active');
+      for(let i = 0; i < slide.length; i++){
+        slide[i].classList.remove('active');
       }
-      Slide[increments-1].classList.toggle('active');
+      slide[increments-1].classList.toggle('active');
     }
 
   return (
@@ -73,7 +74,6 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
         <div className = "logo">
           <img src = {layoutId.logo}/>
         </div>
-        <AiFillCloseCircle className = "close-btn" onClick={()=>setItemClick(!itemClick)}/>
       </div>
 
       <div className = "Video-contents">
@@ -83,7 +83,7 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
         </div>
 
         <div className = "GListItem-Video">
-          <div className = "Video-Image" id = {layoutdata === null ? 'active' : ''}>
+          <div className = "Video-Image" id = {youtubeData === null ? 'active' : ''}>
             <img src = {layoutId.YtbThumbNail} />
             <RiPlayCircleFill className = "Video-playButton" onClick={()=>videoData(ytbData.items[0].id)}/>
           </div>
@@ -98,7 +98,7 @@ const GListItem = ({layoutId, filterCompony, itemClick, setItemClick}) => {
       <div className = "GListItem-mapBox">
         <div className = "Slider-control">
           <div className = "control-page">
-            <h1>0/8</h1>
+            <h1>0/{slideIdx.length}</h1>
           </div>
 
           <div className = "control-button">

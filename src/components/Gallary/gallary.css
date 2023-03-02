@@ -3,6 +3,7 @@ section{
   display: block;
   width : 100%;
   height : 100%;
+  background-color: #000;
 }
 
 /*Gallary Component aside header css */
@@ -16,9 +17,9 @@ section{
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  z-index: 1000;
-  background-color: #000;
-  border-left: 2px solid rgba(255, 255, 255, 0.6);
+  z-index: 100;
+  background-color: transparent;
+  border-left : 2px solid #fff;
 }
 
 .GList-header .Gallary-hamburgerMenu{
@@ -64,119 +65,21 @@ section{
   text-align: center;
 }
 
-/*select years option boxs 부모 css*/
-.GList-header .select-years-container{
-  position: relative;
-  width : 10rem;
-  height : 5rem;
-  z-index: 1000;
-}
-
-/*각 select-years box css */
-.GList-header .select-years{
-  position: absolute;
-  display: block;
-  width : 10rem;
-  height : 3rem;
-}
-
-/*select-years box input box css 
-(select option 박스들을 input box로 대체하여 css 디자인)*/
-.select-years > li > input[type=text]{
-  display: block;
-  padding : 1rem;
-  border : 5px solid #fff;
-  width : 10rem;
-  height : 3rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-family: var(--font-family);
-  color : #000;
-}
-
-/*select-years box input box hover*/
-.select-years > li > input[type=text]:hover{
-  cursor: pointer;
-}
-
-/*toggleClick 클릭시 state 함수 true일 시 li 3번째 input text block*/
-.select-years > li:nth-child(3).active > input[type=text]{
-  display: block;
-  border : none;
-  border: 5px solid transparent;
-}
-
-/*toggleClick 클릭시 state 함수 true일 시 li 4번째 input text block*/
-.select-years > li:nth-child(4).active > input[type=text]{
-  display: block;
-  border : none;
-  border : 5px solid transparent;
-}
-
-/*toggleClick 재 클릭시&remove 할시 li 3번째 input text none*/
-.select-years > li:nth-child(3) > input[type=text]{
-  display: none;
-}
-
-/*toggleClick 재 클릭시&remove 할시 li 4번째 input text none*/
-.select-years > li:nth-child(4) > input[type=text]{
-  display: none;
-}
-
-/*toggleClick 버튼 css */
-.select-years > li > .toggle-button{
-  position: absolute;
-  top : 50%;
-  transform: translateY(-50%);
-  margin-left: 11rem;
-  font-size: 1.5rem;
-  color : #fff;
-  cursor : pointer;
-}
-
-/*clickYear #2022 년도가 아닐시 2022 포커스 select 된 select-years display none*/
-.select-years:first-child{
-  display: none;
-}
-
-/*clickYear #2022 년도 일시 2022 포커스 select 된 select-years display*/
-.select-years:first-child#active{
-  display: block;
-}
-
-.select-years:nth-child(2){
-  display: none;
-}
-
-.select-years:nth-child(2)#active{
-  display: block;
-}
-
-.select-years:nth-child(3){
-  display: none;
-}
-
-.select-years:nth-child(3)#active{
-  display: block;
-}
-
 /*Gallary Component Banner Component css */
 section .Gallary-container{
   position: relative;
   top : 0;
   left : 0;
-  width : 80%;
+  width : 100%;
   height : 100vh;
-  background-color: #000;
 }
 
 .Gallary-container .Gallary-background{
   position: absolute;
-  width : 80%;
+  width : 100%;
   height : 100%;
+  left : 0;
   top : 0;
-  left : 50%;
-  transform: translateX(-50%);
   overflow: hidden;
 }
 
@@ -233,7 +136,7 @@ section .Gallary-container{
 }
 
 .Gallary-contents .Gallary-title{
-  font-size: 3.5rem;
+  font-size: 2rem;
   color : #fff;
   text-transform: uppercase;
   letter-spacing: 1rem;
@@ -247,7 +150,6 @@ section .Gallary-container{
   right : 0;
   width : 80%;
   height : 100vh;
-  background-color: #000;
 }
 
 /*GallaryList item 부모 box css*/
@@ -255,24 +157,15 @@ section .Gallary-container{
   position: absolute;
   top : 0;
   left : 50%;
-  width : max-content;
+  width : 100%;
   height : 100%;
   transform: translateX(-50%);
   overflow-y: auto;
   padding : 2rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap : 2rem;
   place-items: center;
-}
-
-.GallaryList-box::-webkit-scrollbar{
-  width : 1rem;
-  background-color: #fff;
-}
-
-.GallaryList-box::-webkit-scrollbar-thumb{
-  background-color: #000;
 }
 
 .GallaryList-box .GallaryList-item{
@@ -436,39 +329,11 @@ section .Gallary-container{
   overflow: hidden;
 }
 
-.mapBox-imgbox h1{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  top : 0;
-  left : 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  color : #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-}
-
 .mapBox-imgbox img{
   position: absolute;
   width : 100%;
   height : 100%;
   object-fit: cover;
-}
-
-.mapBox-imgbox .imgbox-title{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color : #fff;
-  z-index: 10;
-  font-family: var(--font-family);
-  font-size: 1.2rem;
 }
 
 /**/
@@ -498,23 +363,15 @@ section .Gallary-container{
 
 .GListItem-header .logo{
   position: relative;
-  width : 100%;
-  height : max-content;
+  width : 10rem;
+  height : 5rem;
   margin : 5rem 0;
 }
 
 .logo img{
   width : 100%;
   height : 100%;
-  object-fit: cover;
-}
-
-.GListItem-header .close-btn{
-  position: relative;
-  font-size: 3.5rem;
-  color : #000;
-  z-index: 100;
-  cursor : pointer;
+  object-fit: scale-down;
 }
 
 /*Iframe Video 재생버튼, 인트로 Img, Iframe 동영상 부모 컨테이너*/

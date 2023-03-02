@@ -9,6 +9,7 @@ import GListBox from "./components/Gallary/GListBox";
 import YoutubeData from "./components/YoutubeData";
 import axios from "axios";
 import { useEffect } from "react";
+import GListItem from "./components/Gallary/GListItem";
 
 function App() {
 
@@ -20,8 +21,8 @@ function App() {
           <Route path="/About" element={<About />}></Route>
           <Route path="/Profile" element={<ProfileInfo/>}></Route>
           <Route path="/Gallary" element={<Gallary/>}></Route>
-          <Route path="/GallaryList" element={<GallaryList/>}></Route>
           <Route path="/GallaryBox" element={<GListBox/>}></Route>
+          <Route path="/GallaryItem" element ={<GListItem/>}></Route>
           <Route path="/Youtube" element={<YoutubeData/>}></Route>
         </Routes>
       </BrowserRouter>

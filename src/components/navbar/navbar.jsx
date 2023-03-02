@@ -116,15 +116,15 @@ const Navbar = () => {
               </div>
 
               <li>
-                <Link to="/Profile">EDAM</Link>
+                <a href = "http://www.edam-ent.com/html/" target="_blank">EDAM</a>
               </li>
 
               <li>
-                <a href="#">MADE EDAM</a>
+                <a href="https://madeedam.com/" target="_blank">MADE EDAM</a>
               </li>
 
               <li>
-                <a href="#">IU FAN CAFE</a>
+                <a href="https://m.cafe.daum.net/IU/_rec" target="_blank">IU FAN CAFE</a>
               </li>
 
             </ul>
