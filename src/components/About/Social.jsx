@@ -5,7 +5,7 @@ import {AiFillInstagram} from "react-icons/ai"
 import {AiFillTwitterSquare} from "react-icons/ai"
 import {AiFillFacebook} from "react-icons/ai"
 import Instagram from "../../assets/image/프로필 사진/인스타 프로필.png"
-import facebook from "../../assets/image/기타 사진/라일락 표지.jpg"
+import facebook from "../../assets/image/section 배경/facebook.jpg"
 import {motion} from "framer-motion"
 import Youtube from './Youtube';
 import { useState } from 'react';

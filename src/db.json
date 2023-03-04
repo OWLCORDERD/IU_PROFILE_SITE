@@ -1,0 +1,301 @@
+{
+    "Gallary" : [
+        {
+            "id" : 1,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "subTitle" : "아이유의 짜릿한 변신",
+            "img_url" : "../Magazine/VOGUE/2022.05/1.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022,
+            "YtbID" : "vwekEnIEN0s",
+            "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_Video.jpg",
+            "logo" : "../Magazine/VOGUE/Vogue-logo.jpg"
+        },
+        {
+            "id" : 2,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/2.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 3,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/3.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 4,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/4.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 5,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/5.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 6,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/6.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 7,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/7.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 8,
+            "title" : "아이유x구찌 뷰티 5월호",
+            "img_url" : "../Magazine/VOGUE/2022.05/8.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 9,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "subTitle" : "밀라노의 아이유. 그녀는 같을까 다를까",
+            "img_url" : "./Magazine/VOGUE/2022.10/1.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022,
+            "YtbID" : "vwekEnIEN0s",
+            "YtbThumbNail" : "../Magazine/VOGUE/VOGUE_Video.jpg",
+            "logo" : "../Magazine/VOGUE/Vogue-logo.jpg"
+        },
+        {
+            "id" : 10,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/2.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 11,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/3.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 12,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/4.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 13,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/5.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 14,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/6.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 15,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/7.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 16,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/8.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 17,
+            "title" : "과거는 아주 가끔씩 돌아봐야 더 의미있지 않을까요?",
+            "img_url" : "./Magazine/VOGUE/2022.10/9.jpg",
+            "Compony" : "VOGUE",
+            "since" : 2022
+        },
+        {
+            "id" : 18,
+            "title" : "MARIE CLAIRE",
+            "subTitle" : "MARIE CLAIRE 5월 화보집",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/1.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022,
+            "YtbID" : "h8qQrnRzuTA",
+            "YtbThumbNail" : "./Magazine/MARIE_CLAIRE/MARIE_CLAIRE_Video.jpg",
+            "logo" : "./Magazine/MARIE_CLAIRE/logo.png"
+        },
+        {
+            "id" : 19,
+            "title" : "MARIE CLAIRE",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/2.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 20,
+            "title" : "MARIE CLAIRE",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/3.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 21,
+            "title" : "MARIE CLAIRE",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/4.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 22,
+            "title" : "MARIE CLAIRE",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/5.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 23,
+            "title" : "MARIE CLAIRE",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/6.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 24,
+            "title" : "22 Winter Tiara Funk",
+            "subTitle" : "2022 겨울 Tiara Funk 10월 화보",
+            "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/1.jpg",
+            "Compony" : "J.ESTINA",
+            "since" : 2022,
+            "YtbID" : "UHShYbaTRrk",
+            "YtbThumbNail" : "./Magazine/J.ESTINA/2022_TiaraFunk/JESTINA_Video.jpg",
+            "logo" : "./Magazine/J.ESTINA/logo.png"
+        },
+        {
+            "id" : 25,
+            "title" : "22 Winter Tiara Funk",
+            "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/2.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        
+        {
+            "id" : 26,
+            "title" : "22 Winter Tiara Funk",
+            "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/3.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+
+        
+        {
+            "id" : 27,
+            "title" : "22 Winter Tiara Funk",
+            "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/4.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+
+        
+        {
+            "id" : 28,
+            "title" : "22 Winter Tiara Funk",
+            "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/5.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 29,
+            "title" : "22 Winter Tiara Funk",
+            "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/6.jpg",
+            "Compony" : "MARIE CLAIRE",
+            "since" : 2022
+        },
+        {
+            "id" : 30,
+            "title" : "J.ESTINA X IU COLLECTION",
+            "subTitle" : "J.ESTINA HIP SUMMER 화보집",
+            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/1.jpg",
+            "Compony" : "J.ESTINA",
+            "since" : 2022,
+            "YtbID" : "UHShYbaTRrk",
+            "YtbThumbNail" : "./Magazine/J.ESTINA/2022_TiaraFunk/JESTINA_Video.jpg",
+            "logo" : "./Magazine/J.ESTINA/logo.png"
+        },
+        {
+            "id" : 31,
+            "title" : "J.ESTINA X IU COLLECTION",
+            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/2.jpg",
+            "Compony" : "J.ESTINA",
+            "since" : 2022
+        },
+        {
+            "id" : 32,
+            "title" : "J.ESTINA X IU COLLECTION",
+            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/3.jpg",
+            "Compony" : "J.ESTINA",
+            "since" : 2022
+        },
+        {
+            "id" : 33,
+            "title" : "J.ESTINA X IU COLLECTION",
+            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/4.jpg",
+            "Compony" : "J.ESTINA",
+            "since" : 2022
+        },
+        {
+            "id" : 34,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "subTitle" : "아이유와 이지은, 한 인물이 만들어 낸 두 캐릭터",
+            "img_url" : "./Magazine/BAZAAR/1.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023,
+            "YtbID" : "wCbUWU4l_Ko",
+            "YtbThumbNail" : "./Magazine/BAZAAR/YtbThumbnail.jpg",
+            "logo" : "./Magazine/BAZAAR/logo.jpg"
+        }
+    ],
+
+    "GallarySign" : [
+        {
+            "id" : 1,
+            "Compony" : "VOGUE",
+            "img_url" : "../Magazine/VOGUE/2022.10/1.jpg"
+        },
+        {
+            "id" : 2,
+            "Compony" : "MARIE CLAIRE",
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/1.jpg"
+        },
+        {
+            "id" : 3,
+            "Compony" : "J.ESTINA",
+            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/1.jpg"
+        },
+        {
+            "id" : 4,
+            "Compony" : "BAZAAR",
+            "img_url" : "./Magazine/BAZAAR/1.jpg"
+        }
+    ]
+}

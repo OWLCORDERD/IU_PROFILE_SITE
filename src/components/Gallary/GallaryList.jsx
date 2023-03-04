@@ -2,12 +2,21 @@ import React from 'react'
 import UseFetch from "../hooks/UseFetch"
 import {motion} from "framer-motion"
 import {Link} from "react-router-dom"
+import db from "../../db.json";
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const GallaryList = () => {
 
-    const gallaryData = UseFetch("http://localhost:4000/Gallary");
+    const [gallaryData, setGallaryData] = useState([]);
+    const [signData, setSignData] = useState([]);
 
-    const gallarySign = UseFetch("http://localhost:4000/GallarySign");
+    useEffect(()=>{
+
+    setGallaryData(db.Gallary);
+    setSignData(db.GallarySign);
+
+    }, [gallaryData, signData])
 
     const GallaryAnibox = {
         initial : {
@@ -40,7 +49,7 @@ const GallaryList = () => {
 
         <motion.div className = "GallaryList-box" variants={GallaryAnibox} initial = "initial" animate = "animate">
             
-            {gallarySign.map((item)=> {
+            {signData.map((item) => {
                 return(
                 <motion.div className = "GallaryList-item" variants={GallaryAniList} key = {item.id}>
 

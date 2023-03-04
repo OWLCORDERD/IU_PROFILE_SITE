@@ -1,11 +1,11 @@
 import {React} from 'react'
 import './gallary.css'
 import {motion} from "framer-motion"
-import GallaryBannerImg from "../../assets/image/GallaryBanner.jpg"
+import GallaryBannerImg from "../../assets/image/section 배경/GallaryBanner.jpg"
 
 const GallaryBanner = () => {
 
-  const animationBox = {
+  const animationBox = {  
     initial : {
       opacity : 1
     },
