@@ -10,12 +10,11 @@
 (active class toggle 부모 css)*/
 #slide-container{
   position: absolute;
-  width : 70%;
+  width : 80%;
   height : 30rem;
   right : 5rem;
-  display: none;
   top : 50%;
-  transform: translateY(-50%);
+  left : 50%;
 }
 
 /*IU TV slider container css */
@@ -25,12 +24,6 @@
   height : 30rem;
   overflow: hidden;
   padding : 0.5rem;
-}
-
-/*IU TV slider 최상위 부모 active css */
-#slide-container.active{
-  display: block;
-  animation: ActiveAnimation 1.5s ease-in-out;
 }
 
 @keyframes ActiveAnimation {
@@ -83,7 +76,7 @@
 .slide-box .slide-title{
   position: absolute;
   bottom: 0;
-  width : 100%;
+  width : 80%;
   height : 15rem;
   font-size: 0.8rem;
   color :#fff;
@@ -92,6 +85,7 @@
   align-items: flex-start;
   justify-content: space-around;
   font-family: var(--font-family-Sun);
+  word-break: keep-all;
 }
 
 .slide-title p{
@@ -124,31 +118,4 @@
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.Youtube-container .Youtube-category{
-  position: absolute;
-  left : 5rem;
-  width : 20%;
-  height : 30rem;
-  font-family: var(--font-family-Sun);
-  top : 50%;
-  transform: translateY(-50%);
-}
-
-.Youtube-category li{
-  display: block;
-  width : 100%;
-  height : 8rem;
-}
-
-.Youtube-category li a{
-  font-size: 1.5rem;
-  font-weight: bold;
-  color : rgb(134, 134, 134);
-}
-
-.Youtube-category li a.active{
-  color : #fff;
-  font-size: 2rem;
 }

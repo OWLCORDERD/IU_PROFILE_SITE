@@ -10,9 +10,9 @@ const GListBox = () => {
 
     const filterCompony = sinceFilter.filter(sinceFilter=> sinceFilter.Compony === ComponyData);
     const update2022 = filterCompony.filter(filterCompony => filterCompony.since === 2022);
-    const main2022 = update2022.filter(update2022 => update2022.logo !== null);
+    const main2022 = update2022.filter(update2022 => update2022.logo !== undefined);
     const update2023 = filterCompony.filter(filterCompony => filterCompony.since === 2023);
-    const main2023 = update2023.filter(update2023 => update2023.logo !== null);
+    const main2023 = update2023.filter(update2023 => update2023.logo !== undefined);
 
 
   return (

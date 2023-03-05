@@ -4,14 +4,20 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import {AiFillPlayCircle} from "react-icons/ai"
-import UseFetch from "../hooks/UseFetch"
+import db from "../../db.json"
+import { useEffect } from "react";
+import {motion} from "framer-motion";
 
 
 const Youtube = () => {
-    const Youtube = UseFetch("http://localhost:4000/Youtube");
+    
+    const [ytbData, setYtbData] = useState([]);
 
-    const IUTV = Youtube.filter(Youtube => Youtube.title === "IU TV");
-    const IUCLIP = Youtube.filter(Youtube => Youtube.title === "IU CLIP");
+    useEffect(()=>{
+      setYtbData(db.Youtube);
+    }, [ytbData])
+
+    const IUTV = ytbData.filter(Youtube => Youtube.title === "IU TV");
 
     const settings = {
       infinite: true,
@@ -22,7 +28,23 @@ const Youtube = () => {
       autoplaySpeed: 5000,
     };
 
-    const [categoryClick, setCategoryClick] = useState('IU_TV');
+    const slider = {
+      initial : {
+        opacity : 0,
+        x : "-50%",
+        y : "-40%",
+      },
+
+      animated : {
+        opacity : 1,
+        x : "-50%",
+        y : "-50%",
+        transition : {
+          staggerChildren : 0.5,
+          duration : 2
+        }
+      }
+  }
     
 
     return (
@@ -32,22 +54,14 @@ const Youtube = () => {
         <ul>
           <li>
             <a href="#">
-              YOUTUBE
+              IU TV
             </a>
           </li>
         </ul>
       </nav>
-
-    <ul className = "Youtube-category">
-      <li><a href = "#IU_TV" onClick={() => setCategoryClick('IU_TV')} className = {categoryClick === 'IU_TV' ? 'active' : ''}>IU TV</a></li>
-      <li><a href = "#IU_CLIP" onClick={() => setCategoryClick('IU_CLIP')} className = {categoryClick === 'IU_CLIP' ? 'active' : ''}>IU CLIP</a></li>
-      <li><a href = "#">아이유의 팔레트</a></li>
-      <li><a href = "#">꿈빛 셰프유</a></li>
-      <li><a href = "#">BEHIND</a></li>
-    </ul>
     
 
-      <div id = "slide-container" className = {categoryClick === 'IU_TV' ? 'active' : ''}>
+      <motion.div id = "slide-container" variants={slider} initial = "initial" animate = "animated">
 
         <Slider {...settings}>
           {IUTV.map((item) => {
@@ -66,28 +80,7 @@ const Youtube = () => {
           })}
         </Slider>
         
-      </div>
-
-      <div id = "slide-container" className = {categoryClick === 'IU_CLIP' ? 'active' : ''}>
-        
-        <Slider {...settings}>
-          {IUCLIP.map((item) => {
-            return (
-          <div className = "slide-box" key={item.id}>
-            <div className = "play-video">
-              <AiFillPlayCircle className = "play-button"/>
-            </div>
-           <img src = {item.img_url} alt = ""/>
-           <div className = "slide-title">
-             <h1>{item.VideoName}</h1>
-             <p>{item.director}</p>
-           </div>
-          </div>
-        )
-          })}
-        </Slider>
-        
-      </div>
+      </motion.div>
 
 
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import YoutubeData from '../YoutubeData'
+import YoutubeData from '../hooks/YoutubeData'
 import {RiPlayCircleFill} from "react-icons/ri"
 import {IoIosArrowBack} from "react-icons/io"
 import {IoIosArrowForward} from "react-icons/io"

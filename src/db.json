@@ -195,7 +195,7 @@
             "id" : 25,
             "title" : "22 Winter Tiara Funk",
             "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/2.jpg",
-            "Compony" : "MARIE CLAIRE",
+            "Compony" : "J.ESTINA",
             "since" : 2022
         },
         
@@ -203,7 +203,7 @@
             "id" : 26,
             "title" : "22 Winter Tiara Funk",
             "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/3.jpg",
-            "Compony" : "MARIE CLAIRE",
+            "Compony" : "J.ESTINA",
             "since" : 2022
         },
 
@@ -212,7 +212,7 @@
             "id" : 27,
             "title" : "22 Winter Tiara Funk",
             "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/4.jpg",
-            "Compony" : "MARIE CLAIRE",
+            "Compony" : "J.ESTINA",
             "since" : 2022
         },
 
@@ -221,14 +221,14 @@
             "id" : 28,
             "title" : "22 Winter Tiara Funk",
             "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/5.jpg",
-            "Compony" : "MARIE CLAIRE",
+            "Compony" : "J.ESTINA",
             "since" : 2022
         },
         {
             "id" : 29,
             "title" : "22 Winter Tiara Funk",
             "img_url" : "./Magazine/J.ESTINA/2022_TiaraFunk/6.jpg",
-            "Compony" : "MARIE CLAIRE",
+            "Compony" : "J.ESTINA",
             "since" : 2022
         },
         {
@@ -273,7 +273,78 @@
             "YtbID" : "wCbUWU4l_Ko",
             "YtbThumbNail" : "./Magazine/BAZAAR/YtbThumbnail.jpg",
             "logo" : "./Magazine/BAZAAR/logo.jpg"
+        },
+        {
+            "id" : 35,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/2.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 36,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/3.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 37,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/4.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 38,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/5.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 39,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/6.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 40,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/7.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 41,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/8.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 42,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/9.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 43,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/10.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
+        },
+        {
+            "id" : 44,
+            "title" : "바자 (BAZAAR) 3월호 화보",
+            "img_url" : "./Magazine/BAZAAR/11.jpg",
+            "Compony" : "BAZAAR",
+            "since" : 2023
         }
+
     ],
 
     "GallarySign" : [
@@ -296,6 +367,177 @@
             "id" : 4,
             "Compony" : "BAZAAR",
             "img_url" : "./Magazine/BAZAAR/1.jpg"
+        }
+    ],
+
+    "Youtube" : [
+        {
+            "id" : 1,
+            "title" : "IU TV",
+            "VideoName" : "다육이 vs 육지 불가사리",
+            "img_url" : "./Youtube/IU_TV/Dayook.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 2,
+            "title" : "IU TV",
+            "VideoName" : "무엇이든 물어보세요 With 첫 레고 조립",
+            "img_url" : "./Youtube/IU_TV/Christmas.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 3,
+            "title" : "IU TV",
+            "VideoName" : "아이유 전격 발표 올해는 안식년이었다!",
+            "img_url" : "./Youtube/IU_TV/Presentation.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 4,
+            "title" : "IU TV",
+            "VideoName" : "Christmas Vlog 절망편 Teaser",
+            "img_url" : "./Youtube/IU_TV/Christmas_Intro.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 5,
+            "title" : "IU TV",
+            "VideoName" : "가장 빛났던 순간으로 지금 이순간을 떠올려줬으면",
+            "img_url" : "./Youtube/IU_TV/AtThisMoment.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 6,
+            "title" : "IU TV",
+            "VideoName" : "어느때 보다 뜨거웠던 오렌지 태양 아래",
+            "img_url" : "./Youtube/IU_TV/UnderTheSun.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 7,
+            "title" : "IU TV",
+            "VideoName" : "Bonjour! 칸 영화제 Vlog",
+            "img_url" : "./Youtube/IU_TV/Khan_Award.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 8,
+            "title" : "IU CLIP",
+            "VideoName" : "에잇(eight) Live Clip (2022 IU Concert)",
+            "img_url" : "./Youtube/IU_CLIP/eight_LIVE_CLIP.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 9,
+            "title" : "IU CLIP",
+            "VideoName" : "strawberry moon CONCERT Preview Clip",
+            "img_url" : "./Youtube/IU_CLIP/Strawberry_Consert.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 10,
+            "title" : "IU CLIP",
+            "VideoName" : "겨울잠 (Winter Sleep) Live Clip",
+            "img_url" : "./Youtube/IU_CLIP/WinterSleep_LIVE_CLIP.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 11,
+            "title" : "IU CLIP",
+            "VideoName" : "정거장 - 조각집 선공개 Live Clip",
+            "img_url" : "./Youtube/IU_CLIP/NextStop_LIVE_CLIP.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 12,
+            "title" : "IU CLIP",
+            "VideoName" : "[MMA 2021] IU - Lilac",
+            "img_url" : "./Youtube/IU_CLIP/MMA_Lilac.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 13,
+            "title" : "IU CLIP",
+            "VideoName" : "[MMA 2021] IU - Strawberry moon + celebrity",
+            "img_url" : "./Youtube/IU_CLIP/MMA_Strawberry.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 14,
+            "title" : "IU CLIP",
+            "VideoName" : "꿈빛 파티시엘 dlwlrma Clip",
+            "img_url" : "./Youtube/IU_CLIP/Dream_Patissier.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 15,
+            "title" : "IU CLIP",
+            "VideoName" : "라일락 DANCE PRACTICE",
+            "img_url" : "./Youtube/IU_CLIP/Lilac_DANCE_LIVE.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 16,
+            "title" : "IU CLIP",
+            "VideoName" : "내손을잡아(Hold My Hand) LIVE CLIP",
+            "img_url" : "./Youtube/IU_CLIP/HoldMyHand_LIVE.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 17,
+            "title" : "IU CLIP",
+            "VideoName" : "Love poem Live Clip",
+            "img_url" : "./Youtube/IU_CLIP/LOVE_POEM_LIVE.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 18,
+            "title" : "IU TV",
+            "VideoName" : "데뷔 13주년 기념 생일상 Ep.1",
+            "img_url" : "./Youtube/IU_TV/Dream_Chef_1.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 19,
+            "title" : "IU TV",
+            "VideoName" : "이 손이 베이킹도 성공할 손인가? EP.2",
+            "img_url" : "./Youtube/IU_TV/Dream_Chef_2.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 20,
+            "title" : "IU TV",
+            "VideoName" : "[엔터 직장인 이지동] 포도알이 있었는데 없습니다",
+            "img_url" : "./Youtube/IU_TV/LeeJeeDong_Ticketing.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 20,
+            "title" : "IU TV",
+            "VideoName" : "[엔터 직장인 이지동] 제 꿈을 펼처보겠습니다",
+            "img_url" : "./Youtube/IU_TV/LeeJeeDong_Concept.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 20,
+            "title" : "IU TV",
+            "VideoName" : "[엔터 직장인 이지동] 스포하는 아이유 새 앨범",
+            "img_url" : "./Youtube/IU_TV/LeeJeeDong_Review.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 20,
+            "title" : "IU TV",
+            "VideoName" : "[엔터 직장인 이지동] 아이유 정규 5집 회의",
+            "img_url" : "./Youtube/IU_TV/LeeJeeDong_Concept2.jpg",
+            "director" : "이지금 [IU Official]"
+        },
+        {
+            "id" : 20,
+            "title" : "IU TV",
+            "VideoName" : "[엔터 직장인 이지동] 이지동의 ASMR",
+            "img_url" : "./Youtube/IU_TV/LeeJeeDong_ASMR.jpg",
+            "director" : "이지금 [IU Official]"
         }
     ]
 }

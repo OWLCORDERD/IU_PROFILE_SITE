@@ -4,6 +4,7 @@ import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import AboutVideo from "../../assets/video/introduce-video.mp4";
 import Loading from "../Loading/Loading";
 import {Link} from "react-router-dom"
+import styled from "styled-components";
 
 const About = () => {
   const innerwidth = {
@@ -69,8 +70,17 @@ const About = () => {
   },3000)
   }, []);
 
+  const Section = styled.section`
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+  `
+
   return (
-    <section>
+    <Section>
       {loading ? (
         <Loading loading={loading} />
       ) : (
@@ -122,7 +132,7 @@ const About = () => {
 
         </div>
       )}
-    </section>
+    </Section>
   );
 };
   
