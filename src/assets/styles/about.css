@@ -1,0 +1,538 @@
+section .About-IYOU-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+.About-IYOU-container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  z-index: 10;
+}
+
+.About-IYOU-container .video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.About-IYOU-container .About-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
+.About-title h1 {
+  font-size: 6rem;
+  color: #fff;
+  font-family: var(--font-family);
+}
+
+.About-title p {
+  font-family: var(--font-family);
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.About-IYOU-container .About-buttons{
+  position: absolute;
+  width : 40rem;
+  height : 10rem;
+  bottom : 5%;
+  left : 50%;
+  transform: translate(-50%, -5%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+.About-buttons .View-button {
+  position: relative;
+  width: 15rem;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-family);
+}
+
+.View-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.View-button .button-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  animation: ViewRadius 1.5s infinite;
+}
+
+.About-buttons .Back-button {
+  position: relative;
+  width: 15rem;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-family);
+}
+
+.Back-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.Back-button .button-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  animation: ViewRadius 1.5s infinite;
+}
+
+@keyframes ViewRadius {
+  0% {
+    opacity: 0;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+/*Profile ViewMore Section*/
+#ProfileInfo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+/*컨텐츠 과시를 위한 어두운 명암 덮어씌우기 background*/
+#ProfileInfo-container::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#ProfileInfo-container .back-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 20vh;
+  height: 5rem;
+  z-index: 1200;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.back-button h1 {
+  line-height: 5rem;
+  font-size: 1.5rem;
+}
+
+#ProfileInfo-container .Next-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 20vh;
+  height: 5rem;
+  z-index: 1000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.Next-button#active {
+  display: none;
+}
+
+.Next-button h1 {
+  line-height: 5rem;
+  font-size: 1.5rem;
+}
+
+/*video 화면 background 영역*/
+#ProfileInfo-container .video-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Profile View Navbar Menu 영역*/
+#ProfileInfo-container .Info-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 15vh;
+  padding: 2rem;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+}
+
+.Info-menu#active{
+  display: none;
+}
+
+.Info-menu > ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Info-menu > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+
+.Info-menu > ul > li > a {
+  display: block;
+  width: max-content;
+  height: 100%;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+  font-family: var(--font-family-Ol);
+  border-bottom: 5px solid #fff;
+  text-transform: uppercase;
+}
+
+.Info-menu#hidden{
+  display: none;
+}
+
+/*Profile 파트 아이유 소개 부모 section 영역*/
+#ProfileInfo-container #ProfileInfo-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 85vh;
+  z-index: 1000;
+  padding: 2rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+#ProfileInfo-section.active .Profile-Img{
+  display: none;
+}
+
+#ProfileInfo-section.active .Information-contents{
+  display: none;
+}
+
+#ProfileInfo-section .Profile-Img {
+  position: relative;
+  left: 0;
+  width: 23rem;
+  height: 30rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.Profile-Img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#ProfileInfo-section .Information-contents {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  font-family: var(--font-family-Sun);
+}
+
+.Information-contents .Name {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.Information-contents .sub-name {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.sub-name h1 {
+  font-size: 1.3rem;
+  margin-right: 2rem;
+}
+
+.sub-name p {
+  font-size: 1.3rem;
+}
+
+.Information-contents .About-IU-contents {
+  width: 100%;
+  line-break: auto;
+  font-size: 1.2rem;
+}
+
+.Information-contents .sub-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: relative;
+}
+
+.sub-info .born-date {
+  width: 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.sub-info .Singer-date {
+  width: 13rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.sub-info h1 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.Information-contents .Profile-button{
+  width : 100%;
+  height : 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: var(--font-family-Ol);
+  border : 3px solid #fff;
+  background-color: rgb(0, 0, 0);
+  color : #fff;
+}
+
+#Social-container{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100vh;
+  z-index: 1000;
+  display: none;
+}
+
+#Social-container.active{
+  display: block;
+}
+
+#Social-container .Social-section{
+  position: relative;
+  top : 0;
+  width : 100%;
+  height : 100vh;
+}
+
+.Social-section#hidden{
+  display: none;
+}
+
+.Social-section ul{
+  position: relative;
+  width : 100%;
+  height : 70vh;
+  top : 50%;
+  transform: translateY(-50%);
+}
+
+.Social-section ul li{
+  display: inline-block;
+  width : 33.3%;
+  height : 100%;
+}
+
+.Social-section ul li .Social-type{
+  position: relative;
+  width : 100%;
+  height : 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Social-type .Social-icon{
+  font-size: 2rem;
+}
+
+.Social-type .Social-name{
+  font-size: 1.5rem;
+  font-family: var(--font-family-Ol);
+  text-transform: uppercase;
+}
+
+.Social-section ul li .Social-profile{
+  position: relative;
+  width : 100%; 
+  height : 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Social-profile .Social-image{
+  width : 8rem;
+  height : 8rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.Social-image img{
+  width : 100%;
+  height : 100%;
+  object-fit: cover;
+}
+
+.Social-profile .Social-id{
+  width : 100%;
+  height : 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Social-id h1{
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-family-Sun);
+}
+
+.Social-id p {
+  font-size: 1.2rem;
+  font-family: var(--font-family-Sun);
+  font-weight: bold;
+}
+
+.Social-profile .Social-follower{
+  font-size: 0.7rem;
+  font-family: var(--font-family-Sun);
+}
+
+.Social-section ul li .Social-button{
+  display: block;
+  position: relative;
+  left : 50%;
+  transform: translateX(-50%);
+  width : 12rem;
+  height : 3rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--font-family-Ol);
+  color : #000;
+  background-color: #fff;
+  border : 2px solid transparent;
+  border-radius: 0.5rem;
+  cursor : pointer;
+}
+
+.Social-section ul li .Social-button:hover{
+  background-color: transparent;
+  border : 2px solid #fff;
+  color : #fff;
+  transition: all 0.5s ease-in-out;
+}
+

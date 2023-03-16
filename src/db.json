@@ -233,7 +233,7 @@
         },
         {
             "id" : 30,
-            "title" : "J.ESTINA X IU COLLECTION",
+            "title" : "J.ESTINA X IU COLLECTION ",
             "subTitle" : "J.ESTINA HIP SUMMER 화보집",
             "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/1.jpg",
             "Compony" : "J.ESTINA",
@@ -272,7 +272,8 @@
             "since" : 2023,
             "YtbID" : "wCbUWU4l_Ko",
             "YtbThumbNail" : "./Magazine/BAZAAR/YtbThumbnail.jpg",
-            "logo" : "./Magazine/BAZAAR/logo.jpg"
+            "logo" : "./Magazine/BAZAAR/logo.jpg",
+            "update" : "New"
         },
         {
             "id" : 35,
@@ -351,22 +352,28 @@
         {
             "id" : 1,
             "Compony" : "VOGUE",
-            "img_url" : "../Magazine/VOGUE/2022.10/1.jpg"
+            "img_url" : "../Magazine/VOGUE/2022.10/1.jpg",
+            "Category" : "밀라노의 아이유. 그녀는 같을까 다를까",
+            "Category2" : "아이유x구찌 뷰티 5월호"
         },
         {
             "id" : 2,
             "Compony" : "MARIE CLAIRE",
-            "img_url" : "../Magazine/MARIE_CLAIRE/May/1.jpg"
+            "img_url" : "../Magazine/MARIE_CLAIRE/May/1.jpg",
+            "Category" : "MARIE CLAIRE 5월 화보집"
         },
         {
             "id" : 3,
             "Compony" : "J.ESTINA",
-            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/1.jpg"
+            "img_url" : "./Magazine/J.ESTINA/HIP_SUMMER/1.jpg",
+            "Category" : "J.ESTINA X IU COLLECTION",
+            "Category2" : "22 Winter Tiara Funk"
         },
         {
             "id" : 4,
             "Compony" : "BAZAAR",
-            "img_url" : "./Magazine/BAZAAR/1.jpg"
+            "img_url" : "./Magazine/BAZAAR/1.jpg",
+            "Category" : "바자 (BAZAAR) 3월호 화보"
         }
     ],
 

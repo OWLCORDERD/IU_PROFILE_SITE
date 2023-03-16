@@ -36,12 +36,14 @@ const Main = () => {
   return (
     <>
       <Container>
+
         <Section>
         <Banner />
         <Category />
         <SubMenus />
         <Footer />
         </Section>
+        
       </Container>
     </>
   );

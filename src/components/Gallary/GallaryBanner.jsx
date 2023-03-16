@@ -1,59 +1,49 @@
-import {React} from 'react'
-import './gallary.css'
-import {motion} from "framer-motion"
-import GallaryBannerImg from "../../assets/image/section 배경/GallaryBanner.jpg"
+import { React } from "react";
+import "../../assets/styles/gallaryBanner.css";
+import data from "../../db.json";
+import { RiPlayCircleFill } from "react-icons/ri";
+import { useState } from "react";
 
 const GallaryBanner = () => {
+  const NewFilter = data.Gallary.filter((item) => item.update === "New");
 
-  const animationBox = {  
-    initial : {
-      opacity : 1
-    },
+  const [iframeId, setIframeId] = useState(null);
 
-    animate : {
-      opacity : 1,
-      transition : {
-        staggerChildren : 0.5,
-        delayChildren : 0.8
-      }
+  const videoPlay = () => {
+    if (iframeId == null) {
+      setIframeId(NewFilter[0].YtbID);
+    } else {
+      setIframeId(null);
     }
-  }
+  };
 
-  const animationItem = {
-    initial : {
-      opacity : 0
-    },
-
-    animate : {
-      opacity : 1,
-      transition : {
-        duration : 1
-      }
-    }
-  }
+  const NewIframe = `https://www.youtube.com/embed/${iframeId}?autoplay=1&mute=0&amp;loop=1;controls=0;playlist=${iframeId}`;
 
   return (
-    <motion.div className = "Gallary-container" variants={animationBox} initial = "initial" animate = "animate">
-        
-        <div className = "Gallary-background">
-          <motion.img src = {GallaryBannerImg} alt = "" variants={animationItem}/>
+    <div className="Gallary-banner">
+      <div className="Gallary-background">
+        <div className="New-Megazine" id={iframeId == null ? "active" : ""}>
+          <img src={NewFilter[0].YtbThumbNail} alt="" />
+          <RiPlayCircleFill
+            className="play-button"
+            onClick={(e) => videoPlay(e)}
+          />
         </div>
 
-        <div className = "Gallary-content-box">
-
-          <div className = "Gallary-contents">
-            <motion.div className = "Gallary-subTitle" variants={animationItem}>
-              <h1>IU Gallary</h1>
-            </motion.div>
-
-            <motion.div className = "Gallary-title" variants={animationItem}>
-              <h1>New Megazine Scene</h1>
-            </motion.div>
-          </div>
-
+        <div className="Megazine-Video">
+          <iframe
+            width="560"
+            height="315"
+            src={NewIframe}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
-    </motion.div>
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default GallaryBanner
+export default GallaryBanner;

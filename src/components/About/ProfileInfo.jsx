@@ -1,5 +1,5 @@
 import { React } from "react";
-import "./about.css";
+import "../../assets/styles/about.css";
 import ProfileVideo from "../../assets/video/Celebrity.mp4";
 import ProfileImg from "../../assets/image/Profile-new.jpg";
 import { AiFillFastBackward } from "react-icons/ai";
@@ -7,32 +7,31 @@ import { motion } from "framer-motion";
 import { FaBaby } from "react-icons/fa";
 import { BiStreetView } from "react-icons/bi";
 import { AiFillFastForward } from "react-icons/ai";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import Social from "./Social";
 
 const ProfileInfo = () => {
-
   const [socialOpen, setSocialOpen] = useState(false);
 
   const dynamicBox = {
     initial: {
-      opacity: 1
+      opacity: 1,
     },
 
     animate: {
       opacity: 1,
       transition: {
         staggerChildren: 0.4,
-        delayChildren: 1
-      }
-    }
+        delayChildren: 1,
+      },
+    },
   };
 
   const ShowImg = {
     initial: {
       opacity: 0,
-      y: 100
+      y: 100,
     },
 
     animate: {
@@ -40,67 +39,67 @@ const ProfileInfo = () => {
       y: 0,
       transition: {
         duration: 1,
-        delay: 0.2
-      }
-    }
+        delay: 0.2,
+      },
+    },
   };
 
   const ShowContent = {
     initial: {
       opacity: 0,
-      y: 50
+      y: 50,
     },
 
     animate: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1
-      }
-    }
+        duration: 1,
+      },
+    },
   };
 
   return (
-    <motion.div
-      id="ProfileInfo-container"
-    >
+    <motion.div id="ProfileInfo-container">
       <div className="video-background">
         <video src={ProfileVideo} autoPlay muted loop />
       </div>
 
-      <nav className="Info-menu" id = {socialOpen === !false ? "active" : ''}>
+      <nav className="Info-menu" id={socialOpen === !false ? "active" : ""}>
         <ul>
           <li>
-            <a href="#">
-              PROFILE
-            </a>
+            <a href="#">PROFILE</a>
           </li>
         </ul>
       </nav>
 
-      <Link to = "/About">
-      <div className="back-button">
-        <AiFillFastBackward />
-        <h1>Home</h1>
-      </div>
+      <Link to="/About">
+        <div className="back-button">
+          <AiFillFastBackward />
+          <h1>Home</h1>
+        </div>
       </Link>
 
-      <div className="Next-button" id = {socialOpen === !false ? "active" : ''} onClick={()=>setSocialOpen(!false)}>
+      <div
+        className="Next-button"
+        id={socialOpen === !false ? "active" : ""}
+        onClick={() => setSocialOpen(!false)}
+      >
         <h1>SOCIAL</h1>
         <AiFillFastForward />
       </div>
 
-      <div id="ProfileInfo-section" className = {socialOpen === !false ? "active" : ''}>
-
+      <div
+        id="ProfileInfo-section"
+        className={socialOpen === !false ? "active" : ""}
+      >
         <motion.div
           className="Profile-Img"
           variants={ShowImg}
           initial="initial"
           animate="animate"
         >
-
           <img src={ProfileImg} alt="" />
-
         </motion.div>
 
         <motion.div
@@ -109,7 +108,6 @@ const ProfileInfo = () => {
           initial="initial"
           animate="animate"
         >
-
           <motion.h1 variants={ShowContent} className="Name">
             IU
           </motion.h1>
@@ -139,25 +137,23 @@ const ProfileInfo = () => {
             아이돌이자 아티스트로서 십수 년째 사랑 받고 있으며, <br></br>2012년
             이래로 매년 대규모 콘서트를 진행하며 공연자로서도 활발히 활동
             중이다.
-            <br></br>
-            .
-            <br></br>
-            .
-            <br></br>
+            <br></br>.<br></br>.<br></br>
             출처 : 나무위키
           </motion.div>
 
-          <a href = "https://namu.wiki/w/%EC%95%84%EC%9D%B4%EC%9C%A0" className = "Profile-button" target="_blank">
+          <a
+            href="https://namu.wiki/w/%EC%95%84%EC%9D%B4%EC%9C%A0"
+            className="Profile-button"
+            target="_blank"
+          >
             <h1>+ VIEW MORE INFORMATION</h1>
-            </a>
+          </a>
         </motion.div>
       </div>
 
-      
-    {socialOpen && (
-    <Social setSocialOpen = {setSocialOpen} socialOpen = {socialOpen} />
-    )}
-
+      {socialOpen && (
+        <Social setSocialOpen={setSocialOpen} socialOpen={socialOpen} />
+      )}
     </motion.div>
   );
 };

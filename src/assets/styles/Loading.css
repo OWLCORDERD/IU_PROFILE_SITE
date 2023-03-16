@@ -1,0 +1,70 @@
+.Loading-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.Loading-container .loading-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0 5rem 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.loading-title span {
+  display: inline-block;
+  font-size: 10rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.loading-title p {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.loading-title .loading-state {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Loading-container .contents-left {
+  position: absolute;
+  text-align: center;
+  width: 20rem;
+  height: max-content;
+  left: 20%;
+  top: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  transform: rotate(-90deg);
+  z-index: 100;
+}
+
+.Loading-container .contents-right {
+  position: absolute;
+  width: 20rem;
+  height: max-content;
+  text-align: center;
+  right: 20%;
+  top: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  z-index: 100;
+  transform: rotate(90deg);
+}

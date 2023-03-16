@@ -1,22 +1,22 @@
 import { React, useState, useEffect } from "react";
-import "./about.css";
+import "../../assets/styles/about.css";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import AboutVideo from "../../assets/video/introduce-video.mp4";
 import Loading from "../Loading/Loading";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const About = () => {
   const innerwidth = {
     width: "50%",
-    height: "50%"
+    height: "50%",
   };
 
   const aboutMotion = {
     initial: {
       opacity: 0,
       width: innerwidth.width,
-      height: innerwidth.height
+      height: innerwidth.height,
     },
 
     animated: {
@@ -24,14 +24,14 @@ const About = () => {
       width: ["50%", "100%", "100%"],
       height: ["50%", "50%", "100%"],
       transition: {
-        duration: 1.5
-      }
-    }
+        duration: 1.5,
+      },
+    },
   };
 
   const container = {
     initial: {
-      opacity: 1
+      opacity: 1,
     },
 
     animated: {
@@ -40,24 +40,24 @@ const About = () => {
         delayChildren: 0.8,
         staggerChildren: 0.3,
         duration: 2,
-        delay: 1.5
-      }
-    }
+        delay: 1.5,
+      },
+    },
   };
 
   const h1Animate = {
     initial: {
       y: -100,
-      opacity: 0
+      opacity: 0,
     },
 
     animated: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 2.5
-      }
-    }
+        duration: 2.5,
+      },
+    },
   };
 
   const [loading, setLoading] = useState(false);
@@ -65,9 +65,9 @@ const About = () => {
   useEffect(() => {
     setLoading(!loading);
 
-  setTimeout(() => {
-    setLoading(loading);
-  },3000)
+    setTimeout(() => {
+      setLoading(loading);
+    }, 3000);
   }, []);
 
   const Section = styled.section`
@@ -77,7 +77,7 @@ const About = () => {
     display: block;
     width: 100%;
     height: 100vh;
-  `
+  `;
 
   return (
     <Section>
@@ -85,7 +85,6 @@ const About = () => {
         <Loading loading={loading} />
       ) : (
         <div className="About-IYOU-container">
-
           <motion.div
             variants={aboutMotion}
             initial="initial"
@@ -108,32 +107,27 @@ const About = () => {
               LATEST NEWS and VARIOUS INFORMATION <br></br>
               YOU CAN CHECK IT ON IYOU.
             </motion.p>
-
           </motion.div>
 
-
-          <div className = "About-buttons">
-
-            <Link to = "/">
-              <div className = "Back-button">
+          <div className="About-buttons">
+            <Link to="/">
+              <div className="Back-button">
                 <div className="button-animation"></div>
                 <h1>Home</h1>
               </div>
             </Link>
 
-            <Link to = "/Profile">
+            <Link to="/Profile">
               <div className="View-button">
                 <div className="button-animation"></div>
                 <h1>VIEW MORE</h1>
               </div>
             </Link>
-
           </div>
-
         </div>
       )}
     </Section>
   );
 };
-  
+
 export default About;
