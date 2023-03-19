@@ -4,8 +4,8 @@ import GallaryBanner from "./GallaryBanner";
 import GallaryList from "./GallaryList";
 import Loading from "../Loading/Loading";
 import styled from "styled-components";
-import logo from "../../assets/image/logo/I-YOU-unscreen.gif";
-import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
 
 const Gallary = () => {
   const [loading, setLoading] = useState(false);
@@ -20,8 +20,6 @@ const Gallary = () => {
     }, [3000]);
   }, []);
 
-  const headerTxt = document.querySelector(".Gallary-content-box");
-
   const Section = styled.section`
     position: relative;
     width: 100%;
@@ -35,42 +33,15 @@ const Gallary = () => {
     top: 0;
     right: 0;
     width: 100%;
-    height: 40vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    z-index: 200;
+    z-index: 100;
     background-color: transparent;
     padding: 0 2rem;
     background-color: #fff;
   `;
-
-  const animationBox = {
-    initial: {
-      opacity: 1,
-    },
-
-    animate: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5,
-        delayChildren: 0.8,
-      },
-    },
-  };
-
-  const animationItem = {
-    initial: {
-      opacity: 0,
-    },
-
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
 
   return (
     <>
@@ -79,29 +50,11 @@ const Gallary = () => {
       ) : (
         <Section>
           <GlistHeader>
-            <div className="logo">
-              <img src={logo} alt="" />
-            </div>
-
-            <motion.div
-              className="Gallary-content-box"
-              variants={animationBox}
-              initial="initial"
-              animate="animate"
-            >
-              <div className="Gallary-contents">
-                <motion.div
-                  className="Gallary-subTitle"
-                  variants={animationItem}
-                >
-                  <h1>IU Megazine Gallary</h1>
-                </motion.div>
-
-                <motion.div className="Gallary-title" variants={animationItem}>
-                  <h1>New Megazine</h1>
-                </motion.div>
+            <Link to="/">
+              <div className="home-button">
+                <AiFillHome />
               </div>
-            </motion.div>
+            </Link>
 
             <div className="Gallary-hamburgerMenu">
               <span></span>

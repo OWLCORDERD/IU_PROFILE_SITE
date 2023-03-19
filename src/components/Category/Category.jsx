@@ -27,7 +27,7 @@ const Category = () => {
               IYOU SITE, <br></br> We Always Update <br></br> About IU PROFILE.
             </p>
             <p className="CTG-Korean">
-              아이유 사이트에서는,<br></br> 아이유 프로필을 항시 업데이트합니다.
+              다양한 곡 소개와 영상을<br></br> IYOU MUSIC에서 감상하세요.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ const Category = () => {
               IYOU SITE, <br></br> We Always Update <br></br> About IU PROFILE.
             </p>
             <p className="CTG-Korean">
-              아이유 사이트에서는,<br></br> 아이유 프로필을 항시 업데이트합니다.
+              최신 화보와 영상들,<br></br> 오직 IYOU GALLARY에서만.
             </p>
           </div>
         </div>
@@ -65,7 +65,9 @@ const Category = () => {
             <video src={PART3} muted loop autoPlay />
             <div className="Profile-content">
               <h1 className="Profile-title">GALLARY</h1>
-              <button className="Profile-button">+VIEW MORE</button>
+              <Link to="/Gallary">
+                <button className="Profile-button">+VIEW MORE</button>
+              </Link>
             </div>
           </div>
         </div>

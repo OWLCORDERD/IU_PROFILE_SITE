@@ -8,7 +8,7 @@ header .Gallary-hamburgerMenu{
   width : 7rem;
   height : 7rem;
   cursor: pointer;
-  z-index: 100;
+  z-index: 10000;
 }
 
 .Gallary-hamburgerMenu span{
@@ -19,53 +19,19 @@ header .Gallary-hamburgerMenu{
   margin-bottom: 0.5rem;
 }
 
-header .logo{
+header .home-button{
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width : 7rem;
   height : 7rem;
-  overflow: hidden;
-}
-
-header .Gallary-content-box{
-  position: absolute;
-  left : 0;
-  top : 0;
-  width : 100%;
-  height : 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  font-size: 2rem;
+  color : #000;
+  cursor: pointer;
   z-index: 100;
 }
 
-.Gallary-contents{
-  position: relative;
-  top : 0;
-  width : 100%;
-  height : 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 100;
-}
-
-.Gallary-contents .Gallary-subTitle{
-  font-size: 1.2rem;
-  color : #000;
-  text-transform: uppercase;
-  font-family: var(--font-family-Go);
-}
-
-.Gallary-contents .Gallary-title{
-  font-size: 4rem;
-  font-weight: bold;
-  color : #000;
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-  font-family: var(--font-family-Lexend);
-}
 
 /*Gallary Part List container css*/
 .GList-container{
@@ -73,7 +39,7 @@ header .Gallary-content-box{
   top : 0;
   left : 0;
   width : 100%;
-  height : 200vh;
+  height : 280vh;
   background-color: #fff;
 }
 
@@ -84,10 +50,10 @@ header .Gallary-content-box{
   left : 0;
   width : 100%;
   height : 100%;
-  padding : 2rem 0;
+  padding : 4rem 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap : 5rem;
+  gap : 3rem;
   place-items: center;
 }
 
@@ -115,7 +81,7 @@ header .Gallary-content-box{
   top : 0;
   left : 0;
   width : 70%;
-  height : 100%;
+  height : 30rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

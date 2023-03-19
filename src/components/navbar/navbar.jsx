@@ -6,16 +6,6 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaTwitterSquare } from "react-icons/fa";
 
 const Navbar = () => {
-  window.addEventListener("scroll", function () {
-    const navActive = document.querySelector(".navbar");
-    let NavScroll = window.scrollY;
-    if (NavScroll > 150) {
-      navActive.classList.add("active");
-    } else {
-      navActive.classList.remove("active");
-    }
-  });
-  const [showMenu, setShowMenu] = useState(false);
   const [navbarMenu, setNavbarMenu] = useState(false);
 
   return (

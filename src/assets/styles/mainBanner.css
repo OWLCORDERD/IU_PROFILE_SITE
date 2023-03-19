@@ -52,6 +52,7 @@
   justify-content: space-around;
   align-items: center;
   font-family: var(--font-family);
+  font-weight: bold;
 }
 
 .welcome-txt p{
@@ -60,7 +61,7 @@
   letter-spacing: 1rem;
 }
 
-.slider-background.active{
+.slider-background#active{
   opacity: 0;
 }
 
@@ -94,7 +95,7 @@
   object-fit: cover;
 }
 
-.slider-image.active{
+.slider-image#active{
   width : 100%;
   height : 100vh;
 }
@@ -109,27 +110,40 @@
   content : '';
 }
 
-.slider-image #Slider-contents {
-  position: absolute;
+.slider-image .Slider-contentBox{
+  position: relative;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  color: #fff;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding : 5rem;
+}
+
+.Slider-contentBox .Slider-contents {
+  position: relative;
   top : 0;
   left : 0;
-  width: 100%;
+  width: 40rem;
   height: 100%;
   color: #fff;
   z-index: 10;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
 }
 
-#Slider-contents.active{
+.Slider-contents#active{
   opacity: 1;
+  transition: all 1s ease-in-out;
 }
 
-#Slider-contents .inner-contents {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.Slider-contents .inner-contents {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -138,8 +152,8 @@
   align-items: center;
 }
 
-#Slider-contents .inner-Main-contents {
-  position: absolute;
+.Slider-contents .inner-Main-contents {
+  position: relative;
   top : 50%;
   transform: translateY(-50%);
   width: 100%;
@@ -150,6 +164,7 @@
   justify-content: space-around;
   align-items: center;
   font-family: var(--font-family-Lexend);
+  font-weight: bold;
 }
 
 .inner-Main-contents .Scroll-Down{
@@ -176,43 +191,40 @@
 
 .inner-Main-contents .inner-title {
   width: max-content;
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: 100;
   font-family: var(--font-family);
   text-transform: uppercase;
   letter-spacing: 0.5rem;
+  font-weight: bold;
 }
 
 .inner-Main-contents .inner-sub-title {
   width: max-content;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 2rem 0;
   font-family: var(--font-family);
   font-weight: bold;
   letter-spacing: 0.5rem;
 }
 
-.banner-container .Introduce-container{
-  position: absolute;
-  bottom: 0;
-  width : 100%;
-  height : 100vh;
+.Slider-contentBox .Introduce-container{
+  position: relative;
+  width : 50rem;
+  height : 30rem;
   z-index: 10;
   opacity: 0;
-  transition: all 1s ease-out;
 }
 
-.Introduce-container.active{
+.Introduce-container#active{
   opacity: 1;
+  transition: all 1s ease-in-out;
 }
 
 .Introduce-container .Introduce-content{
-  position: absolute;
-  top : 50%;
-  left : 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width : 100%;
-  height : 40rem;
+  height : 100%;
   padding : 0 4rem;
   z-index: 100;
   display: flex;
@@ -225,17 +237,17 @@
 .Introduce-content .Introduce-title {
   position: relative;
   width: 100%;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1rem;
-  font-family: var(--font-family-Lexend);
+  font-family: var(--font-family);
   text-transform: uppercase;
   text-align : center;
 }
 
 .Introduce-content .Introduce-SubTitle {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 2rem 0;
   font-family: var(--font-family-Go);
   font-weight: bold;
