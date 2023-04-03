@@ -1,273 +1,139 @@
-/*Gallary Component aside header css */
-header .Gallary-hamburgerMenu{
+section .GallaryList-container{
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width : 7rem;
-  height : 7rem;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.Gallary-hamburgerMenu span{
-  display: block;
-  width : 3rem;
-  height : 0.5rem;
-  background-color: #000;
-  margin-bottom: 0.5rem;
-}
-
-header .home-button{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width : 7rem;
-  height : 7rem;
-  font-size: 2rem;
-  color : #000;
-  cursor: pointer;
-  z-index: 100;
-}
-
-
-/*Gallary Part List container css*/
-.GList-container{
-  position: relative;
-  top : 0;
-  left : 0;
-  width : 100%;
-  height : 280vh;
-  background-color: #fff;
-}
-
-/*GallaryList item 부모 box css*/
-.GList-container .GallaryList-box{
-  position: absolute;
-  top : 0;
-  left : 0;
-  width : 100%;
-  height : 100%;
-  padding : 4rem 0;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap : 3rem;
-  place-items: center;
-}
-
-.GallaryList-box .GallaryList-title{
-  position: relative;
-  width : 70%;
-  height : 10vh;
-  font-size: 1.5rem;
-  font-family: var(--font-family);
-  text-transform: uppercase;
-}
-
-.GallaryList-title span{
-  position: relative;
-  display: block;
-  width : 100%;
-  height : 5px;
-  background-color: #000;
-  content: '';
-  margin-top: 1rem;
-}
-
-.GallaryList-box .GallaryList-item{
-  position: relative;
-  top : 0;
-  left : 0;
-  width : 70%;
-  height : 30rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.GallaryList-item .GallaryList-imgbox{
-  position: relative;
-  width : 40rem;
-  height : 100%;
-  overflow: hidden;
-}
-
-.GallaryList-imgbox img{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  object-fit: cover;
-}
-
-.GallaryList-item .GallaryList-content{
-  position: relative;
-  width : 50%;
-  height : 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding : 0 3rem;
-  font-family: var(--font-family);
-}
-
-.GallaryList-content .content-title{
-  width: 100%;
-  height : max-content;
-  font-size: 4rem;
-}
-
-.GallaryList-content .content-Category{
-  width : 100%;
-  height : 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  font-weight: bold;
-}
-
-.content-Category p{
-  color : #B5B5B5;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-.content-Category span{
-  color : #000;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-family: var(--font-family-Sun);
-  font-weight: bold;
-}
-
-.view-more{
-  display: block;
-  width : 100%;
-  height : 3rem;
-  border-bottom: 2px solid #000;
-  line-height: 3rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color : #000;
-  text-transform: uppercase;
-}
-
-/*Compony db column Filter GListBox container css*/
-.GListBox-container{
-  position: relative;
-  top : 0;
-  left : 0;
   width : 100%;
   height : 100vh;
   background-color: #fff;
-  z-index: 1000;
+  padding: 100px 0;
+}
+
+.Gallary-container .GallaryList-header{
+  position: relative;
+  width : 100%;
+}
+
+.GallaryList-header .GallaryList-title{
+  position: relative;
+  left : 50%;
+  transform: translateX(-50%);
+  width : 500px;
+  height : 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: var(--font-family-Lexend);
+  margin-bottom: 50px;
+}
+
+.GallaryList-header .GallaryList-filter{
+  position: relative;
+  left : 50%;
+  transform: translateX(-50%);
+  width : 700px;
+  height : 100px;
+  margin-bottom: 50px;
+}
+
+.GallaryList-filter li{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width : 200px;
+  height: 100%;
+  margin-right: 50px;
+}
+
+.GallaryList-filter li:nth-child(3){
+  margin-right: 0px;
+}
+
+.GallaryList-filter li span{
+  font-size: 1.2rem;
+  font-family: var(--font-family-Lexend);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color : #9B9B9B;
+}
+
+li span.active{
+  color: #000;
+}
+
+.GallaryList-header .Search-container{
+  position: relative;
+  width : 100%;
+  height : 50px;
+  padding : 0 250px;
   display: flex;
   justify-content: space-between;
-}
-
-.GListBox-container .GListBox-header{
-  position: relative;
-  top : 0;
-  left : 0;
-  width : 40%;
-  height : 100%;
-}
-
-.GListBox-header img{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  top : 0;
-  left : 0;
-  object-fit: cover;
-}
-
-.GListBox-header .GListBox-title{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  color : #000;
-  z-index: 100;
 }
 
-.GListBox-header .GListBox-title::before{
-  position: absolute;
-  top : 0;
-  left : 0;
-  content : '';
+.Search-container .result-count{
+  width : 150px;
+  height : 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-family: var(--font-family-Lexend);
+}
+
+.Search-container .Search-input{
+  width : 450px;
+  height : 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Search-input input{
   width : 100%;
-  height : 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: -1;
+  height : 45px;
+  font-size: 1rem;
+  padding : 0 1rem;
+  font-family: var(--font-family-Lexend);
+  font-weight: bold;
+  border: 2px solid #9B9B9B;
 }
 
-.GListBox-title h1{
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
-  font-family: var(--font-family);
-  text-align: center;
-  color : #fff;
-}
-
-.GListBox-title p{
-  width : 25rem;
-  font-size: 1.4rem;
-  letter-spacing: 0.2rem;
-  font-family: var(--font-family);
-  text-align: center;
-  color : #fff;
-}
-
-/*GallaryList item 부모 box css*/
-.GListBox-container .GListBox-mapBox{
+.GallaryList-container .GallaryList-Box{
   position: relative;
-  width : 60%;
-  height : 100%;
-  overflow-y: auto;
-  padding : 2rem;
+  width : 100%;
+  height : max-content;
+  padding : 50px 250px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap : 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap : 30px;
   place-items: center;
 }
 
-.GListBox-mapBox::-webkit-scrollbar{
-  display: none;
-}
-
-.GListBox-mapBox .mapBox-item{
+.GallaryList-Box .Gallary-item{
   position: relative;
-  top : 0;
-  left : 0;
-  width : 100%;
-  height : 30rem;
-  border : 5px solid transparent;
-  cursor: pointer;
-}
-
-.GListBox-mapBox .mapBox-item .mapBox-imgbox{
-  position: relative;
-  width : 100%;
-  height : 100%;
+  width : 350px;
+  height : 350px;
   overflow: hidden;
 }
 
-.mapBox-imgbox img{
+.Gallary-item .Gallary-imgBox{
+  width : 100%;
+  height : 250px;
+  overflow: hidden;
+}
+
+.Gallary-imgBox img{
   position: absolute;
   width : 100%;
   height : 100%;
   object-fit: cover;
+  top : 0;
+  left : 0;
 }
 
 /**/
-.GListBox-container .GListItem-container{
+.GListItem-container{
   position: absolute;
   width : 100%;
   height : max-content;

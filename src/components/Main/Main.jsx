@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Footer from "../Footer/Footer";
-import SubMenus from "../SubMenus/SubMenus";
 import styled from "styled-components";
+import Introduce from "../Introduce/Introduce";
 const Main = () => {
   const Container = styled.div`
     position: relative;
@@ -26,8 +26,7 @@ const Main = () => {
       <Container>
         <Section>
           <Banner />
-          <Category />
-          <SubMenus />
+          <Introduce />
           <Footer />
         </Section>
       </Container>

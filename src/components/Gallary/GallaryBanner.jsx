@@ -1,104 +1,115 @@
 import { React } from "react";
 import "../../assets/styles/gallaryBanner.css";
-import data from "../../db.json";
-import { RiPlayCircleFill } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const GallaryBanner = () => {
-  const NewFilter = data.Gallary.filter((item) => item.update === "New");
+  const [scrollXs, setScrollXs] = useState(0);
+  const incrementRef = useRef(0);
+  const itemRef = useRef(null);
 
-  const [iframeId, setIframeId] = useState(null);
+  const [get, setget] = useState([]);
 
-  const videoPlay = () => {
-    if (iframeId == null) {
-      setIframeId(NewFilter[0].YtbID);
-    } else {
-      setIframeId(null);
+  const megazineSlide = get.filter((get) => get.YtbID !== undefined);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3080/Gallary")
+      .then((res) => res.data)
+      .then((data) => setget(data));
+  }, []);
+
+  const beforeScroll = () => {
+    const itemWidth = itemRef.current.clientWidth + 50;
+    if (scrollXs === 0) {
+      return;
     }
+    setScrollXs((prev) => prev + itemWidth);
   };
 
-  const [headerActive, setHeaderActive] = useState(false);
+  const nextScroll = () => {
+    const itemWidth = itemRef.current.clientWidth + 50;
 
-  const animateHeader = () => {
-    window.addEventListener("scroll", function () {
-      let scroll = window.scrollY;
+    if (scrollXs === itemWidth * 3) {
+      return;
+    }
+    setScrollXs((prev) => prev - itemWidth);
+  };
 
-      if (scroll > 200) {
-        setHeaderActive(!false);
-      } else {
-        setHeaderActive("");
+  useEffect(() => {
+    setInterval(() => {
+      const itemWidth = itemRef.current.clientWidth + 50;
+      incrementRef.current += -itemWidth;
+      setScrollXs(incrementRef.current);
+      if (incrementRef.current === -itemWidth * 4) {
+        incrementRef.current = 0;
+        setScrollXs(incrementRef.current);
       }
-    });
-  };
-  animateHeader();
-
-  const animationBox = {
-    initial: {
-      opacity: 1,
-    },
-
-    animate: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5,
-        delayChildren: 0.8,
-      },
-    },
-  };
-
-  const animationItem = {
-    initial: {
-      opacity: 0,
-    },
-
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-
-  const NewIframe = `https://www.youtube.com/embed/${iframeId}?autoplay=1&mute=0&amp;loop=1;controls=0;playlist=${iframeId}`;
-
+    }, 4000);
+  }, []);
   return (
-    <div className="Gallary-banner">
-      <motion.div
-        className="Gallary-content-box"
-        variants={animationBox}
-        initial="initial"
-        animate="animate"
-      >
-        <div className="Gallary-contents">
-          <motion.div className="Gallary-subTitle" variants={animationItem}>
-            <h1>IU Megazine Gallary</h1>
-          </motion.div>
+    <div className='Gallary-banner'>
+      <div className='Gallary-slideBox'>
+        <div className='Megazine-Category'>
+          <ul
+            className='Scroll-container'
+            style={{
+              transform: `translateX(${scrollXs}px)`,
+              transition: "all 0.6s ease-in",
+            }}
+          >
+            {megazineSlide.map((item) => {
+              return (
+                <li key={item.id}>
+                  <Link
+                    to='/GallaryItem'
+                    state={{ layoutId: item, gallaryDB: get }}
+                  >
+                    <div className='Category-item' ref={itemRef}>
+                      <div className='Megazine-imgBox'>
+                        <img src={item.img_url} />
+                      </div>
 
-          <motion.div className="Gallary-title" variants={animationItem}>
-            <h1 id={headerActive == !false ? "active" : ""}>New Megazine</h1>
-          </motion.div>
-        </div>
-      </motion.div>
-      <div className="Gallary-background">
-        <div className="New-Megazine" id={iframeId == null ? "active" : ""}>
-          <img src={NewFilter[0].YtbThumbNail} alt="" />
-          <RiPlayCircleFill
-            className="play-button"
-            onClick={(e) => videoPlay(e)}
-          />
-        </div>
+                      <div className='Megazine-AboutBox'>
+                        <div className='About-Compony'>
+                          <p>{item.Compony}</p>
+                        </div>
 
-        <div className="Megazine-Video">
-          <iframe
-            width="560"
-            height="315"
-            src={NewIframe}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+                        <div className='About-title'>
+                          <h1>{item.title}</h1>
+                        </div>
+
+                        <div className='About-subTxt'>
+                          <p>{item.subTitle}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <button
+            type='button'
+            className='slider-backButton'
+            id='before'
+            onClick={beforeScroll}
+          >
+            <IoIosArrowBack />
+          </button>
+          <button
+            type='button'
+            className='slider-NextButton'
+            id='left'
+            onClick={nextScroll}
+          >
+            <IoIosArrowForward />
+          </button>
         </div>
       </div>
     </div>

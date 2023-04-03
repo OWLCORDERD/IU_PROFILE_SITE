@@ -1,11 +1,10 @@
 import "./App.css";
 import Main from "./components/Main/Main";
-import About from "./components/About/About";
-import ProfileInfo from "./components/About/ProfileInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Gallary from "./components/Gallary/Gallary";
-import GListBox from "./components/Gallary/GListBox";
 import GListItem from "./components/Gallary/GListItem";
+import Join from "./components/Register/Join";
+import Login from "./components/Register/Login";
 
 function App() {
   return (
@@ -13,11 +12,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/About" element={<About />}></Route>
-          <Route path="/Profile" element={<ProfileInfo />}></Route>
           <Route path="/Gallary" element={<Gallary />}></Route>
-          <Route path="/GallaryBox" element={<GListBox />}></Route>
           <Route path="/GallaryItem" element={<GListItem />}></Route>
+          <Route path="/Join" element={<Join />}></Route>
+          <Route path="/Login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </>

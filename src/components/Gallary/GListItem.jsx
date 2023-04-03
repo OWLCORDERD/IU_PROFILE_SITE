@@ -8,11 +8,11 @@ import { useLocation } from "react-router-dom";
 const GListItem = () => {
   const location = useLocation();
 
-  const filterCompony = location.state.filter;
   const layoutId = location.state.layoutId;
+  const GallaryDB = location.state.gallaryDB;
 
-  const itemFilter = filterCompony.filter(
-    (filterCompony) => filterCompony.title === layoutId.title
+  const itemFilter = GallaryDB.filter(
+    (GallaryDB) => GallaryDB.title === layoutId.title
   );
 
   const [youtubeData, setYoutubeData] = useState(null);
@@ -64,80 +64,75 @@ const GListItem = () => {
   }
 
   return (
-    <div className="GListItem-container">
-      <div className="GListItem-header">
-        <div className="logo">
-          <img src={layoutId.logo} />
+    <div className='GListItem-container'>
+      <div className='GListItem-header'>
+        <div className='logo'>
+          <img src={layoutId?.logo} />
         </div>
       </div>
 
-      <div className="Video-contents">
-        <div className="video-title">
-          <h1>{layoutId.title}</h1>
+      <div className='Video-contents'>
+        <div className='video-title'>
+          <h1>{layoutId?.title}</h1>
           <p>New Video</p>
         </div>
 
-        <div className="GListItem-Video">
+        <div className='GListItem-Video'>
           <div
-            className="Video-Image"
+            className='Video-Image'
             id={youtubeData === null ? "active" : ""}
           >
-            <img src={layoutId.YtbThumbNail} />
+            <img src={layoutId?.YtbThumbNail} />
             <RiPlayCircleFill
-              className="Video-playButton"
+              className='Video-playButton'
               onClick={() => videoData(layoutId.YtbID)}
             />
           </div>
 
-          <div className="Video-iframe">
+          <div className='Video-iframe'>
             <iframe
-              width="560"
-              height="315"
+              width='560'
+              height='315'
               src={iframeSrc}
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              title='YouTube video player'
+              frameborder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowfullscreen
             ></iframe>
           </div>
         </div>
       </div>
 
-      <div className="GListItem-mapBox">
-        <div className="Slider-control">
-          <div className="control-page">
+      <div className='GListItem-mapBox'>
+        <div className='Slider-control'>
+          <div className='control-page'>
             <h1>0/{slideIdx.length}</h1>
           </div>
 
-          <div className="control-button">
+          <div className='control-button'>
             <IoIosArrowBack
-              className="control-back"
+              className='control-back'
               onClick={() => Slide_Back(-1)}
             />
             <IoIosArrowForward
-              className="control-next"
+              className='control-next'
               onClick={() => Slide_Next(1)}
             />
           </div>
         </div>
 
-        <div className="mapBox-Slider">
-          <div id="mapItemBox-itemSign">
-            <div className="Sign-imgbox">
-              <img src={layoutId.img_url} alt="" />
-
-              <div className="Sign-title">
-                <h1>{layoutId.sub_title}</h1>
-                <p>{layoutId.Update}</p>
-              </div>
+        <div className='mapBox-Slider'>
+          <div id='mapItemBox-itemSign'>
+            <div className='Sign-imgbox'>
+              <img src={layoutId?.img_url} alt='' />
             </div>
           </div>
 
           {itemFilter.map((item) => {
             return (
-              <div id="mapItemBox-item" key={item.id}>
-                <div className="mapBox-imgbox">
-                  <img src={item.img_url} alt="" />
+              <div id='mapItemBox-item' key={item.id}>
+                <div className='mapBox-imgbox'>
+                  <img src={item.img_url} alt='' />
                 </div>
               </div>
             );
