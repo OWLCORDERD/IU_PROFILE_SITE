@@ -6,7 +6,61 @@
   overflow: hidden;
 }
 
-.Banner-container .Slider-listBox{
+.Banner-container .slide-button{
+  position: absolute;
+  width : 100%;
+  height : 100px;
+  top : 50%;
+  left: 0;
+  transform : translateY(-50%);
+  z-index: 100;
+}
+
+.slide-button .slide-next{
+  position: absolute;
+  top: 0;
+  right: 50px;
+  color: #fff;
+  width : 10rem;
+  height : 100%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slide-button > div{
+  position: relative;
+  content: '';
+  width : 100%;
+  height : 100%;
+}
+
+.slide-button .slide-before{
+  position: absolute;
+  top: 0;
+  left: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 100px;
+  color: #fff;
+  width : 10rem;
+  height : 100%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.Banner-container .slider-container{
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  bottom: 0;
+  left : 0;
+}
+
+.slider-container .Slider-listBox{
   position: relative;
   display: flex;
   width : 300%;
@@ -14,6 +68,9 @@
 }
 
 .Slider-listBox > li{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
   width : 100%;
   height : 100%;
 }
@@ -22,35 +79,44 @@
   position: relative;
   width : 100%;
   height : 100%;
+  overflow: hidden;
+  transition-duration: 1s;
 }
 
 .Slider-item .Slider-background{
   position: absolute;
-  top : 0;
-  left : 0;
+  top: 0;
+  left: 0;
   width : 100%;
   height : 100%;
-  background-color: #000000;
+  background-color: #fff;
   transition: all 0.5s ease-out;
   overflow: hidden;
 }
 
-.Slider-background img{
+.Slider-background iframe{
   position: absolute;
-  top : 50%;
-  transform: translateY(-50%);
-  width : 100%;
-  height : 0;
+  top : 0;
+  left : 0;
   object-fit: cover;
-  opacity: 0;
+  width : 100%;
+  height : 100%;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
 }
 
 /*active id toggle event*/
-.Slider-item#active img{
-  width : 100%;
+
+.Slider-item#active .Slider-background{
+  width: 100%;
   height: 100%;
-  transition: all 1.2s ease-in;
+  transition: all 1s ease-in;
+}
+
+.Slider-item#active .Slider-background iframe{
   opacity: 1;
+  transition-duration: 1s;
 }
 
 .Slider-background::before{
@@ -59,27 +125,28 @@
   height : 100%;
   top : 0;
   left : 0;
-  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.3) 100%);
   z-index: 1;
   content : '';
 }
 
 .Slider-item .Slider-contents{
   position: absolute;
-  width : 70%;
-  margin : 0 15%;
-  height : 400px;
-  z-index: 10;
+  width : 100%;
+  padding : 0 250px;
   top : 50%;
   transform: translateY(-50%);
+  height : 40%;
+  z-index: 10;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.Slider-contents .Slider-txtBox{
+.Slider-contents .title-Box{
   position: relative;
-  width : 700px;
+  width : 60%;
   height : 100%;
   display: flex;
   flex-direction: column;
@@ -87,95 +154,81 @@
   justify-content: space-between;
 }
 
-.Slider-txtBox .sub-title{
+.title-Box .sub-title{
   width : 100%;
   height : 50px;
   line-height: 50px;
-  font-size: 25px;
+  font-size: 20px;
   color : #fff;
-  opacity: 0;
 }
 
-.Slider-item#active .Slider-txtBox .sub-title{
-  opacity: 1;
-  transition-delay: 1s;
-  transition-duration: 1s;
-}
-
-.Slider-txtBox .Slider-title{
+.title-Box .Slider-title{
   width : 100%;
   height : 100px;
+  line-height: 100px;
   color : #fff;
   font-family: var(--font-family-Noto);
-  font-size: 20px;
-  line-height: 100px;
-  opacity: 0;
+  font-size: 18px;
+  word-break: keep-all;
 }
 
-.Slider-item#active .Slider-txtBox .Slider-title{
-  opacity: 1;
-  transition-delay: 2s;
-  transition-duration: 1s;
+.title-Box .Slider-subTitle{
+  width : 80%;
+  height : 100px;
+  color: #fff;
+  font-family: var(--font-family-Noto);
+  font-size: 15px;
+  word-break: keep-all;
 }
 
-.Slider-txtBox .Slider-info{
+.Slider-contents .view-more{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width : 100%;
-  height : 150px;
+  width : max-content;
+  height : 50px;
+  border-bottom: 5px solid transparent;
+}
+
+.view-more:hover{
+  border-bottom: 5px solid #fff;
+  cursor: pointer;
+}
+
+.view-more span{
   color : #fff;
   font-size: 15px;
   font-weight: bold;
   font-family: var(--font-family-Noto);
-  opacity: 0;
+  text-transform: uppercase;
 }
 
-.Slider-info p{
-  width : 70%;
-  word-break: keep-all;
-}
-
-.Slider-item#active .Slider-txtBox .Slider-info{
-  opacity: 1;
-  transition-delay: 3s;
+.Slider-listBox > li > .NextSlider-Preview{
+  position: relative;
+  display: none;
+  align-items: center;
+  width : 0;
+  height : 550px;
+  z-index: 1000;
   transition-duration: 1s;
 }
 
-.Banner-container .NextSlider-Preview{
-  position: absolute;
-  top : 50%;
-  right : 250px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width : 300px;
-  height : 250px;
-  z-index: 1000;
-  cursor: pointer;
+.NextSlider-Preview#active{
+  width: 25%;
+  transition-duration: 1s;
 }
 
 .NextSlider-Preview .NextSlider-Thumbnail{
   position: relative;
   width : 100%;
-  height : 150px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
+  height : 100%;
   overflow: hidden;
   box-shadow: 3px 3px 3px rgba(255,255,255.0.2);
 }
 
-.NextSlider-Thumbnail:hover{
-  box-shadow: 3px 3px 3px rgba(255,255,255,0.5);
-  transition: all 0.3s ease-in;
-}
-
 .NextSlider-Thumbnail .NextSlider-imgBox{
   position: relative;
-  width : 80%;
+  width : 100%;
   height : 100%;
   overflow: hidden;
   transition: all 0.5s ease-in;
@@ -190,39 +243,54 @@
   height : 100%;
 }
 
-.NextSlider-Thumbnail .NextSlider-button{
-  position: relative;
-  width : 20%;
-  height : 100%;
-  background-color: #000000;
-  color: #fff;
-  font-size: 2rem;
-  text-align: center;
-  line-height: 150px;
-}
-
-.NextSlider-Preview .Preview-info{
-  position: relative;
+.NextSlider-imgBox::before{
+  position: absolute;
   width : 100%;
-  height : 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+  height : 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.NextSlider-imgBox .Next-info{
+  position: absolute;
+  width : 100%;
+  height: 300px;
+  padding : 10%;
+  bottom : 0;
+  left : 0;
+  z-index: 10;
+}
+
+.Next-info h1{
+  width : 100%;
+  height : 150px;
+  font-size: 2rem;
   color: #fff;
 }
 
-.Preview-info .category{
-  width: 100%;
-  height: calc(100px / 2);
-  line-height: 50px;
-  font-size: 15px;
+.Next-info p{
+  width : 100%;
+  height : 150px;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
-.Preview-info .title{
-  width: 100%;
-  height: calc(100px / 2);
-  line-height: 50px;
-  font-size: 15px;
-  font-family: var(--font-family-Noto);
+.Banner-container .slide-status{
+  position: absolute;
+  bottom: 20%;
+  right : 15rem;
+  width : 600px;
+  height : 10px; 
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+}
+
+.slide-status .statusBar{
+  position: relative;
+  display: block;
+  left : 0;
+  width: 200px;
+  background-color: #fff;
+  height: 100%;
 }

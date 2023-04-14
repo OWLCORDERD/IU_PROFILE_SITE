@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import axios from "axios";
 import Slide from "./Slide";
-import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import store from "../../reducer/store";
 import { decrements, increments } from "../../reducer/toggleSlide";
 import { useSelector } from "react-redux";
@@ -16,14 +16,26 @@ const Banner = () => {
 
   const slideRef = useRef(null);
   const bannerRef = useRef(null);
+  const before = useRef(null);
+  const after = useRef(null);
 
   const nextSlide = (e) => {
     e.preventDefault();
 
     if (currentSlide >= TotalSlides) {
-      store.dispatch(decrements());
+      return;
     } else {
       store.dispatch(increments());
+    }
+  };
+
+  const beforeSlide = (e) => {
+    e.preventDefault();
+
+    if (currentSlide >= 1) {
+      store.dispatch(decrements());
+    } else {
+      return;
     }
   };
 
@@ -39,78 +51,64 @@ const Banner = () => {
       .then((data) => setSlideData(data));
 
     slideRef.current.style.right = `${currentSlide}00%`;
-    slideRef.current.style.transition = `all 0.5s ease-out`;
+    slideRef.current.style.transitionDuration = `1s`;
+    slideRef.current.style.transitionDelay = `0.5s`;
+
+    if (currentSlide === 0) {
+      before.current.style.display = `none`;
+    } else {
+      before.current.style.display = `flex`;
+    }
+
+    if (currentSlide > 1) {
+      after.current.style.display = `none`;
+    } else {
+      after.current.style.display = `flex`;
+    }
   }, [currentSlide]);
 
   return (
-    <div className="Banner-container" ref={bannerRef}>
+    <div className='Banner-container' ref={bannerRef}>
       <Navbar bannerRef={bannerRef} />
-      <ul className="Slider-listBox" ref={slideRef}>
-        <li>
-          <Slide MusicData={MusicSlide} />
-        </li>
-        <li>
-          <Slide FashionData={FashionSlide} />
-        </li>
-        <li>
-          <Slide CFData={CFSlide} />
-        </li>
-      </ul>
-      {currentSlide == 0 ? (
-        <div className="NextSlider-Preview" onClick={(e) => nextSlide(e)}>
-          <div className="NextSlider-Thumbnail">
-            <div className="NextSlider-imgBox">
-              <img src={SlideData[currentSlide + 1]?.img_url} alt="" />
-            </div>
-            <div className="NextSlider-button">
-              <BsArrowRightShort />
-            </div>
-          </div>
-          <div className="Preview-info">
-            <h1 className="category">
-              {SlideData[currentSlide + 1]?.category}
-            </h1>
-            <p className="title">{SlideData[currentSlide + 1]?.title}</p>
-          </div>
+      <div className='slide-button'>
+        <div
+          className='slide-before'
+          ref={before}
+          onClick={(e) => beforeSlide(e)}
+        >
+          <MdArrowBackIosNew />
+          <h2>Prev</h2>
         </div>
-      ) : null}
-      {currentSlide == 1 ? (
-        <div className="NextSlider-Preview" onClick={(e) => nextSlide(e)}>
-          <div className="NextSlider-Thumbnail">
-            <div className="NextSlider-imgBox">
-              <img src={SlideData[currentSlide + 1]?.img_url} alt="" />
-            </div>
-            <div className="NextSlider-button">
-              <BsArrowLeftShort />
-            </div>
-          </div>
-          <div className="Preview-info">
-            <h1 className="category">
-              {SlideData[currentSlide + 1]?.category}
-            </h1>
-            <p className="title">{SlideData[currentSlide + 1]?.title}</p>
-          </div>
-        </div>
-      ) : null}
 
-      {currentSlide >= TotalSlides ? (
-        <div className="NextSlider-Preview" onClick={(e) => nextSlide(e)}>
-          <div className="NextSlider-Thumbnail">
-            <div className="NextSlider-imgBox">
-              <img src={SlideData[currentSlide - 2]?.img_url} alt="" />
-            </div>
-            <div className="NextSlider-button">
-              <BsArrowLeftShort />
-            </div>
-          </div>
-          <div className="Preview-info">
-            <h1 className="category">
-              {SlideData[currentSlide - 2]?.category}
-            </h1>
-            <p className="title">{SlideData[currentSlide - 2]?.title}</p>
-          </div>
+        <div className='slide-next' onClick={(e) => nextSlide(e)} ref={after}>
+          <h2>Next</h2>
+          <MdArrowForwardIos />
         </div>
-      ) : null}
+      </div>
+      <div className='slider-container'>
+        <ul className='Slider-listBox' ref={slideRef}>
+          <li>
+            <Slide MusicData={MusicSlide} />
+          </li>
+          <li>
+            <Slide FashionData={FashionSlide} />
+          </li>
+          <li>
+            <Slide CFData={CFSlide} />
+          </li>
+        </ul>
+      </div>
+
+      <div className='slide-status'>
+        <span
+          class='statusBar'
+          style={{
+            transform: `translateX(${currentSlide}00%)`,
+            transitionDelay: `0.5s`,
+            transitionDuration: `0.5s`,
+          }}
+        ></span>
+      </div>
     </div>
   );
 };

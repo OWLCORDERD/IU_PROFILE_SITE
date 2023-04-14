@@ -22,24 +22,53 @@
   "Slider" : [
     {
       "id" : 1,
-      "title" : "디지털 싱글 곡 strawberry moon 발매",
+      "title" : "BTS 슈가, 아이유와 협업 선공개곡 '사람 Pt.2' 발표",
+      "subTitle" : "가수 아이유가 참여한 그룹 방탄소년단(BTS) 슈가의 솔로곡 ‘사람 파트2’가 글로벌 차트에서 순항 중이다.",
       "category" : "Music News",
-      "img_url" : "../Slider/Strawberry1.jpg",
-      "info" : "포토샵으로 만든 것 같은 6월 밤하늘의 딸기 색깔 달보다, 사랑에 빠졌을 때 내 안에서 일어나는 일들이 더 믿기 힘든 판타지에 가깝다..."
+      "YtbId" : "4y-jbO8mGP0"
     },
     {
       "id" : 2,
       "title" : "하퍼스 바자 3월호 화보 비하인드",
+      "subTitle" : "단 하나의 단어로 정의할 수 없는 이 시대의 아이콘 아이유, 그리고 민낯의 이지은",
       "category" : "Fashion News",
-      "img_url" : "../Slider/GallaryNews.jpg",
-      "info" : "아이유와 이지은, 단 하나의 단어로 정의할 수 없는 이 시대의 아이콘 아이유, 그리고 민낮의 이지은..."
+      "YtbId" : "wCbUWU4l_Ko"
     },
     {
       "id" : 3,
       "title" : "참이슬 CF : 이슬자리 편",
+      "subTitle" : "이슬 요정님 손끝에서 펼쳐지는 맑고 깨끗한 이슬 자리⭐ 오늘도 내일도 깨끗함으로 기억될 이 술자리💧",
       "category" : "CF News",
-      "img_url" : "../Slider/CFNEWS.jpg",
-      "info" : "아이유와 이지은, 단 하나의 단어로 정의할 수 없는 이 시대의 아이콘 아이유, 그리고 민낮의 이지은..."
+      "YtbId" : "t6YC6LfWCDY"
+    }
+  ],
+
+  "Index" : [
+    {
+      "id" : "Singer",
+      "name" : "아이유",
+      "career" : "가수",
+      "celebrityMMA" : "./Index/Singer/celebrityMMA.jpg",
+      "celebrityMV" : "./Index/Singer/celebrityMV.jpg",
+      "LilacMMA" : "./Index/Singer/LilacMMA.jpg",
+      "LilacMV" : "./Index/Singer/LilacMV.jpg",
+      "strawberryMMA" : "./Index/Singer/strawberryMMA.jpg",
+      "strawberryMV" : "./Index/Singer/strawberryMV.jpg",
+      "paletteConsert" : "./Index/Singer/paletteConsert.jpg",
+      "paletteMV" : "./Index/Singer/paletteMV.jpg"
+    },
+    {
+      "id" : "Actor",
+      "name" : "이지은",
+      "career" : "배우",
+      "MyMister" : "./Index/Actor/MyMister.jpg",
+      "MyMister2" : "./Index/Actor/MyMister2.jpg",
+      "hoteldelluna" : "./Index/Actor/HotelDelLuna.jpg",
+      "hoteldelluna2" : "./Index/Actor/HotelDelLuna2.jpg",
+      "persona" : "./Index/Actor/Persona.jpg",
+      "persona2" : "./Index/Actor/Persona2.jpg",
+      "MoonLover" : "./Index/Actor/MoonLover.jpg",
+      "produsa" : "./Index/Actor/Produsa.jpg"
     }
   ],
 

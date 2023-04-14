@@ -4,7 +4,6 @@ import GallaryBanner from "./GallaryBanner";
 import GallaryList from "./GallaryList";
 import Loading from "../Loading/Loading";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import Navbar from "../navbar/navbar";
 
 const Gallary = () => {

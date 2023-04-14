@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+.AboutIndex-container{
+    position: relative;
+    width : 100%;
+    height : 600vh;
+}
+
+.AboutIndex-container .AboutIU-IndexList{
+    position: relative;
+    width : 100%;
+    height : 100vh;
+    background-color: #000;
+}
+
+.AboutIU-IndexList.active{
+    position: sticky;
+    top : 0;
+    left : 0;
+}
+
+.AboutIU-IndexList .Singer-IndexBox,
+.AboutIU-IndexList .Actor-IndexBox{
+    position: absolute;
+    left  : 50%;
+    transform: translateX(-50%);
+    width : 100%;
+    height : 100%;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.Singer-IndexBox .Index-ItemBox,
+.Actor-IndexBox .Index-ItemBox{
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width : 80%;
+    height : 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.Index-ItemBox .Index-Content{
+    position: relative;
+    width : 100%;
+    height : 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.Index-Content .Content-main{
+    position: relative;
+    width : 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Index-Content .Index-career{
+    position: relative;
+    width : 40%;
+    font-size: 40px;
+    color: #fff;
+    font-family: var(--font-family-Noto);
+    text-align: center;
+    transition-duration: 0.2s;
+}
+
+.Index-Content .Index-name{
+    position: relative;
+    width : 60%;
+    font-size: 60px;
+    color: #fff;
+    font-family: var(--font-family-Noto);
+    text-align: center;
+    transition-duration: 0.2s;
+}
+
+.Index-Content .Index-subContent{
+    width : 100%;
+    height: 10rem;
+    font-size: 30px;
+    color: #fff;
+    font-family: var(--font-family-Noto);
+    text-align: center;
+}
+
+.Index-ItemBox .singer-LeftScroll,
+.Index-ItemBox .Actor-LeftScroll{
+    position: relative;
+    width : max-content;
+    height : 100%;
+    z-index: 10;
+    overflow-y: hidden;
+}
+
+.singer-LeftScroll .Left-ImgBox,
+.Actor-LeftScroll .Left-ImgBox{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    bottom: 130%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Left-ImgBox .item-Img{
+    position: relative;
+    width : 400px;
+    height : 50vh;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.item-Img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Index-ItemBox .singer-RightScroll,
+.Index-ItemBox .Actor-RightScroll{
+    position: relative;
+    width : max-content;
+    height : 100%;
+    z-index: 100;
+    overflow-y: hidden;
+}
+
+.singer-RightScroll .Right-ImgBox,
+.Actor-RightScroll .Right-ImgBox{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Right-ImgBox .item-Img{
+    position: relative;
+    width : 400px;
+    height : 50vh;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.item-Img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Singer-IndexBox.show,
+.Actor-IndexBox.show{
+    opacity: 1;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+
+.Singer-IndexBox .Focus-EffectBox.show,
+.Actor-IndexBox .Focus-EffectBox.show{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    transition-delay: 1s;
+    transition-duration: 1s;
+    opacity: 1;
+}
+
+.Singer-IndexBox .Focus-EffectBox,
+.Actor-IndexBox .Focus-EffectBox{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    width : 80%;
+    height : 80%;
+    transition-duration: 1s;
+    z-index: 10;
+    opacity: 0;
+}
+
+/*카메라 센서 이미지 영역*/
+.Focus-EffectBox .sensor{
+    position: absolute;
+    top : 0;
+    left : 50%;
+    transform: translateX(-50%);
+}
+
+/*카메라 줌인 Effect css box 4개 디자인*/
+.Focus-EffectBox span:first-child{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 50px;
+    height : 50px;
+    border-width: 4px 0 0 4px;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.Focus-EffectBox span:nth-child(2){
+    position: absolute;
+    top : 0;
+    right : 0;
+    width : 50px;
+    height : 50px;
+    border-width: 4px 4px 0 0;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.Focus-EffectBox span:nth-child(3){
+    position: absolute;
+    bottom : 0;
+    left : 0;
+    width : 50px;
+    height : 50px;
+    border-width: 0 0 4px 4px;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.Focus-EffectBox span:nth-child(4){
+    position: absolute;
+    bottom : 0;
+    right : 0;
+    width : 50px;
+    height : 50px;
+    border-width: 0 4px 4px 0;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.AboutIU-IndexList .Scroll-Down{
+    position: absolute;
+    bottom: 0;
+    left : 50%;
+    transform: translateX(-50%);
+    width : 100px;
+    color: #fff;
+    height : 150px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Scroll-Down span{
+    width : 3px;
+    height : 100%;
+    display: block;
+    content: '';
+    background-color: #fff;
+}
+
+.Scroll-Down h2{
+    width: 100%;
+    height : 100%;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+}

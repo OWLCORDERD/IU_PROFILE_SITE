@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
-import Category from "../Category/Category";
 import Footer from "../Footer/Footer";
 import styled from "styled-components";
 import Introduce from "../Introduce/Introduce";
+import AboutIndex from "../AboutIndex/AboutIndex";
 const Main = () => {
   const Container = styled.div`
     position: relative;
@@ -26,6 +26,7 @@ const Main = () => {
       <Container>
         <Section>
           <Banner />
+          <AboutIndex />
           <Introduce />
           <Footer />
         </Section>

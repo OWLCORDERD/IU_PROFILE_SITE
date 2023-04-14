@@ -15,7 +15,7 @@ function incrementSlides(state = initialState, action) {
       };
     case decrements.type:
       return {
-        count: state.count - 2,
+        count: state.count - 1,
       };
     default:
       return state;

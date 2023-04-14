@@ -2,132 +2,109 @@
     position: relative;
     width : 100%;
     height : 40vh;
-    background-color: #fff;
+    background-color: #000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding : 0 5rem;
+    padding : 4rem 10rem;
     z-index: 1;
 }
 
-.footer-container::before{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    content : '';
-    background-color: rgba(255,255,255,0.6);
-    top : 0;
-    left : 0;
-    z-index: 10;
-}
-
-.footer-container .footer-banner{
+.footer-container .footer-Preview{
     position: relative;
-    width : 30rem;
-    height : 100%;
+    width : 20rem;
+    height : 15rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 10;
-}
-
-.footer-banner .footer-logo{
-    display: flex;
-    width : 100%;
-    height : 10rem;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-.footer-logo img{
-    width : 200px;
-    height : 200px;
-}
-
-.footer-banner .footer-Social{
-    position: relative;
-    width : 100%;
-    height : 10rem;
-}
-
-.footer-Social ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width : 100%;
-    height : 100%;
-}
-
-.footer-Social ul li a {
-    font-size: 2.2rem;
-    color : #fff;
-}
-
-.footer-Social ul li a:hover{
-    font-size: 2.5rem;
-    transition: all 0.5s ease-in-out;
-}
-
-.footer-Social ul > li:first-child > a{
-    color : rgb(255, 107, 107);
-}
-
-.footer-Social ul > li:nth-child(2) > a{
-    color : rgb(52, 113, 245);
-}
-
-.footer-Social ul > li:nth-child(3) > a{
-    color : rgb(245, 52, 94);
-}
-
-.footer-Social ul > li:nth-child(4) > a{
-    color : rgb(7, 79, 233);
-}
-
-.footer-container .footer-menu{
+.footer-Preview .footer-logo{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    width : 20rem;
-    height : 35vh;
-    color : #000;
-    align-items: center;
+    width : 100%;
+    height : 8rem;
+    color: #fff;
+}
+
+.footer-logo h1{
+    font-size: 3rem;
     font-family: var(--font-family-Lexend);
-    z-index: 10;
 }
 
-.footer-menu .menu-title{
-    font-size: 2rem;
-    color : #000;
+.footer.logo p{
+    font-family : var(--font-family);
 }
 
-.footer-menu ul{
+.footer-Preview .footer-title{
     width : 100%;
-    height : max-content;
-}
-
-.footer-menu ul li{
-    display: block;
-    width : 100%;
-    height : max-content;
-    padding : 1rem;
+    height : 5rem;
     text-align: center;
+    padding-top: 10px;
 }
 
-.footer-menu ul li a{
-    color : #000;
-    font-size: 1.2rem;
+.footer-title p{
+    font-size: 1rem;
+    color: #fff;
+}
+
+.footer-container .footer-menus{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width : 50rem;
+    height: 15rem;
+}
+
+.footer-menus .footer-Menu{
+    width : 800px;
+    height : 2rem;
+}
+
+.footer-Menu > li{
+    display: inline-flex;
+    width: 200px;
+    height: 100%;
+    border-left: 3px solid #fff;
+}
+
+.footer-Menu > li:nth-child(1){
+    border-left: 0;
+}
+
+.footer-Menu > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 1rem;
     font-weight: bold;
-    padding : 0.5rem;
-    border-bottom: 5px solid transparent;
 }
 
-.footer-menu ul li a:hover{
-    border-bottom: 5px solid #000;
-    transition : all 0.5s ease-in-out;
+.footer-menus .Family-site{
+    width: 20rem;
+    height : 5rem;
+}
+
+.Family-site select{
+    width: 15rem;
+    height: 3.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.Family-site select > option{
+    display: block;
+    color: #000;
+    font-size: 1rem;
 }

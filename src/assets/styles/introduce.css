@@ -1,7 +1,7 @@
 .Introduce-container{
     position: relative;
     width : 100%;
-    height : 300vh;
+    height : 280vh;
     background-color: #fff;
     padding : 5% 15%;
 }
@@ -14,7 +14,7 @@
 
 .Entertainer-infoBox.active{
     position: sticky;
-    top : 0;
+    top : 5%;
     left : 0;
 }
 
@@ -23,13 +23,6 @@
     width : 700px;
     height : 700px;
     overflow: hidden;
-}
-
-.Entertainer-profileImg video{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    object-fit: cover;
 }
 
 .Entertainer-profileImg img{
@@ -115,7 +108,7 @@
 .dynamic-title h1{
     width : 100%;
     height : 100px;
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 100px;
     font-family: var(--font-family-Lexend);
 }
@@ -123,18 +116,17 @@
 .dynamic-title p {
     width : 100%;
     height : 50px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 50px;
     font-weight: bold;
     font-family: var(--font-family-Noto);
 }
 
 .dynamic-txtBox .dynamic-info{
-    width : 100%;
+    width : 85%;
     height : 300px;
     position: relative;
-    width : 100%;
-    font-size: 1.1rem;
+    font-size: 15px;
     font-weight: bold;
     font-family: var(--font-family-Noto);
     word-break: keep-all;

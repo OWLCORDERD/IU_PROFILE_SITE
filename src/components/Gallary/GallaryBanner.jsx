@@ -35,7 +35,7 @@ const GallaryBanner = () => {
   const nextScroll = () => {
     const itemWidth = itemRef.current.clientWidth + 50;
 
-    if (scrollXs === itemWidth * 3) {
+    if (scrollXs === -itemWidth * 2) {
       return;
     }
     setScrollXs((prev) => prev - itemWidth);
@@ -46,7 +46,7 @@ const GallaryBanner = () => {
       const itemWidth = itemRef.current.clientWidth + 50;
       incrementRef.current += -itemWidth;
       setScrollXs(incrementRef.current);
-      if (incrementRef.current === -itemWidth * 4) {
+      if (incrementRef.current === -itemWidth * 3) {
         incrementRef.current = 0;
         setScrollXs(incrementRef.current);
       }
