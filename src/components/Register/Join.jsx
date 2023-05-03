@@ -91,58 +91,58 @@ const Join = () => {
     }
   };
   return (
-    <div className="Join-container">
-      <div className="logo">
-        <img src={logo} alt="" />
+    <div className='Join-container'>
+      <div className='logo'>
+        <img src={logo} alt='' />
       </div>
-      <div className="Join-Form">
-        <div className="Email-Input">
+      <div className='Join-Form'>
+        <div className='Email-Input'>
           <input
-            type="text"
-            name="userId"
+            type='text'
+            name='userId'
             onChange={(e) => onChange(e)}
-            placeholder="이메일을 입력해주세요."
-            id="userId"
+            placeholder='이메일을 입력해주세요.'
+            id='userId'
             ref={IdRef}
           />
           {idValid === true ? null : (
-            <p className="Warning-txt">이메일 형식에 맞춰 입력해주세요</p>
+            <p className='Warning-txt'>이메일 형식에 맞춰 입력해주세요</p>
           )}
         </div>
 
-        <div className="Password-Input">
+        <div className='Password-Input'>
           <input
-            type="password"
-            name="userPw"
+            type='password'
+            name='userPw'
             onChange={(e) => onChange(e)}
-            placeholder="비밀번호를 입력해주세요."
-            id="userPw"
+            placeholder='비밀번호를 입력해주세요.'
+            id='userPw'
             ref={PwRef}
           />
           {pwValid === true ? null : (
-            <p className="Warning-txt">
+            <p className='Warning-txt'>
               비밀번호는 8자 이상, 숫자/대문자/소문자/특수문자를 모두
               포함해야합니다.
             </p>
           )}
         </div>
 
-        <div className="name-Input">
+        <div className='name-Input'>
           <input
-            type="text"
+            type='text'
             onChange={(e) => onChange(e)}
-            placeholder="닉네임을 적어주세요."
-            id="userName"
-            name="userName"
+            placeholder='닉네임을 적어주세요.'
+            id='userName'
+            name='userName'
             ref={NameRef}
           />
           {nameValid === true ? null : (
-            <p className="Warning-txt">닉네임을 입력해주세요.</p>
+            <p className='Warning-txt'>닉네임을 입력해주세요.</p>
           )}
         </div>
 
         <button
-          className="SignUp-button"
+          className='SignUp-button'
           onClick={(event) => signIn(event)}
           disabled={notAllowed}
         >

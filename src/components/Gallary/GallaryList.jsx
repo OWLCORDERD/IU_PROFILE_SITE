@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useCallback } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const GallaryList = () => {
   const [gallaryData, setGallaryData] = useState([]);
@@ -89,11 +90,13 @@ const GallaryList = () => {
         <div className='GallaryList-Box'>
           {gallaryData.map((item) => {
             return (
-              <div className='Gallary-item'>
-                <div className='Gallary-imgBox'>
-                  <img src={item.img_url} />
+              <Link to='/GallaryNotice'>
+                <div className='Gallary-item'>
+                  <div className='Gallary-imgBox'>
+                    <img src={item.img_url} />
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

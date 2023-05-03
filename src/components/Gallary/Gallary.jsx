@@ -5,6 +5,7 @@ import GallaryList from "./GallaryList";
 import Loading from "../Loading/Loading";
 import styled from "styled-components";
 import Navbar from "../navbar/navbar";
+import Footer from "../Footer/Footer";
 
 const Gallary = () => {
   const [loading, setLoading] = useState(false);
@@ -36,6 +37,7 @@ const Gallary = () => {
           <Navbar />
           <GallaryBanner />
           <GallaryList />
+          <Footer />
         </Section>
       )}
     </>

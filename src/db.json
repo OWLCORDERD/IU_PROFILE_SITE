@@ -43,6 +43,45 @@
     }
   ],
 
+  "Discography" : [
+    {
+      "id" : "조각집",
+      "info" : "THE SPECIAL MINI ALBUM",
+      "Since" : "2021.12.29",
+      "AlbumImg" : "./Album/PieceHouse.jpg"
+    },
+    {
+      "id" : "LILAC",
+      "info" : "THE 5th Album",
+      "Since" : "2021.03.25",
+      "AlbumImg" : "./Album/LILAC.jpg"
+    },
+    {
+      "id" : "LOVE POEM",
+      "info" : "THE 5th Mini Album",
+      "Since" : "2019.11.18",
+      "AlbumImg" : "./Album/LovePoem.jpg"
+    },
+    {
+      "id" : "꽃갈피 둘",
+      "info" : "THE 2nd Remake Album",
+      "Since" : "2017.09.22",
+      "AlbumImg" : "./Album/FlowerBookMark.jpg"
+    },
+    {
+      "id" : "Palette",
+      "info" : "THE 4th Album",
+      "Since" : "2017.04.21",
+      "AlbumImg" : "./Album/palette.jpg"
+    },
+    {
+      "id" : "CHAT-SHIRE",
+      "info" : "THE 4th Mini Album",
+      "Since" : "2015.10.23",
+      "AlbumImg" : "./Album/CHAT-SHIRE.jpg"
+    }
+  ],
+
   "Index" : [
     {
       "id" : "Singer",

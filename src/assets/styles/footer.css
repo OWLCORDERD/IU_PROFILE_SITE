@@ -7,7 +7,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding : 4rem 10rem;
+    padding : 2% 15%;
     z-index: 1;
 }
 
@@ -84,19 +84,23 @@
     width: 100%;
     padding: 10px;
     color: #fff;
-    font-size: 1rem;
+    font-size: 12px;
     font-weight: bold;
 }
 
 .footer-menus .Family-site{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     width: 20rem;
     height : 5rem;
 }
 
 .Family-site select{
+    position: relative;
     width: 15rem;
     height: 3.5rem;
-    font-size: 1rem;
+    font-size: 12px;
     background-color: transparent;
     border: 2px solid #fff;
     color: #fff;
@@ -106,5 +110,5 @@
 .Family-site select > option{
     display: block;
     color: #000;
-    font-size: 1rem;
+    font-size: 12px;
 }

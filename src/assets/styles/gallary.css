@@ -123,6 +123,7 @@ li span.active{
   width : 350px;
   height : 350px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .Gallary-item .Gallary-imgBox{
@@ -668,111 +669,4 @@ layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
 .CommentView-textBox h1{
   font-size: 1.2rem;
   font-family: var(--font-family-Go);
-}
-
-
-/* Gallary Component [header, GallaryBanner, GallaryList] 반응형 리뉴얼 디자인 */
-@media screen and (max-width : 1200px) {
-
-/*Gallary Component aside header css */
-section .GList-header{
-  position: relative;
-  width : 100%;
-  height : 10rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background-color: #000;
-  border-left: none;
-}
-
-.GList-header .Gallary-hamburgerMenu{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 5rem;
-  height: 7rem;
-  cursor: pointer;
-}
-
-.Gallary-hamburgerMenu span{
-  display: block;
-  width : 3rem;
-  height : 0.5rem;
-  background-color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.GList-header .GList-title{
-  position: absolute;
-  left : 50%;
-  transform : translateX(-50%);
-  width : 10rem;
-  height : max-content;
-}
-
-.GList-title h1{
-  font-size: 2.5rem;
-  letter-spacing: 0.2rem;
-  font-family: var(--font-family);
-  text-align: center;
-}
-
-.GList-title p{
-  display: none;
-}
-
-/*select years option boxs 부모 css*/
-.GList-header .select-years-container{
-  position: relative;
-  top : 1rem;
-  right : 2rem;
-  width : 10rem;
-  height : 5rem;
-  z-index: 1000;
-}
-
-/*select-years box input box css 
-(select option 박스들을 input box로 대체하여 css 디자인)*/
-.select-years > li > input[type=text]{
-  display: block;
-  width : 8rem;
-  height : 3rem;
-}
-
-/*toggleClick 버튼 css */
-.select-years > li > .toggle-button{
-  margin-left: 10rem;
-}
-
-/*Gallary Component Banner Component css */
-section .Gallary-container{
-  width : 100%;
-  height : 100vh;
-}
-
-/*Gallary Part List container css*/
-.GList-container{
-  width : 100%;
-  height : 100vh;
-}
-
-/*GallaryList item 부모 box css*/
-.GList-container .GallaryList-box{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.GallaryList-box::-webkit-scrollbar{
-  display: none;
-}
-
-.GallaryList-box .GallaryList-item{
-  width : 22rem;
-}
-
 }

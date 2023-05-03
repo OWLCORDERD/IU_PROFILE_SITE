@@ -4,16 +4,12 @@ import { useState } from "react";
 import "../../assets/styles/Register.css";
 import axios from "axios";
 import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../reducer/userSlice";
 
 const Login = () => {
   const [loginInputs, setLoginInputs] = useState({
     userId: "",
     userPw: "",
   });
-
-  const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState("");
@@ -54,7 +50,6 @@ const Login = () => {
         console.log(res.data);
         if (res.data.code === 200) {
           console.log("로그인");
-          dispatch(loginUser(res.data.userInfo));
           setMsg("");
         }
         if (res.data.code === 400) {
@@ -71,30 +66,30 @@ const Login = () => {
   };
 
   return (
-    <div className="Login-container">
-      <div className="Login-Form">
-        <div className="Email-Input">
+    <div className='Login-container'>
+      <div className='Login-Form'>
+        <div className='Email-Input'>
           <input
-            type="text"
-            name="userId"
-            placeholder="아이디를 입력해주세요."
+            type='text'
+            name='userId'
+            placeholder='아이디를 입력해주세요.'
             ref={IdRef}
             onChange={(e) => onChange(e)}
           />
         </div>
 
-        <div className="Password-Input">
+        <div className='Password-Input'>
           <input
-            type="password"
-            name="userPw"
+            type='password'
+            name='userPw'
             ref={PwRef}
-            placeholder="패스워드를 입력해주세요."
+            placeholder='패스워드를 입력해주세요.'
             onChange={(e) => onChange(e)}
           />
         </div>
 
         <button
-          className="SignIn-button"
+          className='SignIn-button'
           onClick={(event) => LoginFunc(event)}
           disabled={loading}
         >

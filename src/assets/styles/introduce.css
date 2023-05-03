@@ -3,7 +3,7 @@
     width : 100%;
     height : 280vh;
     background-color: #fff;
-    padding : 5% 15%;
+    padding : 5% 10%;
 }
 
 .Introduce-container .Entertainer-infoBox{
@@ -32,28 +32,34 @@
     object-fit: cover;
 }
 
-.Entertainer-infoBox .About-ContentBox,
 .Entertainer-infoBox .Profile-ContentBox{
     position: absolute;
     top : 50%;
     transform: translateY(-50%);
     left : 0;
     width : 100%;
-    height : 700px;
-    display: flex;
+    height : 750px;
+    display: none;
     align-items: center;
     justify-content: space-between;
-    opacity: 0;
     transition: all 0.5s ease-out;
+    z-index: 10;
 }
 
-.About-ContentBox.active,
 .Profile-ContentBox.active{
-    opacity: 1;
-    transition: all 0.5s ease-in;
+    display: flex;
+    animation : ProfileView 1s linear;
 }
 
-.About-ContentBox .ContentBox-item,
+@keyframes ProfileView {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 .Profile-ContentBox .ContentBox-item{
     position: relative;
     width : 450px;
@@ -64,79 +70,45 @@
     align-items: flex-start;
 }
 
-/*About ContentBox*/
-.ContentBox-item .Static-title{
-    width : 100%;
-    height : 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.Static-title span{
-    content : '';
-    width : 100%;
-    height : 1px;
-    background-color: #6C6C6C;
-}
-
-.Static-title h1{
-    font-size: 1.5rem;
-    font-family: var(--font-family);
-    text-transform: uppercase;
-    color : #6C6C6C;
-}
-
-/*About txtBox styled*/
 .ContentBox-item .dynamic-txtBox{
     position: relative;
-    width : 100%;
-    height : 500px;
+    width: 100%;
+    height: 550px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-between;
-    opacity: 1;
+    align-items: flex-start;
 }
 
 .dynamic-txtBox .dynamic-title{
-    width : 100%;
-    height : 150px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .dynamic-title h1{
-    width : 100%;
-    height : 100px;
-    font-size: 3rem;
+    width: 100%;
     line-height: 100px;
+    font-size: 3rem;
     font-family: var(--font-family-Lexend);
+    font-weight: 600;
+    color: #464646;
 }
 
-.dynamic-title p {
-    width : 100%;
-    height : 50px;
-    font-size: 1rem;
+.dynamic-title p{
+    width: 100%;
     line-height: 50px;
-    font-weight: bold;
+    font-size: 1rem;
     font-family: var(--font-family-Noto);
+    font-weight: bold;
+    color: #464646;
 }
 
 .dynamic-txtBox .dynamic-info{
-    width : 85%;
-    height : 300px;
-    position: relative;
-    font-size: 15px;
-    font-weight: bold;
-    font-family: var(--font-family-Noto);
-    word-break: keep-all;
-    color : #6C6C6C;
-}
-
-.ContentBox-item .selectMenu-Box{
-    position: relative;
-    width : 100%;
-    height : 50px;
+    width: 100%;
 }
 
 /*Profile txtBox styled*/
@@ -146,7 +118,6 @@
 .dynamic-txtBox .entertainment-info,
 .dynamic-txtBox .FanClub-info,
 .dynamic-txtBox .Social-info{
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,6 +133,7 @@
     height : 100%;
     font-size: 1rem;
     text-align: start;
+    font-family: var(--font-family-Noto);
 }
 
 .name-info p, .debut-info p,
@@ -171,6 +143,7 @@
     text-align: start;
     font-size: 1rem;
     line-height: 50px;
+    font-family: var(--font-family-Noto);
 }
 
 .entertainment-info .entertainment-img,
@@ -212,6 +185,72 @@
     font-size: 35px;
 }
 
+/*About ContentBox*/
+
+.Entertainer-infoBox .About-ContentBox{
+    position: absolute;
+    top : 50%;
+    transform: translateY(-50%);
+    left : 0;
+    width : 100%;
+    height : 750px;
+    display: none;
+    transition: all 0.5s ease-out;
+}
+
+.About-ContentBox.active{
+    display: block;
+    animation: AboutView 1s linear;
+}
+
+@keyframes AboutView {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.About-ContentBox .ContentBox-item{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.ContentBox-item .Static-title{
+    width : 100%;
+    height : 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.Static-title span{
+    content : '';
+    width : 100%;
+    height : 1px;
+    background-color: #6C6C6C;
+}
+
+.Static-title h1{
+    font-size: 1.5rem;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    color : #6C6C6C;
+}
+
+.ContentBox-item .selectMenu-Box{
+    position: relative;
+    width : 600px;
+    height : 50px;
+}
+
 .selectMenu-Box li{
     display: inline-flex;
     align-items: center;
@@ -232,3 +271,168 @@
     border-bottom: 5px solid #000;
     font-weight: bold;
 }
+
+.ContentBox-item .Discography-container{
+    position: relative;
+    width: 100%;
+    height : 550px;
+    display: flex;
+}
+
+.Discography-container .Discography-contentBox{
+    width : 40%;
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.Discography-contentBox .Discography-titleBox{
+    width : 100%;
+    height : 200px;
+}
+
+.Discography-titleBox .Discography-title{
+    display: block;
+    width: 100%;
+    height : 100px;
+    line-height: 100px;
+    font-size: 2.5rem;
+    font-family: var(--font-family-Lexend);
+    text-transform: uppercase;
+    color: #464646;
+    font-weight: bold;
+}
+
+.Discography-titleBox .Discography-subTitle{
+    display: block;
+    width: 100%;
+    height : 50px;
+    font-size: 1rem;
+    font-family: var(--font-family-Noto);
+    text-transform: uppercase;
+    color: #646464;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.Discography-container .Discography-control{
+    width: 100%;
+    height : 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 0;
+}
+
+.Discography-control .control-play{
+    width : 150px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-play .play,
+.control-play .pause{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.Discography-control .control-move{
+    width : 150px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-move .before,
+.control-move .next{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.Discography-container .discography-slide{
+    position: relative;
+    width: 60rem;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.discography-slide .slide-wrap{
+    position: absolute;
+    display: inline-flex;
+    top: 0;
+    left: 0rem;
+    width: max-content;
+    height: 100%;
+}
+
+.slide-wrap .slide-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20rem;
+    height: 100%;
+    background-color: #fff;
+}
+
+.slide-item .Album-Img{
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+}
+
+.Album-Img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-item .Album-info{
+    position: relative;
+    width: 100%;
+}
+
+.Album-info .Album-title{
+    width: 100%;
+    height: 4rem;
+}
+
+.Album-title h2{
+    line-height: 4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: var(--font-family-Lexend);
+}
+
+.Album-info .Album-info{
+    width: 100%;
+    height: 3rem;
+}
+
+.Album-info h3{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.Album-info .Album-Since{
+    width: 100%;
+    height: 3rem;
+}
+
+.Album-Since p{
+    font-size: 1rem;
+    line-height: 3rem;
+    font-weight: bold;
+    font-family: var(--font-family);
+}
+

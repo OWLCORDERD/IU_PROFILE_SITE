@@ -1,0 +1,111 @@
+.Official-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 10% 5% 10%;
+}
+
+.Official-container .Official-title{
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 5rem;
+    color: #464646;
+}
+
+.Official-title h1{
+    width: 100%;
+    height: 7rem;
+    line-height: 7rem;
+    text-align: center;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.Official-title p{
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    font-family: var(--font-family-Noto);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.Official-container .Official-ChanelBox{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    width: 100%;
+    border-radius: 20px 0 20px 0;
+    overflow: hidden;
+}
+
+.Official-ChanelBox .IUTV-Chanel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 25rem;
+    overflow: hidden;
+}
+
+.IUTV-Chanel .Chanel-Thumbnail{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.Chanel-Thumbnail .play-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.play-icon:hover img{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.Chanel-Thumbnail img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.IUTV-Chanel .Chanel-info{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+}
+
+.Chanel-info .Chanel-title{
+    width: 100%;
+    height: 5rem;
+}
+
+.Chanel-title h2{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 5rem;
+    font-family: var(--font-family);
+}
+
+.Chanel-info .info-txt{
+    width: 100%;
+}
+
+.info-txt p{
+    margin-top: 2rem;
+    width: 70%;
+    word-break: keep-all;
+    font-size: 13px;
+    font-family: var(--font-family-Noto);
+    font-weight: 400;
+    color: #737373;
+}

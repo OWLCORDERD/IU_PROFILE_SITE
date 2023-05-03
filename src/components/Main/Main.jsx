@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Banner from "../Banner/Banner";
 import Footer from "../Footer/Footer";
 import styled from "styled-components";
 import Introduce from "../Introduce/Introduce";
 import AboutIndex from "../AboutIndex/AboutIndex";
+import Youtube from "../Youtube/Youtube";
+import FanCafe from "../FanCafe/FanCafe";
 const Main = () => {
   const Container = styled.div`
     position: relative;
@@ -26,10 +28,25 @@ const Main = () => {
       <Container>
         <Section>
           <Banner />
-          <AboutIndex />
-          <Introduce />
-          <Footer />
         </Section>
+
+        <Section>
+          <AboutIndex />
+        </Section>
+
+        <Section>
+          <Introduce />
+        </Section>
+
+        <Section>
+          <Youtube />
+        </Section>
+
+        <Section>
+          <FanCafe />
+        </Section>
+
+        <Footer />
       </Container>
     </>
   );

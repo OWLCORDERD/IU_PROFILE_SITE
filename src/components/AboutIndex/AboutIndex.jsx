@@ -35,7 +35,7 @@ const AboutIndex = () => {
 
   ScrollTrigger.create({
     trigger: IndexRef.current,
-    start: "10% top",
+    start: "top top",
     end: "100% top",
     toggleClass: { className: "hide", targets: ".navbar" },
   });

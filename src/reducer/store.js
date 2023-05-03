@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "./userSlice";
 import incrementSlides from "./toggleSlide";
-import selectMenus from "./selectMenus";
+import controlSlide from "./controlSlide";
 
 export default configureStore({
   reducer: {
     slide: incrementSlides,
-    user: userSlice,
-    select: selectMenus,
+    discoSlide: controlSlide,
   },
 });

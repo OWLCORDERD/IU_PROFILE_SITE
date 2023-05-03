@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import store from "../../reducer/store";
+import { useSelector } from "react-redux";
+import { decrementToggle, incrementToggle } from "../../reducer/controlSlide";
 import "../../assets/styles/introduce.css";
-import AboutImg from "../../assets/image/banner 배경/slider-banner.jpg";
-import { useRef } from "react";
 import { gsap } from "gsap/all";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect } from "react";
+import axios from "axios";
+import { motion } from "framer-motion";
 import ProfileImg from "../../assets/image/Profile-new.jpg";
 import Edamlogo from "../../assets/image/logo/EDAM엔터테인먼트_logo.png";
 import Clublogo from "../../assets/image/logo/UAENA LOGO.jpg";
@@ -13,14 +15,43 @@ import {
   AiFillFacebook,
   AiFillTwitterSquare,
   AiFillYoutube,
+  AiFillPlayCircle,
+  AiFillPauseCircle,
 } from "react-icons/ai";
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 const Introduce = () => {
   const IntroRef = useRef(null);
 
+  const discoTotalSlide = 2;
+
+  const toggleCount = useSelector((state) => state.discoSlide.toggle);
+
+  const DiscoNextSlide = (e) => {
+    e.preventDefault();
+
+    if (toggleCount <= discoTotalSlide) {
+      store.dispatch(incrementToggle());
+    } else {
+      return;
+    }
+  };
+
+  const DiscoBeforeSlide = (e) => {
+    e.preventDefault();
+
+    if (toggleCount >= 1) {
+      store.dispatch(decrementToggle());
+    } else {
+      return;
+    }
+  };
+
+  console.log(toggleCount);
+
   gsap.registerPlugin(ScrollTrigger);
 
-  const tl = gsap.timeline();
+  const [discoDB, setDiscoDB] = useState([]);
 
   useEffect(() => {
     ScrollTrigger.create({
@@ -34,60 +65,24 @@ const Introduce = () => {
       trigger: ".Introduce-container",
       start: "-50% top",
       end: "30% top",
-      toggleClass: { targets: ".About-ContentBox", className: "active" },
+      toggleClass: { targets: ".Profile-ContentBox", className: "active" },
     });
 
     ScrollTrigger.create({
       trigger: ".Introduce-container",
       start: "30% top",
       end: "100% top",
-      toggleClass: { targets: ".Profile-ContentBox", className: "active" },
+      toggleClass: { targets: ".About-ContentBox", className: "active" },
     });
-  });
+
+    axios
+      .get("http://localhost:3080/Discography")
+      .then((res) => res.data)
+      .then((data) => setDiscoDB(data));
+  }, []);
   return (
     <div className='Introduce-container' ref={IntroRef}>
       <div className='Entertainer-infoBox'>
-        <div className='About-ContentBox'>
-          <div className='ContentBox-item'>
-            <div className='Static-title'>
-              <span></span>
-              <h1>Introduce Entertainer</h1>
-            </div>
-
-            <div className='dynamic-txtBox'>
-              <div className='dynamic-title'>
-                <h1>I & YOU</h1>
-                <p>음악으로 너와 내가 하나가 된다.</p>
-              </div>
-
-              <div className='dynamic-info'>
-                <p>
-                  예명인 아이유(IU)는 '음악으로 너와 내가 하나가 된다'라는 뜻을
-                  가지고 있다. 만 15세였던 2008년에 가수로 데뷔했으며,
-                  2010년에는 국민 여동생이라는 칭호를 얻으면서 국민적인 스타로
-                  떠올랐다. 매력적인 음색과 뛰어난 작사작곡 능력을 바탕으로
-                  아이돌이자 아티스트로서 십수 년째 사랑 받고 있으며, 2012년
-                  이래로 매년 대규모 콘서트를 진행하며 공연자로서도 활발히 활동
-                  중이다.
-                </p>
-              </div>
-            </div>
-
-            <ul className='selectMenu-Box'>
-              <li>
-                <a className='active'>ABOUT</a>
-              </li>
-              <li>
-                <a>PROFILE</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className='Entertainer-profileImg'>
-            <img src={AboutImg} alt='' />
-          </div>
-        </div>
-
         <div className='Profile-ContentBox'>
           <div className='ContentBox-item'>
             <div className='Static-title'>
@@ -138,6 +133,7 @@ const Introduce = () => {
                       className='Social-item'
                       href='https://www.youtube.com/@dlwlrma'
                       target='_blank'
+                      rel='noreferrer'
                     >
                       <AiFillYoutube />
                     </a>
@@ -146,6 +142,7 @@ const Introduce = () => {
                       className='Social-item'
                       href='https://www.instagram.com/dlwlrma/'
                       target='_blank'
+                      rel='noreferrer'
                     >
                       <AiFillInstagram />
                     </a>
@@ -154,6 +151,7 @@ const Introduce = () => {
                       className='Social-item'
                       href='https://www.facebook.com/iu.loen/?locale=ko_KR'
                       target='_blank'
+                      rel='noreferrer'
                     >
                       <AiFillFacebook />
                     </a>
@@ -162,6 +160,7 @@ const Introduce = () => {
                       className='Social-item'
                       href='https://twitter.com/_IUofficial'
                       target='_blank'
+                      rel='noreferrer'
                     >
                       <AiFillTwitterSquare />
                     </a>
@@ -172,16 +171,97 @@ const Introduce = () => {
 
             <ul className='selectMenu-Box'>
               <li>
-                <a>ABOUT</a>
+                <a className='active'>PROFILE</a>
               </li>
               <li>
-                <a className='active'>PROFILE</a>
+                <a>MUSIC</a>
               </li>
             </ul>
           </div>
 
           <div className='Entertainer-profileImg'>
             <img src={ProfileImg} alt='' />
+          </div>
+        </div>
+
+        <div className='About-ContentBox'>
+          <div className='ContentBox-item'>
+            <div className='Static-title'>
+              <span></span>
+              <h1>Introduce Entertainer</h1>
+            </div>
+
+            <section className='Discography-container'>
+              <article className='Discography-contentBox'>
+                <div className='Discography-titleBox'>
+                  <h2 className='Discography-title'>Discography</h2>
+                  <h2 className='Discography-subTitle'>
+                    가수 아이유의 정규 앨범 및 미니 앨범 음반들을 소개합니다.
+                  </h2>
+                </div>
+
+                <div className='Discography-control'>
+                  <div className='control-play'>
+                    <AiFillPlayCircle className='play' />
+                    <AiFillPauseCircle className='pause' />
+                  </div>
+
+                  <div className='control-move'>
+                    <MdArrowBackIosNew
+                      className='before'
+                      onClick={(e) => DiscoBeforeSlide(e)}
+                    />
+                    <MdArrowForwardIos
+                      className='next'
+                      onClick={(e) => DiscoNextSlide(e)}
+                    />
+                  </div>
+                </div>
+              </article>
+
+              <article className='discography-slide'>
+                <div
+                  className='slide-wrap'
+                  style={{
+                    left: `calc(-${toggleCount} * 20rem)`,
+                    transition: "all 0.2s ease-in",
+                  }}
+                >
+                  {discoDB.map((item) => {
+                    return (
+                      <div className='slide-item' key={item.id}>
+                        <div className='Album-Img'>
+                          <img src={item.AlbumImg} alt='AlbumImg' />
+                        </div>
+
+                        <div className='Album-info'>
+                          <div className='Album-title'>
+                            <h2>{item.id}</h2>
+                          </div>
+
+                          <div className='Album-info'>
+                            <h3>{item.info}</h3>
+                          </div>
+
+                          <div className='Album-Since'>
+                            <p>{item.Since}</p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </article>
+            </section>
+
+            <ul className='selectMenu-Box'>
+              <li>
+                <a>PROFILE</a>
+              </li>
+              <li>
+                <a className='active'>MUSIC</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
