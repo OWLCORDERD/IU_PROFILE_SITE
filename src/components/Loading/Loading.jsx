@@ -39,30 +39,14 @@ const Loading = (props) => {
     },
   };
 
-  const dynamicSubTxt = {
-    initial: {
-      opacity: 0,
-      y: 50,
-    },
-
-    animated: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.2,
-      },
-    },
-  };
-
   return (
-    <div className="Loading-container">
-      <div className="loading-title">
+    <div className='Loading-container'>
+      <div className='loading-title'>
         <motion.div
           variants={dynamicBox}
-          initial="initial"
-          animate="animated"
-          className="Dynamic-title"
+          initial='initial'
+          animate='animated'
+          className='Dynamic-title'
         >
           <motion.span variants={dynamicTxt}>I</motion.span>
           <motion.span variants={dynamicTxt}>Y</motion.span>
@@ -71,7 +55,7 @@ const Loading = (props) => {
         </motion.div>
 
         <motion.div
-          className="loading-state"
+          className='loading-state'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}

@@ -29,13 +29,16 @@
     "slick-carousel": "^1.8.1",
     "spinners-react": "^1.0.7",
     "styled-components": "^5.3.8",
+    "sweetalert2": "^11.7.5",
+    "sweetalert2-react-content": "^5.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server" : "json-server --watch db.json --port 3080"
   },
   "eslintConfig": {
     "extends": [

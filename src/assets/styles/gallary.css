@@ -5,51 +5,54 @@ section .GallaryList-container{
   background-color: #fff;
   padding: 100px;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 
 .GallaryList-container .GallaryList-header{
-  position: sticky;
+  position: relative;
   top : 10%;
   left: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-  width : 40%;
-  height : 800px;
+  align-items: center;
+  justify-content: space-between;
+  width : 100%;
+  height : 25rem;
+  margin-bottom: 50px;
 }
 
 .GallaryList-header .GallaryList-title{
-  width : 500px;
+  width : 100%;
   height : 100px;
   font-size: 2rem;
   line-height: 100px;
   text-transform: uppercase;
   font-family: var(--font-family-Lexend);
   padding: 0 50px;
+  text-align: center;
 }
 
 .GallaryList-header .GallaryList-filter{
   position: relative;
-  width : 700px;
+  width : 60rem;
   height : 100px;
   display: inline-flex;
 }
 
 .GallaryList-filter li{
-  width : 200px;
-  height: 100%;
+  width : 20rem;
+  height: 100%; 
   line-height: 100px;
-  text-align: center;
-}
-
-.GallaryList-filter li:nth-child(3){
-  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .GallaryList-filter li span{
+  display: block;
+  width: 10rem;
   font-size: 1.2rem;
   font-family: var(--font-family-Lexend);
   font-weight: bold;
@@ -58,30 +61,24 @@ section .GallaryList-container{
   color : #9B9B9B;
 }
 
-li span.active{
+li.active span{
   color: #000;
+  border-bottom: 5px solid #000;
 }
 
-.GallaryList-header .Search-container{
-  position: relative;
-  width : 100%;
-  height : 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding : 0 50px;
-  align-items: flex-start;
-}
-
-.Search-container .result-count{
+.GallaryList-header .result-count{
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width : 150px;
   height : 50px;
+  line-height: 50px;
   font-size: 0.8rem;
   font-family: var(--font-family-Lexend);
 }
 
-.Search-container .Search-input{
-  width : 450px;
+.GallaryList-header .Search-input{
+  width : 50rem;
   height : 50px;
   display: flex;
   align-items: center;
@@ -91,16 +88,16 @@ li span.active{
 .Search-input input{
   width : 100%;
   height : 45px;
-  font-size: 1rem;
+  font-size: 15px;
   padding : 0 1rem;
-  font-family: var(--font-family-Lexend);
+  font-family: var(--font-family-Noto);
   font-weight: bold;
   border: 2px solid #9B9B9B;
 }
 
 .GallaryList-container .Gallary-Board{
   position: relative;
-  width : 60%;
+  width : 100%;
   height : max-content;
   display: flex;
   flex-direction: column;
@@ -120,16 +117,18 @@ li span.active{
 
 .GallaryList-Box .Gallary-item{
   position: relative;
-  width : 350px;
-  height : 350px;
+  width : 480px;
+  height : 630px;
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
 }
 
 .Gallary-item .Gallary-imgBox{
+  position: relative;
   width : 100%;
-  height : 250px;
+  height : 70%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .Gallary-imgBox img{
@@ -139,6 +138,32 @@ li span.active{
   object-fit: cover;
   top : 0;
   left : 0;
+}
+
+.Gallary-item .Gallary-info{
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+
+.Gallary-info .Gallary-type{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 10px;
+  font-family: var(--font-family-Lexend);
+  color: #000;
+  text-transform: uppercase;
+}
+
+.Gallary-info .Gallary-title{
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  font-family: var(--font-family-Noto);
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
 }
 
 .Gallary-Board .Loading{
@@ -500,173 +525,4 @@ layoutdata 값에 id값이 들어가면 이미지 화면 숨김*/
   width : 3rem;
   height : 3rem;
   cursor: pointer;
-}
-
-/*댓글창 부모 컴포넌트 container css */
-.GListItem-container .GListItem-comment{
-  position: relative;
-  left : 10%;
-  bottom : -100vh;
-  width : 90%;
-  height : 100vh;
-  padding : 5rem;
-  z-index: 10;
-}
-
-.GListItem-comment .Comment-title{
-  width : 100%;
-  height : 3rem;
-}
-
-.Comment-title h1{
-  font-size: 1.8rem;
-  font-family: var(--font-family-Sun);
-}
-
-.GListItem-comment .Comment-box{
-  position: relative;
-  width : 100%;
-  height : max-content;
-  padding : 2rem;
-  background-color: rgb(0, 0, 0);
-}
-
-.GListItem-comment .CommentCRA-box{
-  position: relative;
-  width : 100%;
-  height : 15rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding : 2rem 5rem;
-  background-color: #fff;
-}
-
-.CommentCRA-box .Comment-info{
-  width : 20rem;
-  height : 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.CommentCRA-box .Comment-InputBox{
-  width : 100%;
-  height : max-content;
-  border : none;
-  border-bottom: 2px solid #000;
-  font-family: var(--font-family-Sun);
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.CommentCRA-box .Name-InputBox{
-  width : 8rem;
-  height : max-content;
-  border: 2px solid #000;
-  font-family: var(--font-family-Sun);
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.CommentCRA-box .Date-InputBox{
-  width : 9rem;
-  height : max-content;
-  border: 2px solid #000;
-  font-family: var(--font-family-Sun);
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.CommentCRA-box .Comment-PostBox{
-  width : 10rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.Comment-PostBox .post-button{
-  display: block;
-  width : 4rem;
-  padding : 0.5rem;
-  font-size: 1rem;
-  font-family: var(--font-family-Sun);
-  border : none;
-  background-color: rgb(136, 136, 136);
-  border-radius: 2rem;
-  color : #fff;
-  cursor: pointer;
-}
-
-.Comment-PostBox .Cancel-button{
-  display: block;
-  width : 4rem;
-  padding : 0.5rem;
-  font-size: 1rem;
-  font-family: var(--font-family-Sun);
-  border : none;
-  border-radius: 2rem;
-  background-color: rgb(250, 69, 69);
-  color : #fff;
-  cursor: pointer;
-}
-
-/*댓글 Preview 창 부모 css*/
-.GListItem-comment .CommentView-box{
-  position: relative;
-  width : 100%;
-  height : 20rem;
-  overflow-y: auto;
-  margin: 2rem 0;
-}
-
-.CommentView-box::-webkit-scrollbar{
-  width : 1rem;
-  background-color: #fff;
-}
-
-.CommentView-box::-webkit-scrollbar-thumb{
-  background-color: rgb(224, 40, 40);
-}
-
-.CommentView-box .CommentView-item{
-  display: block;
-  width : 100%;
-  height : max-content;
-}
-
-.CommentView-item .CommentView-info{
-  width : 20rem;
-  height : 5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding : 0 2rem;
-  color : #fff;
-}
-
-.CommentView-info h1{
-  font-size: 1.2rem;
-  font-family: var(--font-family-Go);
-}
-
-.CommentView-info p{
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: var(--font-family-Go);
-}
-
-.CommentView-item .CommentView-textBox{
-  width : max-content;
-  height : 5rem;
-  padding: 0 2rem;
-  color : #fff;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.CommentView-textBox h1{
-  font-size: 1.2rem;
-  font-family: var(--font-family-Go);
 }

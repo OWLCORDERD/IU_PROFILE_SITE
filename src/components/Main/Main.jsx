@@ -6,6 +6,7 @@ import Introduce from "../Introduce/Introduce";
 import AboutIndex from "../AboutIndex/AboutIndex";
 import Youtube from "../Youtube/Youtube";
 import FanCafe from "../FanCafe/FanCafe";
+import ScrollTop from "../hooks/ScrollTop";
 const Main = () => {
   const Container = styled.div`
     position: relative;
@@ -25,6 +26,7 @@ const Main = () => {
 
   return (
     <>
+      <ScrollTop />
       <Container>
         <Section>
           <Banner />

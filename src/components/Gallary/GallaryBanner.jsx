@@ -1,115 +1,130 @@
-import { React } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import "../../assets/styles/gallaryBanner.css";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
-import { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { commonService } from "../service";
+import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs";
 
 const GallaryBanner = () => {
-  const [scrollXs, setScrollXs] = useState(0);
-  const incrementRef = useRef(0);
-  const itemRef = useRef(null);
+  const [GSliderDB, setGSliderDB] = useState([]);
 
-  const [get, setget] = useState([]);
+  const [nextSlide, setNextSlide] = useState(0);
 
-  const megazineSlide = get.filter((get) => get.YtbID !== undefined);
+  const [isRunning, setIsRunning] = useState(true);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3080/Gallary")
-      .then((res) => res.data)
-      .then((data) => setget(data));
-  }, []);
+  const SlideImgRef = useRef(null);
 
-  const beforeScroll = () => {
-    const itemWidth = itemRef.current.clientWidth + 50;
-    if (scrollXs === 0) {
-      return;
+  const StatusRef = useRef(null);
+
+  function useInterval(callback, delay) {
+    if (nextSlide === 4) {
+      setNextSlide(0);
     }
-    setScrollXs((prev) => prev + itemWidth);
-  };
 
-  const nextScroll = () => {
-    const itemWidth = itemRef.current.clientWidth + 50;
+    const saveCallBack = useRef();
 
-    if (scrollXs === -itemWidth * 2) {
-      return;
-    }
-    setScrollXs((prev) => prev - itemWidth);
-  };
+    useEffect(() => {
+      saveCallBack.current = callback;
+    });
 
-  useEffect(() => {
-    setInterval(() => {
-      const itemWidth = itemRef.current.clientWidth + 50;
-      incrementRef.current += -itemWidth;
-      setScrollXs(incrementRef.current);
-      if (incrementRef.current === -itemWidth * 3) {
-        incrementRef.current = 0;
-        setScrollXs(incrementRef.current);
+    useEffect(() => {
+      function init() {
+        saveCallBack.current();
       }
-    }, 4000);
-  }, []);
+
+      if (delay !== null) {
+        let incrementCount = setInterval(init, delay);
+
+        return () => clearInterval(incrementCount);
+      }
+    }, [delay]);
+  }
+
+  useInterval(
+    () => {
+      setNextSlide(nextSlide + 1);
+    },
+    isRunning ? 6000 : null
+  );
+
+  const slideDBreload = () => {
+    commonService.getGallarySlider().then((res) => {
+      setGSliderDB(res);
+    });
+  };
+
+  useEffect(() => {
+    slideDBreload();
+
+    if (nextSlide >= 0) {
+      SlideImgRef.current.classList.add("active");
+    }
+
+    return () => setIsRunning(false);
+  }, [nextSlide]);
+
+  const slideStop = (e) => {
+    e.preventDefault();
+
+    setIsRunning(false);
+
+    SlideImgRef.current.classList.remove("active");
+    StatusRef.current.classList.remove("active");
+  };
+
+  const slidePlay = (e) => {
+    e.preventDefault();
+
+    setIsRunning(true);
+
+    StatusRef.current.classList.add("active");
+  };
+
   return (
     <div className='Gallary-banner'>
-      <div className='Gallary-slideBox'>
-        <div className='Megazine-Category'>
-          <ul
-            className='Scroll-container'
-            style={{
-              transform: `translateX(${scrollXs}px)`,
-              transition: "all 0.6s ease-in",
-            }}
-          >
-            {megazineSlide.map((item) => {
-              return (
-                <li key={item.id}>
-                  <Link
-                    to='/GallaryItem'
-                    state={{ layoutId: item, gallaryDB: get }}
-                  >
-                    <div className='Category-item' ref={itemRef}>
-                      <div className='Megazine-imgBox'>
-                        <img src={item.img_url} />
-                      </div>
+      <div className='Banner-Index'>
+        <div className='Index-video' ref={SlideImgRef}>
+          <img src={GSliderDB[nextSlide]?.thumbNail} alt='Bazaar' />
+        </div>
 
-                      <div className='Megazine-AboutBox'>
-                        <div className='About-Compony'>
-                          <p>{item.Compony}</p>
-                        </div>
+        <div className='Index-Info'>
+          <div className='Index-type'>
+            <h2>{GSliderDB[nextSlide]?.type}</h2>
+          </div>
 
-                        <div className='About-title'>
-                          <h1>{item.title}</h1>
-                        </div>
+          <div className='Index-Compony'>
+            <p>{GSliderDB[nextSlide]?.Compony}</p>
+          </div>
 
-                        <div className='About-subTxt'>
-                          <p>{item.subTitle}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <button
-            type='button'
-            className='slider-backButton'
-            id='before'
-            onClick={beforeScroll}
+          <div className='Index-title'>
+            <p>{GSliderDB[nextSlide]?.title}</p>
+          </div>
+
+          <a
+            href={GSliderDB[nextSlide]?.video_url}
+            className='view-video'
+            target='_blank'
+            rel='noreferrer'
           >
-            <IoIosArrowBack />
-          </button>
-          <button
-            type='button'
-            className='slider-NextButton'
-            id='left'
-            onClick={nextScroll}
-          >
-            <IoIosArrowForward />
-          </button>
+            영상 보러가기
+          </a>
+
+          <div className='Slide-status'>
+            <div className='status-bar active' ref={StatusRef}>
+              <span></span>
+            </div>
+            <div className='status-info'>
+              {nextSlide + 1} / {GSliderDB.length}
+            </div>
+
+            <div className='slide-control'>
+              <div className='autoSlide-stop' onClick={(e) => slideStop(e)}>
+                <BsFillPauseFill />
+              </div>
+
+              <div className='autoSlide-play' onClick={(e) => slidePlay(e)}>
+                <BsFillPlayFill />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

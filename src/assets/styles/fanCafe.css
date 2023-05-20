@@ -87,9 +87,8 @@
 
 .FanCafe-section .FanCafe-Video{
     position: relative;
-    width: 50%;
+    width: 45%;
     height: 30rem;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .FanCafe-Video iframe{

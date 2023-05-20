@@ -6,7 +6,6 @@ import "../../assets/styles/introduce.css";
 import { gsap } from "gsap/all";
 import { ScrollTrigger } from "gsap/all";
 import axios from "axios";
-import { motion } from "framer-motion";
 import ProfileImg from "../../assets/image/Profile-new.jpg";
 import Edamlogo from "../../assets/image/logo/EDAM엔터테인먼트_logo.png";
 import Clublogo from "../../assets/image/logo/UAENA LOGO.jpg";
@@ -46,8 +45,6 @@ const Introduce = () => {
       return;
     }
   };
-
-  console.log(toggleCount);
 
   gsap.registerPlugin(ScrollTrigger);
 

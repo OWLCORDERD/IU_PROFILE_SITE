@@ -16,8 +16,9 @@
 ```
 ## 사이트 소개
 - React SPA 기반으로 제작한 아이유 프로필 사이트
-- Figma 도구 툴을 사용하여 전체적인 사이트 프레임 구축 후 작업 진행
-- Main Component, Gallary Component, Profile Component, Navbar Component Develop 진행
+- Redux를 사용한 캐러셀 슬라이드 구현
+- Framer-Motion, ScrollTrigger, InterSectionObserver 등 다양한 라이브러리 및 API 활용
+- Main Page, Gallary Page Develop 진행 중
 
 ##사이트를 만들게 된 계기는?
 아이유의 오랜 팬인데, 아이유를 소개하는 프로필 사이트가 없었고 Entertainment 사이트도

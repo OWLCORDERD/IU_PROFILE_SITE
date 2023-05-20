@@ -5,164 +5,191 @@
     left : 0;
     width : 100%;
     height : 100vh;
-    background-color: rgb(0, 0, 0);
     overflow: hidden;
+    font-family: var(--font-family-Noto);
+    padding: 0 200px;
+  }
+
+  .Gallary-banner .Banner-Index{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Banner-Index .Index-video{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .Index-video.active{
+    opacity: 1;
+    animation: videoActive 6s infinite;
+  }
+
+  @keyframes videoActive {
+    0%{
+      opacity: 0;
+      transition: all 0.5s ease-out;
+    }
+    100%{
+      opacity: 1;
+      transition : all 0.5s ease-in;
+    }
+  }
+
+  .Index-video::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content : '';
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .Index-video img{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in;
+  }
+
+  .Banner-Index .Index-Info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    padding: 0 5rem;
+    z-index: 10;
+  }
+
+  .Index-Info .Index-type{
+    width: 100%;
+    height: 8rem;
+    font-size: 15px;
+    color: #fff;
+    font-family: var(--font-family);
+  }
+
+  .Index-Info .Index-title{
+    width: 100%;
+    height: 7rem;
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
     font-family: var(--font-family-Noto);
   }
 
-  .Gallary-banner .Gallary-slideBox{
+  .Index-Info .Index-Compony{
+    width: 100%;
+    height: 8rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    font-family: var(--font-family-Noto);
+  }
+
+  .Index-Info .view-video{
+    display: block;
+    text-align: center;
+    width: 20rem;
+    line-height: 50px;
+    cursor: pointer;
+    border : 2px solid rgba(255,255,255,0.5);
+    background-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: var(--font-family-Noto);
+  }
+
+  .Banner-Index .Slide-status{
     position: relative;
-    top : 150px;
-    width : 100%;
-    height : 900px;
-    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 5rem;
+    width: 40rem;
+    height: 5rem;
   }
 
-  .slider-title h1{
-    width: 100%;
-    height : 100%;
-    color : #fff;
-    font-size: 3rem;
-    text-align: center;
+  .Slide-status .status-bar{
+    display: block;
+    width: 20rem;
+    height: 10px;
+    background-color: rgba(255,255,255,0.5);
   }
 
-  .Gallary-slideBox .Megazine-Category{
-    position: absolute;
-    top : 0;
-    right: 0;
-    width : 100%;
+  .status-bar span{
+    display: block;
+    width: 20rem;
     height: 100%;
-    overflow: hidden;
+    background-color: #fff;
   }
 
-  .Megazine-Category .Scroll-container{
-    position: relative;
-    top : 0;
-    left : 0;
-    width : 3000px;
-    height : 100%;
+  .status-bar.active span{
+    animation: animationdd infinite;
+    animation-duration: 6s;
+  }
+
+  @keyframes animationdd {
+    0%{
+      width: 1rem;
+    }
+
+    100%{
+      width: 20rem;
+      transition: all 6s ease-in;
+    }
+  }
+
+  .Slide-status .status-info{
+    font-size: 15px;
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: bold;
+  }
+
+  .Slide-status .slide-control{
+    display: inline-flex;
+    width: 10rem;
+    height: 100%;
+  }
+
+  .slide-control .autoSlide-stop{
+    width: 3rem;
+    margin-right: 2rem;
+    height: 100%;
     display: flex;
     align-items: center;
-    scroll-behavior: smooth;
-  }
-
-  .Scroll-container li{
-    position: relative;
-    width : 450px;
-    height : 100%;
-    margin-right: 50px;
-  }
-
-  .Scroll-container li a{
-    position: relative;
-    width : 100%;
-    height : 100%;
-  }
-
-  li a .Category-item{
-    width : 100%;
-    height : 100%;
-  }
-
-  .Category-item .Megazine-imgBox{
-    position: relative;
-    width : 100%;
-    height : 100%;
-    overflow: hidden;
-  }
-
-  .Megazine-imgBox::before{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    top : 0;
-    left : 0;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
-  }
-
-  .Megazine-imgBox img{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    object-fit: cover;
-  }
-
-  .Category-item .Megazine-AboutBox{
-    position: absolute;
-    width : 100%;
-    height : 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    bottom: 0;
-    padding : 0 50px;
-    z-index: 10;
-  }
-
-  .Megazine-AboutBox .About-Compony{
-    position: relative;
-    width : 100%;
-    height : 50px;
+    justify-content: center;
     font-size: 1.2rem;
-    color: #fff;
+    color : #fff;
+    cursor: pointer;
   }
 
-  .Megazine-AboutBox .About-title{
-    position: relative;
-    width : 100%;
-    height : 100px;
-    font-size: 1rem;
-    color: #fff;
-    word-break: keep-all;
-  }
-
-  .Megazine-AboutBox .About-subTxt{
-    position: relative;
-    width : 80%;
-    height : 150px;
-    font-size: 1rem;
-    color: #fff;
-    word-break: keep-all;
-  }
-  
-  .Megazine-Category .slider-backButton{
-    position: absolute;
-    left : 50px;
-    top : 50%;
-    transform: translateY(-50%);
-    width : 100px;
-    height : 100px;
-    font-size: 4rem;
-    color: #fff;
+  .slide-control .autoSlide-play{
+    width: 3rem;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    border: none;
+    font-size: 1.2rem;
+    color : #fff;
     cursor: pointer;
-    background-color: transparent;
-  }
-
-  .Megazine-Category .slider-NextButton{
-    position: absolute;
-    right : 50px;
-    top : 50%;
-    transform: translateY(-50%);
-    width : 100px;
-    height : 100px;
-    font-size: 4rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
   }

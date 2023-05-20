@@ -10,16 +10,16 @@ const Slide = ({ MusicData, FashionData, CFData }) => {
   return (
     <>
       {MusicData ? (
-        <div className='Slider-item' id={currentSlides == 0 ? "active" : ""}>
+        <div className='Slider-item' id={currentSlides === 0 ? "active" : ""}>
           <div className='Slider-background'>
             <iframe
               width='560'
               height='315'
               src={MusicIframe}
               title='YouTube video player'
-              frameborder='0'
+              frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
 
@@ -44,16 +44,16 @@ const Slide = ({ MusicData, FashionData, CFData }) => {
       ) : null}
 
       {FashionData ? (
-        <div className='Slider-item' id={currentSlides == 1 ? "active" : ""}>
+        <div className='Slider-item' id={currentSlides === 1 ? "active" : ""}>
           <div className='Slider-background'>
             <iframe
               width='560'
               height='315'
               src={FashionIframe}
               title='YouTube video player'
-              frameborder='0'
+              frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
 
@@ -78,16 +78,16 @@ const Slide = ({ MusicData, FashionData, CFData }) => {
       ) : null}
 
       {CFData ? (
-        <div className='Slider-item' id={currentSlides == 2 ? "active" : ""}>
+        <div className='Slider-item' id={currentSlides === 2 ? "active" : ""}>
           <div className='Slider-background'>
             <iframe
               width='560'
               height='315'
               src={CFIframe}
               title='YouTube video player'
-              frameborder='0'
+              frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
 

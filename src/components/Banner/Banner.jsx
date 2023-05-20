@@ -46,7 +46,7 @@ const Banner = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3080/Slider")
+      .get("http://localhost:3080/MainSlider")
       .then((res) => res.data)
       .then((data) => setSlideData(data));
 
