@@ -5,7 +5,6 @@ import { decrementToggle, incrementToggle } from "../../reducer/controlSlide";
 import "../../assets/styles/introduce.css";
 import { gsap } from "gsap/all";
 import { ScrollTrigger } from "gsap/all";
-import axios from "axios";
 import ProfileImg from "../../assets/image/Profile-new.jpg";
 import Edamlogo from "../../assets/image/logo/EDAM엔터테인먼트_logo.png";
 import Clublogo from "../../assets/image/logo/UAENA LOGO.jpg";
@@ -14,10 +13,9 @@ import {
   AiFillFacebook,
   AiFillTwitterSquare,
   AiFillYoutube,
-  AiFillPlayCircle,
-  AiFillPauseCircle,
 } from "react-icons/ai";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { commonService } from "../service";
 
 const Introduce = () => {
   const IntroRef = useRef(null);
@@ -72,10 +70,9 @@ const Introduce = () => {
       toggleClass: { targets: ".About-ContentBox", className: "active" },
     });
 
-    axios
-      .get("http://localhost:3080/Discography")
-      .then((res) => res.data)
-      .then((data) => setDiscoDB(data));
+    commonService.getDiscoGraphy().then((res) => {
+      setDiscoDB(res);
+    });
   }, []);
   return (
     <div className='Introduce-container' ref={IntroRef}>
@@ -198,11 +195,6 @@ const Introduce = () => {
                 </div>
 
                 <div className='Discography-control'>
-                  <div className='control-play'>
-                    <AiFillPlayCircle className='play' />
-                    <AiFillPauseCircle className='pause' />
-                  </div>
-
                   <div className='control-move'>
                     <MdArrowBackIosNew
                       className='before'
@@ -233,7 +225,7 @@ const Introduce = () => {
 
                         <div className='Album-info'>
                           <div className='Album-title'>
-                            <h2>{item.id}</h2>
+                            <h2>{item.title}</h2>
                           </div>
 
                           <div className='Album-info'>

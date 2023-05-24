@@ -1,14 +1,13 @@
 import React, { useState, useRef } from "react";
 import "../../assets/styles/mainBanner.css";
 import Navbar from "../navbar/navbar";
-import { motion } from "framer-motion";
 import { useEffect } from "react";
-import axios from "axios";
 import Slide from "./Slide";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import store from "../../reducer/store";
 import { decrements, increments } from "../../reducer/toggleSlide";
 import { useSelector } from "react-redux";
+import { commonService } from "../service";
 
 const Banner = () => {
   const TotalSlides = 2;
@@ -45,10 +44,9 @@ const Banner = () => {
   const CFSlide = SlideData.find((SlideData) => SlideData.id === 3);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3080/MainSlider")
-      .then((res) => res.data)
-      .then((data) => setSlideData(data));
+    commonService.getMainSlider().then((res) => {
+      setSlideData(res);
+    });
 
     slideRef.current.style.right = `${currentSlide}00%`;
     slideRef.current.style.transitionDuration = `1s`;

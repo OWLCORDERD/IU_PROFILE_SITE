@@ -2,7 +2,7 @@ import axios from "axios";
 import commonService from "./commonService";
 
 const getService = axios.create({
-  baseURL: "http://localhost:3080",
+  baseURL: "http://lim5570.cafe24.com:4000",
   timeout: 60000,
 });
 

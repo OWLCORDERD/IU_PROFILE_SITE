@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 const Slide = ({ MusicData, FashionData, CFData }) => {
   const currentSlides = useSelector((state) => state.slide.count);
 
-  const MusicIframe = `https://www.youtube.com/embed/${MusicData?.YtbId}?autoplay=1&mute=1&amp;playlist=${MusicData?.YtbId}&loop=1;controls=0;`;
-  const FashionIframe = `https://www.youtube.com/embed/${FashionData?.YtbId}?autoplay=1&mute=1&amp;playlist=${FashionData?.YtbId}&loop=1;controls=0;`;
-  const CFIframe = `https://www.youtube.com/embed/${CFData?.YtbId}?autoplay=1&mute=1&amp;playlist=${CFData?.YtbId}&loop=1;controls=0;`;
+  const MusicIframe = `https://www.youtube.com/embed/${MusicData?.YtbID}?autoplay=1&mute=1&amp;playlist=${MusicData?.YtbID}&loop=1;controls=0;`;
+  const FashionIframe = `https://www.youtube.com/embed/${FashionData?.YtbID}?autoplay=1&mute=1&amp;playlist=${FashionData?.YtbID}&loop=1;controls=0;`;
+  const CFIframe = `https://www.youtube.com/embed/${CFData?.YtbID}?autoplay=1&mute=1&amp;playlist=${CFData?.YtbID}&loop=1;controls=0;`;
   return (
     <>
       {MusicData ? (

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { commonService } from "../service";
 
 const GallaryList = () => {
   const [gallaryData, setGallaryData] = useState([]);
@@ -17,13 +18,20 @@ const GallaryList = () => {
 
   const page = useRef(1);
 
+  const page_size = 6;
+
   const [isloading, setIsloading] = useState(false);
 
   const fetch = useCallback(async () => {
     try {
-      const { data } = await axios.get(
-        `http://localhost:3080/Gallary?_limit=6&_page=${page.current}`
+      const { data } = await axios.post(
+        `http://http://lim5570.cafe24.com:4000/GallaryList`,
+        {
+          curPage: page.current,
+          pageSize: page_size,
+        }
       );
+
       setGallaryData((prev) => [...prev, ...data]);
       setHasNextPage(data.length === 6);
       if (data.length) {
@@ -40,25 +48,19 @@ const GallaryList = () => {
     const io = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         setIsloading(true);
-        setTimeout(function () {
-          fetch();
-        }, 1000);
+        fetch();
       }
     });
     io.observe(BoxRef.current);
     return () => {
       io.disconnect();
-      setIsloading(false);
     };
   }, [fetch, hasNextPage]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3080/Gallary")
-      .then((res) => res.data)
-      .then((data) => setTotalData(data));
-
-    return () => setHasNextPage(false);
+    commonService.getGallary().then((res) => {
+      setTotalData(res);
+    });
   }, []);
 
   return (

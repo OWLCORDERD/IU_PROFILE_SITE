@@ -57,8 +57,6 @@ const GallaryBanner = () => {
     if (nextSlide >= 0) {
       SlideImgRef.current.classList.add("active");
     }
-
-    return () => setIsRunning(false);
   }, [nextSlide]);
 
   const slideStop = (e) => {

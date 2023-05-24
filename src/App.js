@@ -2,7 +2,6 @@ import "./App.css";
 import Main from "./components/Main/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Gallary from "./components/Gallary/Gallary";
-import GListItem from "./components/Gallary/GListItem";
 import GallaryBoard from "./components/Gallary/GallaryBoard";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />}></Route>
           <Route path='/Gallary' element={<Gallary />}></Route>
-          <Route path='/GallaryItem' element={<GListItem />}></Route>
           <Route path='/GallaryBoard' element={<GallaryBoard />}></Route>
         </Routes>
       </BrowserRouter>

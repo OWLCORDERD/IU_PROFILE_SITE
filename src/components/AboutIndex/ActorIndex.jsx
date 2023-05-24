@@ -43,16 +43,16 @@ const SingerIndex = ({ infoData, indexRef }) => {
         <div className='Actor-LeftScroll'>
           <div className='Left-ImgBox'>
             <div className='item-Img'>
-              <img src={infoData[0]?.MyMister} alt='' />
+              <img src={infoData[0]?.IndexImg1} alt='' />
             </div>
             <div className='item-Img'>
-              <img src={infoData[0]?.MyMister2} alt='' />
+              <img src={infoData[0]?.IndexImg2} alt='' />
             </div>
             <div className='item-Img'>
-              <img src={infoData[0]?.hoteldelluna} alt='' />
+              <img src={infoData[0]?.IndexImg3} alt='' />
             </div>
             <div className='item-Img'>
-              <img src={infoData[0]?.hoteldelluna2} alt='' />
+              <img src={infoData[0]?.IndexImg4} alt='' />
             </div>
           </div>
         </div>
@@ -70,16 +70,16 @@ const SingerIndex = ({ infoData, indexRef }) => {
         <div className='Actor-RightScroll'>
           <div className='Right-ImgBox'>
             <div className='item-Img'>
-              <img src={infoData[0]?.persona} alt='' />
+              <img src={infoData[0]?.IndexImg5} alt='' />
             </div>
             <div className='item-Img'>
-              <img src={infoData[0]?.persona2} alt='' />
+              <img src={infoData[0]?.IndexImg6} alt='' />
             </div>
             <div className='item-Img'>
-              <img src={infoData[0]?.MoonLover} alt='' />
+              <img src={infoData[0]?.IndexImg7} alt='' />
             </div>
             <div className='item-Img'>
-              <img src={infoData[0]?.produsa} alt='' />
+              <img src={infoData[0]?.IndexImg8} alt='' />
             </div>
           </div>
         </div>

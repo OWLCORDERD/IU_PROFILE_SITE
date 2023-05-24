@@ -1,10 +1,11 @@
 import axios from "axios";
 import React from "react";
+import { useRef } from "react";
 import { useCallback } from "react";
 import { useState } from "react";
 import "../../assets/styles/comment.css";
 
-const Comment = ({ filterComment, commonData }) => {
+const Comment = ({ filterBoard, filterComment, commonData }) => {
   let totalDate = new Date();
 
   let year = totalDate.getFullYear();
@@ -15,7 +16,10 @@ const Comment = ({ filterComment, commonData }) => {
 
   const date = `${year}.0${month}.${day}`;
 
-  const title = filterComment[0]?.title;
+  const title = filterBoard[0]?.title;
+
+  const nameRef = useRef(null);
+  const contentRef = useRef(null);
 
   const [contents, setContents] = useState({
     name: "",
@@ -46,27 +50,40 @@ const Comment = ({ filterComment, commonData }) => {
     (e) => {
       const name = contents.name;
       const content = contents.content;
-      const comment = {
-        name,
-        content,
-        date,
-        title,
-      };
 
-      axios
-        .post("http://localhost:3080/comment", comment)
-        .then(function (response) {
-          console.log(response);
-          commonData();
-        })
-        .catch(function (err) {
-          console.log(err);
-        });
+      switch (name === "" || content === "") {
+        case true:
+          if (name === "") {
+            alert("닉네임을 입력해주세요.");
+            nameRef.current.focus();
+          } else if (content === "") {
+            alert("댓글을 입력해주세요.");
+            contentRef.current.focus();
+          }
+          break;
+        default:
+          const comment = {
+            name: name,
+            content: content,
+            date: date,
+            title: title,
+          };
 
-      setContents({
-        name: "",
-        content: "",
-      });
+          axios
+            .post("http://lim5570.cafe24.com:4000/CommentInsert", comment)
+            .then(function (response) {
+              console.log(response);
+              commonData();
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+
+          setContents({
+            name: "",
+            content: "",
+          });
+      }
 
       e.preventDefault();
     },
@@ -86,6 +103,7 @@ const Comment = ({ filterComment, commonData }) => {
           onChange={(e) => nameChange(e)}
           className='text-name'
           placeholder='닉네임 입력'
+          ref={nameRef}
         />
 
         <input
@@ -94,6 +112,7 @@ const Comment = ({ filterComment, commonData }) => {
           onChange={(e) => contentChange(e)}
           className='text-content'
           placeholder='댓글 추가'
+          ref={contentRef}
         />
 
         <button type='submit' className='Comment-submit'>

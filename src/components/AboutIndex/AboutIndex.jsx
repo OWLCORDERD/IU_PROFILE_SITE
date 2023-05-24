@@ -4,7 +4,7 @@ import { gsap } from "gsap/all";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
 import SingerIndex from "./SingerIndex";
-import axios from "axios";
+import { commonService } from "../service";
 import { useState } from "react";
 import ActorIndex from "./ActorIndex";
 import { useRef } from "react";
@@ -13,14 +13,10 @@ const AboutIndex = () => {
   const [IndexData, setIndexData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3080/Index")
-      .then((res) => res.data)
-      .then((data) => setIndexData(data));
+    commonService.getIntroIndex().then((res) => {
+      setIndexData(res);
+    });
   }, []);
-
-  const SingerData = IndexData.filter((item) => item.id === "Singer");
-  const ActorData = IndexData.filter((item) => item.id === "Actor");
 
   const IndexRef = useRef(null);
 
@@ -60,6 +56,9 @@ const AboutIndex = () => {
     end: "100% top",
     toggleClass: { className: "show", targets: ".Focus-EffectBox" },
   });
+
+  const SingerData = IndexData.filter((item) => item.type === "Singer");
+  const ActorData = IndexData.filter((item) => item.type === "Actor");
 
   return (
     <div className='AboutIndex-container' ref={IndexRef}>

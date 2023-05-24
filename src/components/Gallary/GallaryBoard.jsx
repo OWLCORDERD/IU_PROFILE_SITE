@@ -63,8 +63,9 @@ const GallaryBoard = () => {
 
   const updateLike = (total) => {
     axios
-      .patch(`http://localhost:3080/Gallary/${layoutId}`, {
+      .patch(`http://lim5570.cafe24.com:4000/likeUp`, {
         like: total,
+        id: layoutId,
       })
       .then(function (response) {
         console.log(response);
@@ -117,14 +118,14 @@ const GallaryBoard = () => {
                   <div className='Like-CountItem'>
                     <div
                       className='Like-button'
-                      onClick={() => likeUp(item.like)}
+                      onClick={() => likeUp(item.likes)}
                     >
                       <BsFillHeartFill className='Like-icon' />
                       <div className='Like-content'>
                         <h2>이 이미지가 마음에 듭니다.</h2>
                       </div>
                     </div>
-                    <div className='count-Like'>{item.like}</div>
+                    <div className='count-Like'>{item.likes}</div>
                   </div>
                   <div className='Comment-CountItem'>
                     <FaCommentAlt />
@@ -136,7 +137,11 @@ const GallaryBoard = () => {
           );
         })}
 
-        <Comment filterComment={filterComment} commonData={reCommentDB} />
+        <Comment
+          filterBoard={filterBoard}
+          filterComment={filterComment}
+          commonData={reCommentDB}
+        />
       </div>
     </>
   );
