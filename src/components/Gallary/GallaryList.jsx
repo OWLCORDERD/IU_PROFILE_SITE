@@ -25,7 +25,7 @@ const GallaryList = () => {
   const fetch = useCallback(async () => {
     try {
       const { data } = await axios.post(
-        `http://lim5570.cafe24.com:4000/GallaryList`,
+        `https://api.iuprofile.site/GallaryList`,
         {
           curPage: page.current,
           pageSize: page_size,

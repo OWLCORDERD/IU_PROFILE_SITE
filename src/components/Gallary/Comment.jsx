@@ -70,7 +70,7 @@ const Comment = ({ filterBoard, filterComment, commonData }) => {
           };
 
           axios
-            .post("http://lim5570.cafe24.com:4000/CommentInsert", comment)
+            .post("https://api.iuprofile.site/CommentInsert", comment)
             .then(function (response) {
               console.log(response);
               commonData();

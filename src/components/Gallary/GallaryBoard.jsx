@@ -63,7 +63,7 @@ const GallaryBoard = () => {
 
   const updateLike = (total) => {
     axios
-      .patch(`http://lim5570.cafe24.com:4000/likeUp`, {
+      .patch(`https://api.iuprofile.site/likeUp`, {
         like: total,
         id: layoutId,
       })
