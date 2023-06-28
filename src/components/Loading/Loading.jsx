@@ -4,10 +4,10 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "styled-components";
 import { motion } from "framer-motion";
 
-const Loading = (props) => {
+const Loading = ({ loading }) => {
   const detail = css`
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
   `;
 
   const dynamicBox = {
@@ -60,12 +60,7 @@ const Loading = (props) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
         >
-          <ClipLoader
-            color={"#fff"}
-            size={150}
-            loading={props.loading}
-            css={detail}
-          />
+          <ClipLoader color={"#fff"} size={50} loading={loading} css={detail} />
         </motion.div>
 
         <motion.p
@@ -80,4 +75,4 @@ const Loading = (props) => {
   );
 };
 
-export default Loading;
+export default React.memo(Loading);

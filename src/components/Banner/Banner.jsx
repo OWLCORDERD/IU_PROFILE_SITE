@@ -21,9 +21,7 @@ const Banner = () => {
   const nextSlide = (e) => {
     e.preventDefault();
 
-    if (currentSlide >= TotalSlides) {
-      return;
-    } else {
+    if (currentSlide <= TotalSlides) {
       store.dispatch(increments());
     }
   };
@@ -33,8 +31,6 @@ const Banner = () => {
 
     if (currentSlide >= 1) {
       store.dispatch(decrements());
-    } else {
-      return;
     }
   };
 
@@ -67,7 +63,6 @@ const Banner = () => {
 
   return (
     <div className='Banner-container' ref={bannerRef}>
-      <Navbar bannerRef={bannerRef} />
       <div className='slide-button'>
         <div
           className='slide-before'
@@ -99,7 +94,7 @@ const Banner = () => {
 
       <div className='slide-status'>
         <span
-          class='statusBar'
+          className='statusBar'
           style={{
             transform: `translateX(${currentSlide}00%)`,
             transitionDelay: `0.5s`,

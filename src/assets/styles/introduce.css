@@ -1,27 +1,30 @@
 .Introduce-container{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width : 100%;
-    height : 280vh;
+    height : 100rem;
     background-color: #fff;
-    padding : 5% 10%;
+    padding: 5% 10%;
 }
 
-.Introduce-container .Entertainer-infoBox{
+.Introduce-container .Profile-ContentBox{
     position: relative;
-    width : 100%;
-    height : 100vh;
-}
-
-.Entertainer-infoBox.active{
-    position: sticky;
-    top : 5%;
     left : 0;
+    width : 100%;
+    height : 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s ease-out;
+    z-index: 10;
 }
 
-.Entertainer-infoBox .Entertainer-profileImg{
+.Profile-ContentBox .Entertainer-profileImg{
     position: relative;
-    width : 700px;
-    height : 700px;
+    width : 30%;
+    height : 100%;
     overflow: hidden;
 }
 
@@ -32,37 +35,9 @@
     object-fit: cover;
 }
 
-.Entertainer-infoBox .Profile-ContentBox{
-    position: absolute;
-    top : 50%;
-    transform: translateY(-50%);
-    left : 0;
-    width : 100%;
-    height : 750px;
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.5s ease-out;
-    z-index: 10;
-}
-
-.Profile-ContentBox.active{
-    display: flex;
-    animation : ProfileView 1s linear;
-}
-
-@keyframes ProfileView {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
 .Profile-ContentBox .ContentBox-item{
     position: relative;
-    width : 450px;
+    width : 40%;
     height : 100%;
     display: flex;
     flex-direction: column;
@@ -70,26 +45,49 @@
     align-items: flex-start;
 }
 
-.ContentBox-item .dynamic-txtBox{
+.ContentBox-item .Static-title{
+    width : 100%;
+    height : 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.Static-title span{
+    content : '';
+    width : 100%;
+    height : 1px;
+    background-color: #6C6C6C;
+}
+
+.Static-title h1{
+    font-size: 1.5rem;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    color : #6C6C6C;
+}
+
+.ContentBox-item .Profile-txtBox{
     position: relative;
     width: 100%;
-    height: 550px;
+    height: 85%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.dynamic-txtBox .dynamic-title{
+.Profile-txtBox .Profile-title{
     width: 100%;
-    height: 150px;
+    height: 10rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
 }
 
-.dynamic-title h1{
+.Profile-title h1{
     width: 100%;
     line-height: 100px;
     font-size: 3rem;
@@ -98,7 +96,7 @@
     color: #464646;
 }
 
-.dynamic-title p{
+.Profile-title p{
     width: 100%;
     line-height: 50px;
     font-size: 1rem;
@@ -107,17 +105,17 @@
     color: #464646;
 }
 
-.dynamic-txtBox .dynamic-info{
+.Profile-txtBox .Profile-info{
     width: 100%;
 }
 
 /*Profile txtBox styled*/
-.dynamic-txtBox .name-info, 
-.dynamic-txtBox .debut-info,
-.dynamic-txtBox .birth-info,
-.dynamic-txtBox .entertainment-info,
-.dynamic-txtBox .FanClub-info,
-.dynamic-txtBox .Social-info{
+.Profile-info .name-info, 
+.Profile-info .debut-info,
+.Profile-info .birth-info,
+.Profile-info .entertainment-info,
+.Profile-info .FanClub-info,
+.Profile-info .Social-info{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -187,29 +185,11 @@
 
 /*About ContentBox*/
 
-.Entertainer-infoBox .About-ContentBox{
-    position: absolute;
-    top : 50%;
-    transform: translateY(-50%);
-    left : 0;
+.Introduce-container .About-ContentBox{
+    position: relative;
     width : 100%;
-    height : 750px;
-    display: none;
+    height : 40rem;
     transition: all 0.5s ease-out;
-}
-
-.About-ContentBox.active{
-    display: block;
-    animation: AboutView 1s linear;
-}
-
-@keyframes AboutView {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
 }
 
 .About-ContentBox .ContentBox-item{
@@ -222,61 +202,12 @@
     justify-content: space-between;
 }
 
-.ContentBox-item .Static-title{
-    width : 100%;
-    height : 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.Static-title span{
-    content : '';
-    width : 100%;
-    height : 1px;
-    background-color: #6C6C6C;
-}
-
-.Static-title h1{
-    font-size: 1.5rem;
-    font-family: var(--font-family);
-    text-transform: uppercase;
-    color : #6C6C6C;
-}
-
-.ContentBox-item .selectMenu-Box{
-    position: relative;
-    width : 600px;
-    height : 50px;
-}
-
-.selectMenu-Box li{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width : calc(100% / 3);
-    height: 100%;
-}
-
-.selectMenu-Box li > a{
-    width : 100px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.selectMenu-Box li > a.active{
-    border-bottom: 5px solid #000;
-    font-weight: bold;
-}
-
 .ContentBox-item .Discography-container{
     position: relative;
     width: 100%;
-    height : 550px;
+    height : 100%;
     display: flex;
+    justify-content: space-between;
 }
 
 .Discography-container .Discography-contentBox{
@@ -285,12 +216,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .Discography-contentBox .Discography-titleBox{
     width : 100%;
-    height : 200px;
+    height : 50%;
 }
 
 .Discography-titleBox .Discography-title{
@@ -309,17 +240,17 @@
     display: block;
     width: 100%;
     height : 50px;
-    font-size: 1rem;
+    font-size: 15px;
     font-family: var(--font-family-Noto);
     text-transform: uppercase;
     color: #646464;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 50px;
 }
 
 .Discography-container .Discography-control{
     width: 100%;
-    height : 50px;
+    height : 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -417,10 +348,10 @@
 }
 
 .Album-info h3{
-    font-size: 1rem;
+    font-size: 15px;
     text-transform: uppercase;
     font-family: var(--font-family);
-    font-weight: bold;
+    font-weight: 100;
     line-height: 3rem;
 }
 
@@ -430,7 +361,7 @@
 }
 
 .Album-Since p{
-    font-size: 1rem;
+    font-size: 12px;
     line-height: 3rem;
     font-weight: bold;
     font-family: var(--font-family);

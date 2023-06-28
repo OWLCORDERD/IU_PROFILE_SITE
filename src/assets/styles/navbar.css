@@ -19,7 +19,7 @@
 
 .navbar#active{
   background-color: #000;
-  height: 100px;
+  height: 80px;
   z-index: 1500;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .navbar#active .logo h1{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .logo p{
@@ -63,7 +63,7 @@
 }
 
 .navbar#active .logo p{
-  font-size: 8px;
+  display: none;
 }
 
 /*navbar Main Menu ul css*/
@@ -80,18 +80,20 @@
   justify-content: center;
   width : calc(700px / 4);
   height : 100%;
+  cursor: pointer;
 }
 
 .Main-menu li > a{
-  width : 100px;
+  width : 100%;
   height : 50px;
   line-height: 50px;
   text-align: center;
   color : #fff;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   font-family: var(--font-family-Lexend);
+  cursor: pointer;
 }
 
 .navbar .Sub-menu{
@@ -105,7 +107,7 @@
 .Sub-menu .User-button{
   width : 50px;
   height : 100%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color : #fff;
   display: flex;
   align-items: center;
@@ -116,7 +118,7 @@
 .Sub-menu .Search-button{
   width : 50px;
   height : 100%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color : #fff;
   display: flex;
   align-items: center;

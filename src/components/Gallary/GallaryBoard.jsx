@@ -22,8 +22,8 @@ const GallaryBoard = () => {
   const [boardComment, setBoardComment] = useState([]);
 
   useEffect(() => {
-    reGallaryDB();
     reCommentDB();
+    reGallaryDB();
   }, []);
 
   const reCommentDB = () => {
@@ -55,35 +55,27 @@ const GallaryBoard = () => {
     removeClass: { className: "hide", targets: ".navbar" },
   });
 
-  const likeUp = (likes) => {
-    let total = likes + 1;
+  const likeUp = async (likes) => {
+    const total = likes + 1;
 
-    updateLike(total);
-  };
-
-  const updateLike = (total) => {
-    axios
-      .patch(`https://api.iuprofile.site/likeUp`, {
+    try {
+      await axios.patch(`https://api.iuprofile.site/likeUp`, {
         like: total,
         id: layoutId,
-      })
-      .then(function (response) {
-        console.log(response);
-        console.log("성공적으로 하트를 날렸습니다.");
-        console.log(`업데이트 될 좋아요 수는 ${total} 개입니다.`);
-        Swal.fire({
-          icon: "success",
-          title: "Thank's for Like",
-          text: "좋아요는 작성자에게 큰 힘이 됩니다 ♥",
-        }).then((value) => {
-          if (value) {
-            reGallaryDB();
-          }
-        });
-      })
-      .catch(function (err) {
-        console.log(err);
       });
+
+      Swal.fire({
+        icon: "success",
+        title: "Thank`s for like",
+        text: "좋아요는 개발자에게 큰 힘이 됩니다.",
+      }).then((value) => {
+        if (value) {
+          reGallaryDB();
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

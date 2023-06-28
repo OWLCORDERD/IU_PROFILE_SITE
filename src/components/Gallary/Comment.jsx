@@ -1,94 +1,90 @@
 import axios from "axios";
 import React from "react";
-import { useRef } from "react";
-import { useCallback } from "react";
+import { useMemo } from "react";
 import { useState } from "react";
 import "../../assets/styles/comment.css";
 
 const Comment = ({ filterBoard, filterComment, commonData }) => {
-  let totalDate = new Date();
-
-  let year = totalDate.getFullYear();
-
-  let month = totalDate.getMonth() + 1;
-
-  let day = totalDate.getDate();
-
-  const date = `${year}.0${month}.${day}`;
-
   const title = filterBoard[0]?.title;
 
-  const nameRef = useRef(null);
-  const contentRef = useRef(null);
+  const [finalDate, setFinalDate] = useState("");
 
   const [contents, setContents] = useState({
     name: "",
     content: "",
   });
 
-  const nameChange = useCallback(
-    (e) => {
-      setContents({
-        name: e.target.value,
-        content: contents.content,
-      });
-    },
-    [contents]
-  );
+  const nameChange = (e) => {
+    setContents({
+      name: e.target.value,
+      content: contents.content,
+    });
+  };
 
-  const contentChange = useCallback(
-    (e) => {
-      setContents({
-        name: contents.name,
-        content: e.target.value,
-      });
-    },
-    [contents]
-  );
+  const contentChange = (e) => {
+    setContents({
+      name: contents.name,
+      content: e.target.value,
+    });
+  };
 
-  const commentSubmit = useCallback(
-    (e) => {
-      const name = contents.name;
-      const content = contents.content;
+  const totalDate = new Date();
+
+  const year = totalDate.getFullYear();
+
+  const month = totalDate.getMonth() + 1;
+
+  const day = totalDate.getDate();
+
+  useMemo(() => {
+    if (String(month).length < 2) {
+      setFinalDate(`${year}.0${month}.${day}`);
+    } else if (String(day).length < 2) {
+      setFinalDate(`${year}.${month}.0${day}`);
+    } else {
+      setFinalDate(`${year}.${month}.${day}`);
+    }
+  }, [day, month, year]);
+
+  const commentSubmit = async (e) => {
+    e.preventDefault();
+
+    const name = contents.name;
+    const content = contents.content;
+
+    if (finalDate !== "") {
+      const comment = {
+        name: name,
+        content: content,
+        date: finalDate,
+        title: title,
+      };
 
       switch (name === "" || content === "") {
         case true:
           if (name === "") {
             alert("닉네임을 입력해주세요.");
-            nameRef.current.focus();
           } else if (content === "") {
             alert("댓글을 입력해주세요.");
-            contentRef.current.focus();
           }
           break;
         default:
-          const comment = {
-            name: name,
-            content: content,
-            date: date,
-            title: title,
-          };
-
-          axios
-            .post("https://api.iuprofile.site/CommentInsert", comment)
-            .then(function (response) {
-              console.log(response);
-              commonData();
-            })
-            .catch(function (err) {
-              console.log(err);
+          try {
+            await axios.post(
+              "https://api.iuprofile.site/CommentInsert",
+              comment
+            );
+            commonData();
+            setContents({
+              name: "",
+              content: "",
             });
-
-          setContents({
-            name: "",
-            content: "",
-          });
+          } catch (err) {
+            console.log(err);
+          }
       }
-
-      e.preventDefault();
-    },
-    [contents, date, title, commonData]
-  );
+    }
+  };
 
   return (
     <div className='Comment-container'>
@@ -103,7 +99,6 @@ const Comment = ({ filterBoard, filterComment, commonData }) => {
           onChange={(e) => nameChange(e)}
           className='text-name'
           placeholder='닉네임 입력'
-          ref={nameRef}
         />
 
         <input
@@ -112,7 +107,6 @@ const Comment = ({ filterBoard, filterComment, commonData }) => {
           onChange={(e) => contentChange(e)}
           className='text-content'
           placeholder='댓글 추가'
-          ref={contentRef}
         />
 
         <button type='submit' className='Comment-submit'>

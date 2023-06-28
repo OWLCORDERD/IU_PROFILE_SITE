@@ -8,39 +8,39 @@ import Navbar from "../navbar/navbar";
 import Footer from "../Footer/Footer";
 import ScrollTop from "../hooks/ScrollTop";
 
-const Gallary = () => {
-  const [loading, setLoading] = useState(false);
+const Section = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #000;
+`;
 
-  const Section = styled.section`
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: #000;
-  `;
+const Gallary = () => {
+  const [gallaryLoading, setGallaryLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setTimeout(() => {
+      setGallaryLoading(false);
+    }, 3000);
 
-    return () => setLoading(false);
+    return () => setGallaryLoading(true);
   }, []);
-
-  setTimeout(() => {
-    setLoading(false);
-  }, 3000);
 
   return (
     <>
-      <ScrollTop />
-      {loading ? (
-        <Loading loading={loading} />
+      {gallaryLoading ? (
+        <Loading loading={gallaryLoading} />
       ) : (
-        <Section>
-          <Navbar />
-          <GallaryBanner />
-          <GallaryList />
-          <Footer />
-        </Section>
+        <>
+          <ScrollTop />
+          <Section>
+            <Navbar />
+            <GallaryBanner />
+            <GallaryList />
+            <Footer />
+          </Section>
+        </>
       )}
     </>
   );

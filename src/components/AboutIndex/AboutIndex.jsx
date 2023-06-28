@@ -12,50 +12,45 @@ import { useRef } from "react";
 const AboutIndex = () => {
   const [IndexData, setIndexData] = useState([]);
 
+  const IndexRef = useRef(null);
+
   useEffect(() => {
     commonService.getIntroIndex().then((res) => {
       setIndexData(res);
     });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: IndexRef.current,
+      start: "-20% top",
+      end: "100% top",
+      toggleClass: { className: "active", targets: ".AboutIU-IndexList" },
+    });
+
+    ScrollTrigger.create({
+      trigger: IndexRef.current,
+      start: "-20% top",
+      end: "40% top",
+      toggleClass: { className: "show", targets: ".Singer-IndexBox" },
+    });
+
+    ScrollTrigger.create({
+      trigger: IndexRef.current,
+      start: "40% top",
+      end: "100% top",
+      toggleClass: { className: "show", targets: ".Actor-IndexBox" },
+    });
+
+    ScrollTrigger.create({
+      trigger: IndexRef.current,
+      start: "top top",
+      end: "100% top",
+      toggleClass: { className: "show", targets: ".Focus-EffectBox" },
+    });
+
+    return () => setIndexData();
   }, []);
-
-  const IndexRef = useRef(null);
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  ScrollTrigger.create({
-    trigger: IndexRef.current,
-    start: "top top",
-    end: "100% top",
-    toggleClass: { className: "active", targets: ".AboutIU-IndexList" },
-  });
-
-  ScrollTrigger.create({
-    trigger: IndexRef.current,
-    start: "top top",
-    end: "100% top",
-    toggleClass: { className: "hide", targets: ".navbar" },
-  });
-
-  ScrollTrigger.create({
-    trigger: IndexRef.current,
-    start: "top top",
-    end: "40% top",
-    toggleClass: { className: "show", targets: ".Singer-IndexBox" },
-  });
-
-  ScrollTrigger.create({
-    trigger: IndexRef.current,
-    start: "40% top",
-    end: "100% top",
-    toggleClass: { className: "show", targets: ".Actor-IndexBox" },
-  });
-
-  ScrollTrigger.create({
-    trigger: IndexRef.current,
-    start: "top top",
-    end: "100% top",
-    toggleClass: { className: "show", targets: ".Focus-EffectBox" },
-  });
 
   const SingerData = IndexData.filter((item) => item.type === "Singer");
   const ActorData = IndexData.filter((item) => item.type === "Actor");

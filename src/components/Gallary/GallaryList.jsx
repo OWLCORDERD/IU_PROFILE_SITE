@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { commonService } from "../service";
@@ -18,12 +17,12 @@ const GallaryList = () => {
 
   const page = useRef(1);
 
-  const page_size = 6;
-
   const [isloading, setIsloading] = useState(false);
 
-  const fetch = useCallback(async () => {
+  const fetch = async () => {
     try {
+      const page_size = 6;
+
       const { data } = await axios.post(
         `https://api.iuprofile.site/GallaryList`,
         {
@@ -41,26 +40,31 @@ const GallaryList = () => {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  };
 
   useEffect(() => {
     if (!BoxRef.current || !hasNextPage) return;
     const io = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setIsloading(true);
-        fetch();
-      }
+      setIsloading(true);
+      setTimeout(() => {
+        if (entries[0].isIntersecting) {
+          fetch();
+        }
+      }, 500);
     });
     io.observe(BoxRef.current);
+
     return () => {
       io.disconnect();
     };
-  }, [fetch, hasNextPage]);
+  }, [hasNextPage]);
 
   useEffect(() => {
     commonService.getGallary().then((res) => {
       setTotalData(res);
     });
+
+    return () => setTotalData([]);
   }, []);
 
   return (
@@ -92,12 +96,8 @@ const GallaryList = () => {
         <div className='GallaryList-Box'>
           {gallaryData.map((item) => {
             return (
-              <Link
-                to='/GallaryBoard'
-                state={{ layoutId: item.id }}
-                key={item.id}
-              >
-                <div className='Gallary-item'>
+              <Link to='/GallaryBoard' state={{ layoutId: item.id }}>
+                <div className='Gallary-item' key={item.id}>
                   <div className='Gallary-imgBox'>
                     <img src={item.img_url} alt='img-url'></img>
                   </div>

@@ -14,7 +14,7 @@ const GallaryBanner = () => {
 
   const StatusRef = useRef(null);
 
-  function useInterval(callback, delay) {
+  const useInterval = (callback, delay) => {
     if (nextSlide === 4) {
       setNextSlide(0);
     }
@@ -23,12 +23,14 @@ const GallaryBanner = () => {
 
     useEffect(() => {
       saveCallBack.current = callback;
-    });
+
+      return () => {
+        saveCallBack.current = null;
+      };
+    }, [callback]);
 
     useEffect(() => {
-      function init() {
-        saveCallBack.current();
-      }
+      const init = () => saveCallBack.current();
 
       if (delay !== null) {
         let incrementCount = setInterval(init, delay);
@@ -36,7 +38,7 @@ const GallaryBanner = () => {
         return () => clearInterval(incrementCount);
       }
     }, [delay]);
-  }
+  };
 
   useInterval(
     () => {
@@ -45,18 +47,16 @@ const GallaryBanner = () => {
     isRunning ? 6000 : null
   );
 
-  const slideDBreload = () => {
+  useEffect(() => {
     commonService.getGallarySlider().then((res) => {
       setGSliderDB(res);
     });
-  };
-
-  useEffect(() => {
-    slideDBreload();
 
     if (nextSlide >= 0) {
       SlideImgRef.current.classList.add("active");
     }
+
+    return () => setGSliderDB([]);
   }, [nextSlide]);
 
   const slideStop = (e) => {
@@ -80,7 +80,7 @@ const GallaryBanner = () => {
     <div className='Gallary-banner'>
       <div className='Banner-Index'>
         <div className='Index-video' ref={SlideImgRef}>
-          <img src={GSliderDB[nextSlide]?.thumbNail} alt='Bazaar' />
+          <img src={GSliderDB[nextSlide]?.thumbNail} alt='slideImg' />
         </div>
 
         <div className='Index-Info'>

@@ -31,6 +31,11 @@ const example = {
       url: "/IntroIndex",
     }).then((res) => res.data);
   },
+  getSubMenu: () => {
+    return service({
+      url: "/SubMenu",
+    }).then((res) => res.data);
+  },
 };
 
 export default example;
