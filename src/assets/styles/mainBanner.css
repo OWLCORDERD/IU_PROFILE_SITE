@@ -6,50 +6,28 @@
   overflow: hidden;
 }
 
-.Banner-container .slide-button{
+.Banner-container .Data-Loading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  width : 100%;
-  height : 100px;
-  top : 50%;
+  top: 0;
   left: 0;
-  transform : translateY(-50%);
+  width: 100%;
+  height: 100%;
+  background-color: #000;
   z-index: 100;
 }
 
-.slide-button .slide-next{
-  position: absolute;
-  top: 0;
-  right: 50px;
-  color: #fff;
-  width : 10rem;
-  height : 100%;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.slide-button > div{
+.Data-Loading .loading-content{
   position: relative;
-  content: '';
-  width : 100%;
-  height : 100%;
-}
-
-.slide-button .slide-before{
-  position: absolute;
-  top: 0;
-  left: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  line-height: 100px;
+  width: 100%;
+  font-size: 1.5rem;
   color: #fff;
-  width : 10rem;
-  height : 100%;
-  font-size: 20px;
-  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .Banner-container .slider-container{
@@ -62,6 +40,7 @@
 
 .slider-container .Slider-listBox{
   position: relative;
+  left: 0;
   display: flex;
   width : 300%;
   height : 100%;
@@ -106,26 +85,13 @@
   transition-delay: 0.5s;
 }
 
-/*active id toggle event*/
-
-.Slider-item#active .Slider-background{
-  width: 100%;
-  height: 100%;
-  transition: all 1s ease-in;
-}
-
-.Slider-item#active .Slider-background iframe{
-  opacity: 1;
-  transition-duration: 1s;
-}
-
 .Slider-background::before{
   position: absolute;
   width : 100%;
   height : 100%;
   top : 0;
   left : 0;
-  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.4) 80%);
   z-index: 1;
   content : '';
 }
@@ -195,7 +161,7 @@
   cursor: pointer;
 }
 
-.view-more span{
+.view-more a{
   color : #fff;
   font-size: 15px;
   font-weight: bold;
@@ -276,21 +242,50 @@
   color: #fff;
 }
 
+.Banner-container .slide-control{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 30%;
+  right: 15rem;
+  width: 30rem;
+  z-index: 10;
+  font-size: 2rem;
+}
+
+.slide-control .slide-state{
+  width: 10rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.slide-control .control-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10rem;
+}
+
+.control-buttons .control-icon:hover{
+  cursor: pointer;
+}
+
 .Banner-container .slide-status{
   position: absolute;
   bottom: 20%;
   right : 15rem;
-  width : 600px;
+  width : 30rem;
   height : 10px; 
   background-color: rgba(255, 255, 255, 0.5);
-  z-index: 100;
+  z-index: 10;
 }
 
 .slide-status .statusBar{
   position: relative;
   display: block;
   left : 0;
-  width: 200px;
+  width: 10rem;
   background-color: #fff;
   height: 100%;
 }

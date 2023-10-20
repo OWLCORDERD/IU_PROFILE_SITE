@@ -1,9 +1,8 @@
 import "./App.css";
-import Main from "./components/Main/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Gallary from "./components/Gallary/Gallary";
-import GallaryBoard from "./components/Gallary/GallaryBoard";
-import RootMain from "./components/Main/RootMain";
+import Gallary from "components/Gallary/Gallary";
+import GallaryBoard from "components/Gallary/GallaryBoard";
+import RootMain from "components/Main/RootMain";
 
 function App() {
   return (

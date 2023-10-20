@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Loading from "../Loading/Loading";
 import Main from "./Main";
+import ScrollTop from "../hooks/ScrollTop";
 
 const RootMain = () => {
   const [mainLoading, setmainLoading] = useState(true);
@@ -18,14 +19,12 @@ const RootMain = () => {
 
   return (
     <>
-      {mainLoading ? (
-        <Loading loading={mainLoading} />
-      ) : (
-        <>
-          <Main />
-          <Footer />
-        </>
-      )}
+      {mainLoading ? <Loading loading={mainLoading} /> : null}
+      <>
+        <ScrollTop />
+        <Main loading={mainLoading} />
+        <Footer loading={mainLoading} />
+      </>
     </>
   );
 };

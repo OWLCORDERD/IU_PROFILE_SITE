@@ -14,6 +14,12 @@ const GallaryBanner = () => {
 
   const StatusRef = useRef(null);
 
+  useEffect(() => {
+    commonService.getGallarySlider().then((res) => {
+      setGSliderDB(res);
+    });
+  }, []);
+
   const useInterval = (callback, delay) => {
     if (nextSlide === 4) {
       setNextSlide(0);
@@ -42,21 +48,17 @@ const GallaryBanner = () => {
 
   useInterval(
     () => {
-      setNextSlide(nextSlide + 1);
+      setNextSlide((prev) => {
+        return prev + 1;
+      });
     },
     isRunning ? 6000 : null
   );
 
   useEffect(() => {
-    commonService.getGallarySlider().then((res) => {
-      setGSliderDB(res);
-    });
-
     if (nextSlide >= 0) {
       SlideImgRef.current.classList.add("active");
     }
-
-    return () => setGSliderDB([]);
   }, [nextSlide]);
 
   const slideStop = (e) => {

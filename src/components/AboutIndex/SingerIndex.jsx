@@ -1,32 +1,29 @@
 import React from "react";
 import "../../assets/styles/AboutIndex.css";
 import sensor from "../../assets/image/sensor.png";
-import { gsap } from "gsap/all";
-import { ScrollTrigger } from "gsap/all";
+import { useEffect } from "react";
 
-const SingerIndex = ({ infoData, indexRef }) => {
-  gsap.registerPlugin(ScrollTrigger);
+const SingerIndex = ({ infoData, indexRef, gsap }) => {
+  useEffect(() => {
+    gsap.to(".singer-LeftScroll .Left-ImgBox", {
+      bottom: "0%",
+      scrollTrigger: {
+        trigger: indexRef.current,
+        scrub: 5,
+        start: "10% top",
+        end: "50% top",
+      },
+    });
 
-  const tl = gsap.timeline();
-
-  tl.to(".singer-LeftScroll .Left-ImgBox", {
-    bottom: 0,
-    scrollTrigger: {
-      trigger: indexRef.current,
-      scrub: 5,
-      start: "10% top",
-      end: "50% top",
-    },
-  });
-
-  tl.to(".singer-RightScroll .Right-ImgBox", {
-    bottom: "100%",
-    scrollTrigger: {
-      trigger: indexRef.current,
-      scrub: 5,
-      start: "10% top",
-      end: "50% top",
-    },
+    gsap.to(".singer-RightScroll .Right-ImgBox", {
+      bottom: "100%",
+      scrollTrigger: {
+        trigger: indexRef.current,
+        scrub: 5,
+        start: "10% top",
+        end: "50% top",
+      },
+    });
   });
   return (
     <div className='Singer-IndexBox'>

@@ -1,12 +1,13 @@
 import React from "react";
-import Banner from "../Banner/Banner";
+import Banner from "components/Banner/Banner";
 import styled from "styled-components";
-import Introduce from "../Introduce/Introduce";
-import AboutIndex from "../AboutIndex/AboutIndex";
-import Youtube from "../Youtube/Youtube";
-import ScrollTop from "../hooks/ScrollTop";
-import Navbar from "../navbar/navbar";
-import SubMenu from "../SubMenu/SubMenu";
+import Introduce from "components/Introduce/Introduce";
+import AboutIndex from "components/AboutIndex/AboutIndex";
+import Youtube from "components/Youtube/Youtube";
+import Navbar from "components/navbar/navbar";
+import SubMenu from "components/SubMenu/SubMenu";
+import FanCafe from "components/FanCafe/FanCafe";
+import Discography from "components/Discography/Discography";
 
 const Container = styled.main`
   position: relative;
@@ -15,6 +16,11 @@ const Container = styled.main`
   top: 0;
   left: 0;
   padding: 0;
+  display: none;
+
+  &#active {
+    display: block;
+  }
 `;
 
 const Section = styled.section`
@@ -24,14 +30,17 @@ const Section = styled.section`
   display: block;
 `;
 
-const Main = () => {
+const Main = ({ loading }) => {
   return (
     <>
-      <ScrollTop />
       <Navbar />
-      <Container>
+      <Container id={loading ? "" : "active"}>
         <Section>
           <Banner />
+        </Section>
+
+        <Section>
+          <Discography />
         </Section>
 
         <Section>

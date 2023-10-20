@@ -1,27 +1,61 @@
 import React, { useState, useRef } from "react";
-import "../../assets/styles/mainBanner.css";
-import Navbar from "../navbar/navbar";
+import "assets/styles/mainBanner.css";
 import { useEffect } from "react";
 import Slide from "./Slide";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-import store from "../../reducer/store";
-import { decrements, increments } from "../../reducer/toggleSlide";
+import store from "reducer/store";
+import { decrements, increments, reset } from "reducer/toggleSlide";
 import { useSelector } from "react-redux";
 import { commonService } from "../service";
+import { Oval } from "react-loader-spinner";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Banner = () => {
-  const TotalSlides = 2;
+  const [SlideData, setSlideData] = useState([]);
+  const totalSlides = 2;
   const currentSlide = useSelector((state) => state.slide.count);
 
-  const slideRef = useRef(null);
+  const [loop, setLoop] = useState();
+  const [loading, setLoading] = useState(true);
+
   const bannerRef = useRef(null);
-  const before = useRef(null);
-  const after = useRef(null);
+
+  useEffect(() => {
+    commonService.getMainSlider().then((res) => {
+      setSlideData(res);
+    });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 6000);
+  }, []);
+
+  useEffect(() => {
+    if (loading === false) {
+      const timeout = setTimeout(() => {
+        if (currentSlide > totalSlides) {
+          return store.dispatch(reset());
+        }
+
+        return store.dispatch(increments());
+      }, 9000);
+
+      setLoop(timeout);
+
+      if (currentSlide > totalSlides) {
+        return store.dispatch(reset());
+      }
+    }
+    return () => {
+      clearTimeout(loop);
+    };
+  }, [loading, SlideData, currentSlide]);
 
   const nextSlide = (e) => {
     e.preventDefault();
 
-    if (currentSlide <= TotalSlides) {
+    if (currentSlide > 2) {
+      store.dispatch(reset());
+    } else {
       store.dispatch(increments());
     }
   };
@@ -29,67 +63,67 @@ const Banner = () => {
   const beforeSlide = (e) => {
     e.preventDefault();
 
-    if (currentSlide >= 1) {
+    if (currentSlide > 0) {
       store.dispatch(decrements());
     }
   };
 
-  const [SlideData, setSlideData] = useState([]);
-  const MusicSlide = SlideData.find((SlideData) => SlideData.id === 1);
-  const FashionSlide = SlideData.find((SlideData) => SlideData.id === 2);
-  const CFSlide = SlideData.find((SlideData) => SlideData.id === 3);
-
-  useEffect(() => {
-    commonService.getMainSlider().then((res) => {
-      setSlideData(res);
-    });
-
-    slideRef.current.style.right = `${currentSlide}00%`;
-    slideRef.current.style.transitionDuration = `1s`;
-    slideRef.current.style.transitionDelay = `0.5s`;
-
-    if (currentSlide === 0) {
-      before.current.style.display = `none`;
-    } else {
-      before.current.style.display = `flex`;
-    }
-
-    if (currentSlide > 1) {
-      after.current.style.display = `none`;
-    } else {
-      after.current.style.display = `flex`;
-    }
-  }, [currentSlide]);
-
   return (
     <div className='Banner-container' ref={bannerRef}>
-      <div className='slide-button'>
-        <div
-          className='slide-before'
-          ref={before}
-          onClick={(e) => beforeSlide(e)}
-        >
-          <MdArrowBackIosNew />
-          <h2>Prev</h2>
-        </div>
+      {loading === true ? (
+        <div className='Data-Loading'>
+          <Oval
+            height={80}
+            width={80}
+            color='#fff'
+            wrapperStyle={{}}
+            wrapperClass=''
+            visible={true}
+            ariaLabel='oval-loading'
+            secondaryColor='#E5E5E5'
+            strokeWidth={2}
+            strokeWidthSecondary={2}
+          />
 
-        <div className='slide-next' onClick={(e) => nextSlide(e)} ref={after}>
-          <h2>Next</h2>
-          <MdArrowForwardIos />
+          <div className='loading-content'>Banner slider loading...</div>
         </div>
-      </div>
+      ) : null}
       <div className='slider-container'>
-        <ul className='Slider-listBox' ref={slideRef}>
-          <li>
-            <Slide MusicData={MusicSlide} />
-          </li>
-          <li>
-            <Slide FashionData={FashionSlide} />
-          </li>
-          <li>
-            <Slide CFData={CFSlide} />
-          </li>
+        <ul
+          className='Slider-listBox'
+          style={{
+            left: `-${currentSlide}00%`,
+            transitionDelay: `0.5s`,
+            transitionDuration: `1s`,
+          }}
+        >
+          {SlideData.map((item) => {
+            return (
+              <li key={item.id}>
+                <Slide slideData={item} />
+              </li>
+            );
+          })}
         </ul>
+      </div>
+
+      <div className='slide-control'>
+        <div className='slide-state'>{currentSlide + 1} / 3</div>
+
+        <div className='control-buttons'>
+          <IoIosArrowBack
+            color='#fff'
+            onClick={(e) => beforeSlide(e)}
+            visibility={currentSlide === 0 ? "hidden" : "visible"}
+            className='control-icon'
+          />
+          <IoIosArrowForward
+            color='#fff'
+            onClick={(e) => nextSlide(e)}
+            visibility={currentSlide === 2 ? "hidden" : "visible"}
+            className='control-icon'
+          />
+        </div>
       </div>
 
       <div className='slide-status'>

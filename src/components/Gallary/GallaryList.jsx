@@ -84,9 +84,6 @@ const GallaryList = () => {
             <span>CF</span>
           </li>
         </ul>
-        <div className='Search-input'>
-          <input type='text' placeholder='검색어를 입력하세요.' />
-        </div>
 
         <div className='result-count'>
           <h1>{totalData.length} Results</h1>

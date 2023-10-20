@@ -4,17 +4,15 @@
 .Submenu-container{
     position: relative;
     width: 100%;
-    height: 160vh;
+    height: max-content;
     padding : 5% 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: #000;
 }
 
 /*Submenu 제목 소제목 box container*/
 .Submenu-container .Submenu-titleBox{
+    display: block;
     width: 100%;
-    height: 10rem;
 }
 
 .Submenu-titleBox h1{
@@ -25,180 +23,85 @@
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: bold;
-}
-
-.Submenu-titleBox p{
-    width: 100%;
-    line-height: 3rem;
-    text-align: center;
-    font-family: var(--font-family-Noto);
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: bold;
+    color: #fff;
 }
 
 /*Submenu wrap 부모 셀렉터*/
 .Submenu-container .Submenu-wrap{
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/*column 100% 크기 box menu 부모 컨테이너*/
-.Submenu-wrap .menu-ColumnBox{
+.Submenu-wrap .Menu-card{
+    position: absolute;
+    display: none;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 50vh;
+    height: 100%;
 }
 
-/*column 100% 크기 box Menu container*/
-.menu-ColumnBox .Menu-container{
-    position: relative;
+.Menu-card:nth-child(1){
+    display: flex;
+}
+
+.Menu-card .Menu-imgBox{
+    flex : 6;
+    width: 100%;
+    height: 28rem;
+    overflow: hidden;
+}
+
+.Menu-imgBox > img{
     width : 100%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.5s ease-out;
-}
-
-/*Menu component hover Img scale 이벤트*/
-.Menu-container:hover .Menu-imgBox{
-    transform: scale(1.1);
-    transition: all 0.5s ease-in;
-}
-
-/*Menu Component 동일 요소 opacity 속성*/
-.Menu-container::before{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: '';
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-/*Menu Component 동일 요소 이미지 크기 cover*/
-.Menu-container .Menu-imgBox{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.Menu-imgBox img{
-    position: absolute;
-    top : 0;
-    left : 0;
-    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/*row 50% & 50% menu 부모 컨테이너*/
-.Submenu-wrap .menu-RowBox{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 60vh;
-}
-
-/*row 50%  Menu component css*/
-.menu-RowBox .Menu-container{
-    position: relative;
-    width : 50%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-/*row 50% 오른쪽 column 2칸으로 나눈 container*/
-.menu-RowBox .row-ColumnBox{
-    position: relative;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.row-ColumnBox .Menu-container{
-    position: relative;
-    width : 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-/*Menu Component Content 자식요소 컨테이너*/
-.Menu-container .Menu-contentBox{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% ,-50%);
-    width: 100%;
-    height: 15rem;
-    font-family: var(--font-family);
-    z-index: 10;
+.Menu-card .Menu-contentBox{
+    flex: 4;
+    height: 28rem;
+    padding : 0 5rem;
 }
 
 .Menu-contentBox .Menu-subTitle{
-    width: 100%;
-    text-align: center;
-}
-
-.Menu-subTitle span{
-    font-size: 1.2rem;
-    line-height: 5rem;
+    font-size: 18px;
+    line-height: 4rem;
     color: #fff;
-    text-transform: uppercase;
 }
 
 .Menu-contentBox .Menu-title{
-    text-align: center;
-}
-
-.Menu-title h1{
-    font-size: 2rem;
-    line-height: 10rem;
+    font-size: 1.8rem;
     color: #fff;
-    text-transform: uppercase;
+    line-height: 8rem;
 }
 
-.Menu-imgBox .Menu-videoBox{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    display: none;
+.Menu-contentBox .Menu-info{
+    margin-top: 4rem;
+    width: 25rem;
+    height: 6rem;
+    font-size: 1rem;
+    color: #fff;
+    word-break: keep-all;
+    font-family: var(--font-family-Noto);
 }
 
-.Menu-videoBox iframe{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.Menu-container:hover .Menu-videoBox{
+.Menu-contentBox .view-info{
     display: block;
-    animation: iframeAnimation 0.5s ease-in-out;
-}
-
-@keyframes iframeAnimation{
-    0%{
-        opacity: 0;
-        transition: all 0.5s ease-out;
-    }
-
-    100%{
-        opacity: 1;
-        transition: all 0.5s ease-in;
-    }
+    line-height: 3rem;
+    margin-top: 3rem;
+    width: 150px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    font-family: var(--font-family-Noto);
+    cursor: pointer;
 }

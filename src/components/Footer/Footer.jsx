@@ -1,14 +1,9 @@
 import React from "react";
 import "../../assets/styles/footer.css";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaTwitterSquare } from "react-icons/fa";
-import { BsYoutube } from "react-icons/bs";
-import { BsFacebook } from "react-icons/bs";
-import Logo from "../../assets/image/logo/I-YOU-unscreen.gif";
 
-const Footer = () => {
+const Footer = ({ loading }) => {
   return (
-    <footer className='footer-container'>
+    <footer className='footer-container' id={loading ? "" : "active"}>
       <div className='footer-Preview'>
         <div className='footer-logo'>
           <h1>IYOU</h1>
@@ -25,12 +20,20 @@ const Footer = () => {
       <div className='footer-menus'>
         <ul className='footer-Menu'>
           <li>
-            <a href='https://www.youtube.com/@dlwlrma' target='_blank'>
+            <a
+              href='https://www.youtube.com/@dlwlrma'
+              target='_blank'
+              rel='noreferrer'
+            >
               YOUTUBE
             </a>
           </li>
           <li>
-            <a href='https://m.cafe.daum.net/IU/_rec' target='_blank'>
+            <a
+              href='https://m.cafe.daum.net/IU/_rec'
+              target='_blank'
+              rel='noreferrer'
+            >
               IU FAN CAFE
             </a>
           </li>
@@ -38,6 +41,7 @@ const Footer = () => {
             <a
               href='https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344'
               target='_blank'
+              rel='noreferrer'
             >
               개발자
             </a>

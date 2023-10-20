@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import store from "../../reducer/store";
-import { useSelector } from "react-redux";
-import { decrementToggle, incrementToggle } from "../../reducer/controlSlide";
+import React, { useEffect, useRef } from "react";
 import "../../assets/styles/introduce.css";
 import ProfileImg from "../../assets/image/Profile-new.jpg";
 import Edamlogo from "../../assets/image/logo/EDAM엔터테인먼트_logo.png";
@@ -12,49 +9,33 @@ import {
   AiFillTwitterSquare,
   AiFillYoutube,
 } from "react-icons/ai";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-import { commonService } from "../service";
 
 const Introduce = () => {
   const IntroRef = useRef(null);
 
-  const discoTotalSlide = 2;
+  const ProfileContent = useRef(null);
 
-  const toggleCount = useSelector((state) => state.discoSlide.toggle);
-
-  const DiscoNextSlide = (e) => {
-    e.preventDefault();
-
-    if (toggleCount <= discoTotalSlide) {
-      store.dispatch(incrementToggle());
-    } else {
-      return;
-    }
-  };
-
-  const DiscoBeforeSlide = (e) => {
-    e.preventDefault();
-
-    if (toggleCount >= 1) {
-      store.dispatch(decrementToggle());
-    } else {
-      return;
-    }
-  };
-
-  const [discoDB, setDiscoDB] = useState([]);
+  const ImgRef = useRef(null);
 
   useEffect(() => {
-    commonService.getDiscoGraphy().then((res) => {
-      setDiscoDB(res);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((el) => {
+        if (el.isIntersecting) {
+          el.target.classList.add("show");
+        } else {
+          el.target.classList.remove("show");
+        }
+      });
     });
 
-    return () => setDiscoDB([]);
+    observer.observe(ProfileContent.current);
+    observer.observe(ImgRef.current);
   }, []);
+
   return (
     <div className='Introduce-container' ref={IntroRef}>
       <div className='Profile-ContentBox'>
-        <div className='ContentBox-item'>
+        <div className='ContentBox-item hidden' ref={ProfileContent}>
           <div className='Static-title'>
             <span></span>
             <h1>Introduce Entertainer</h1>
@@ -140,75 +121,8 @@ const Introduce = () => {
           </div>
         </div>
 
-        <div className='Entertainer-profileImg'>
+        <div className='Entertainer-profileImg hidden' ref={ImgRef}>
           <img src={ProfileImg} alt='' />
-        </div>
-      </div>
-
-      <div className='About-ContentBox'>
-        <div className='ContentBox-item'>
-          <div className='Static-title'>
-            <span></span>
-            <h1>Introduce Entertainer</h1>
-          </div>
-
-          <section className='Discography-container'>
-            <article className='Discography-contentBox'>
-              <div className='Discography-titleBox'>
-                <h2 className='Discography-title'>Discography</h2>
-                <h2 className='Discography-subTitle'>
-                  가수 아이유의 정규 앨범 및 미니 앨범 음반들을 소개합니다.
-                </h2>
-              </div>
-
-              <div className='Discography-control'>
-                <div className='control-move'>
-                  <MdArrowBackIosNew
-                    className='before'
-                    onClick={(e) => DiscoBeforeSlide(e)}
-                  />
-                  <MdArrowForwardIos
-                    className='next'
-                    onClick={(e) => DiscoNextSlide(e)}
-                  />
-                </div>
-              </div>
-            </article>
-
-            <article className='discography-slide'>
-              <div
-                className='slide-wrap'
-                style={{
-                  left: `calc(-${toggleCount} * 20rem)`,
-                  transition: "all 0.2s ease-in",
-                }}
-              >
-                {discoDB.map((item) => {
-                  return (
-                    <div className='slide-item' key={item.id}>
-                      <div className='Album-Img'>
-                        <img src={item.AlbumImg} alt='AlbumImg' />
-                      </div>
-
-                      <div className='Album-info'>
-                        <div className='Album-title'>
-                          <h2>{item.title}</h2>
-                        </div>
-
-                        <div className='Album-info'>
-                          <h3>{item.info}</h3>
-                        </div>
-
-                        <div className='Album-Since'>
-                          <p>{item.Since}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </article>
-          </section>
         </div>
       </div>
     </div>

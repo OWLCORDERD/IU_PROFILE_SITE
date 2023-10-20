@@ -1,0 +1,147 @@
+.Discography-container{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    background-color: #000;
+    padding : 0 10%;
+    z-index: 200;
+}
+
+.Discography-container .Discography-titleBox{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 10%;
+    top: -10rem;
+    width: 40rem;
+    height: 6.25rem;
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.Discography-titleBox .Discography-title{
+    width: 30rem;
+    line-height: 6.25rem;
+}
+
+.Discography-titleBox .control-animate{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 8rem;
+    height: 100%;
+}
+
+.control-animate .control-button{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.Discography-container .Discography-slider{
+    position: relative;
+    top: -2rem;
+    width: 100%;
+    height: 700px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.Discography-slider .slider-wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: max-content;
+    height: 100%;
+}
+
+.slider-wrap .slide{
+    display: inline-flex;
+    width: max-content;
+    height: 100%;
+}
+
+.slider-wrap .slide.original{
+    animation: 20s linear infinite normal none running animate;
+}
+
+.slider-wrap .slide.clone{
+    animation: 20s linear infinite animate2;
+}
+
+.slider-wrap .slide.stop{
+    animation-play-state: paused;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateX(0%);
+    }
+
+    50%{
+        transform: translateX(-100%);
+    }
+
+    50.1%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes animate2 {
+    0%{
+        transform: translateX(0%);
+    }
+
+    100%{
+        transform: translateX(-200%);
+    }
+}
+
+.slide li{
+    width: 35rem;
+    height: 100%;
+    margin-right: 50px;
+}
+
+.slide li > a{
+    width: 100%;
+    height: 100%;
+}
+
+.slide li > a > .Album-imgBox{
+    width: 100%;
+    height: 550px;
+}
+
+.Album-imgBox > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide li > a > .Album-infoBox{
+    width: 100%;
+    height: 150px;
+}
+
+.Album-infoBox > h2{
+    margin-top: 20px;
+    line-height: 50px;
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: var(--font-family-Noto);
+}
+
+.Album-infoBox > p{
+    line-height: 50px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: var(--font-family-Noto);
+}

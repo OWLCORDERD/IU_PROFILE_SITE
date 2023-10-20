@@ -43,7 +43,9 @@ const FanCafe = () => {
           <h2 className='header-subTitle'>Fan Cafe</h2>
           <h1 className='header-title'>IU(아이유) 공식 팬카페</h1>
         </div>
+      </div>
 
+      <div className='FanCafe-section'>
         <div className='header-memberBox'>
           <h2 className='member-title'>회원 수</h2>
 
@@ -51,20 +53,6 @@ const FanCafe = () => {
             <h1 className='dynamic-count'>0</h1>
             <p className='static-txt'>명</p>
           </div>
-        </div>
-      </div>
-
-      <div className='FanCafe-section'>
-        <div className='FanCafe-Video'>
-          <iframe
-            width='560'
-            height='315'
-            src='https://www.youtube.com/embed/aFkkL7f1ZJ8'
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            allowFullScreen
-          ></iframe>
         </div>
 
         <div className='FanCafe-info'>
