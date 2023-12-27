@@ -5,9 +5,9 @@ import Introduce from "components/Introduce/Introduce";
 import AboutIndex from "components/AboutIndex/AboutIndex";
 import Youtube from "components/Youtube/Youtube";
 import Navbar from "components/navbar/navbar";
-import SubMenu from "components/SubMenu/SubMenu";
-import FanCafe from "components/FanCafe/FanCafe";
+import ActorList from "components/ActorList/ActorList";
 import Discography from "components/Discography/Discography";
+import GallaryPreview from "components/GallaryPreview/GallaryPreview";
 
 const Container = styled.main`
   position: relative;
@@ -56,7 +56,11 @@ const Main = ({ loading }) => {
         </Section>
 
         <Section>
-          <SubMenu />
+          <GallaryPreview />
+        </Section>
+
+        <Section>
+          <ActorList />
         </Section>
       </Container>
     </>

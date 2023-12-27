@@ -23,13 +23,10 @@ const GallaryList = () => {
     try {
       const page_size = 6;
 
-      const { data } = await axios.post(
-        `https://api.iuprofile.site/GallaryList`,
-        {
-          curPage: page.current,
-          pageSize: page_size,
-        }
-      );
+      const { data } = await axios.post(`https://iuprofile.site/GallaryList`, {
+        curPage: page.current,
+        pageSize: page_size,
+      });
 
       setGallaryData((prev) => [...prev, ...data]);
       setHasNextPage(data.length === 6);

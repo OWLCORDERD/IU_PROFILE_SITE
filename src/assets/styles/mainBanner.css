@@ -4,6 +4,7 @@
   height: 100vh;
   font-family: var(--font-family);
   overflow: hidden;
+  background-color: #000;
 }
 
 .Banner-container .Data-Loading{
@@ -31,261 +32,138 @@
 }
 
 .Banner-container .slider-container{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  bottom: 0;
-  left : 0;
-}
-
-.slider-container .Slider-listBox{
-  position: relative;
-  left: 0;
-  display: flex;
-  width : 300%;
-  height : 100%;
-}
-
-.Slider-listBox > li{
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  width : 100%;
-  height : 100%;
-}
-
-.Slider-item{
   position: relative;
   width : 100%;
-  height : 100%;
+  height : 46rem;
+  top : 60%;
+  transform: translateY(-60%);
+}
+
+.slider-container .slick-slider{
+  width: 100%;
+  height: 100%;
+}
+
+.slick-slider .slick-slide{
+  padding: 0;
+}
+
+.slick-slider .slick-center{
+  margin: 0 20px;
+}
+
+.slick-slide .Slider-item{
+  position: relative;
+  width : 100%;
+  height : 46rem;
   overflow: hidden;
-  transition-duration: 1s;
+  background-color: #fff;
 }
 
 .Slider-item .Slider-background{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Slider-background > img{
   position: absolute;
   top: 0;
   left: 0;
-  width : 100%;
-  height : 100%;
-  background-color: #fff;
-  transition: all 0.5s ease-out;
-  overflow: hidden;
-}
-
-.Slider-background iframe{
-  position: absolute;
-  top : 0;
-  left : 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  width : 100%;
-  height : 100%;
-  opacity: 1;
-  transition-duration: 0.5s;
-  transition-delay: 0.5s;
 }
 
 .Slider-background::before{
   position: absolute;
-  width : 100%;
-  height : 100%;
-  top : 0;
-  left : 0;
-  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.4) 80%);
-  z-index: 1;
-  content : '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 .Slider-item .Slider-contents{
   position: absolute;
-  width : 100%;
-  padding : 0 250px;
-  top : 50%;
-  transform: translateY(-50%);
-  height : 40%;
-  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 6.25rem 3rem;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.5s ease-out;
 }
 
-.Slider-contents .title-Box{
-  position: relative;
-  width : 60%;
-  height : 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.title-Box .sub-title{
-  width : 100%;
-  height : 50px;
-  line-height: 50px;
-  font-size: 20px;
-  color : #fff;
-}
-
-.title-Box .Slider-title{
-  width : 100%;
-  height : 100px;
-  line-height: 100px;
-  color : #fff;
-  font-family: var(--font-family-Noto);
-  font-size: 18px;
-  word-break: keep-all;
-}
-
-.title-Box .Slider-subTitle{
-  width : 80%;
-  height : 100px;
-  color: #fff;
-  font-family: var(--font-family-Noto);
-  font-size: 15px;
-  word-break: keep-all;
-}
-
-.Slider-contents .view-more{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width : max-content;
-  height : 50px;
-  border-bottom: 5px solid transparent;
-}
-
-.view-more:hover{
-  border-bottom: 5px solid #fff;
-  cursor: pointer;
-}
-
-.view-more a{
-  color : #fff;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: var(--font-family-Noto);
-  text-transform: uppercase;
-}
-
-.Slider-listBox > li > .NextSlider-Preview{
-  position: relative;
-  display: none;
-  align-items: center;
-  width : 0;
-  height : 550px;
-  z-index: 1000;
-  transition-duration: 1s;
-}
-
-.NextSlider-Preview#active{
-  width: 25%;
-  transition-duration: 1s;
-}
-
-.NextSlider-Preview .NextSlider-Thumbnail{
-  position: relative;
-  width : 100%;
-  height : 100%;
-  overflow: hidden;
-  box-shadow: 3px 3px 3px rgba(255,255,255.0.2);
-}
-
-.NextSlider-Thumbnail .NextSlider-imgBox{
-  position: relative;
-  width : 100%;
-  height : 100%;
-  overflow: hidden;
+.slick-center .Slider-contents{
+  opacity: 1;
   transition: all 0.5s ease-in;
 }
 
-.NextSlider-imgBox img{
-  position: absolute;
-  top : 0;
-  left : 0;
-  object-fit: cover;
-  width : 100%;
-  height : 100%;
+.Slider-contents .slide-index{
+  width: 100%;
+  height: 5rem;
 }
 
-.NextSlider-imgBox::before{
-  position: absolute;
-  width : 100%;
-  height : 100%;
-  content: '';
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.NextSlider-imgBox .Next-info{
-  position: absolute;
-  width : 100%;
-  height: 300px;
-  padding : 10%;
-  bottom : 0;
-  left : 0;
-  z-index: 10;
-}
-
-.Next-info h1{
-  width : 100%;
-  height : 150px;
-  font-size: 2rem;
+.slide-index > p{
+  line-height: 5rem;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  font-weight: bold;
   color: #fff;
 }
 
-.Next-info p{
-  width : 100%;
-  height : 150px;
-  font-size: 1.5rem;
-  color: #fff;
+.Slider-contents .slide-title{
+  width: 100%;
+  height: 5rem;
 }
 
-.Banner-container .slide-control{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  bottom: 30%;
-  right: 15rem;
-  width: 30rem;
-  z-index: 10;
-  font-size: 2rem;
-}
-
-.slide-control .slide-state{
-  width: 10rem;
+.slide-title > h1{
+  line-height: 5rem;
   font-size: 1.2rem;
+  font-family: var(--font-family-Noto);
   color: #fff;
 }
 
-.slide-control .control-buttons{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 10rem;
+.Slider-contents .slide-info{
+  width: 100%;
+  height: 6rem;
 }
 
-.control-buttons .control-icon:hover{
-  cursor: pointer;
+.slide-info > p {
+  width: 100%;
+  word-break: keep-all;
+  font-size: 1rem;
+  color: #fff;
+  font-family: var(--font-family-Noto);
 }
 
-.Banner-container .slide-status{
-  position: absolute;
-  bottom: 20%;
-  right : 15rem;
-  width : 30rem;
-  height : 10px; 
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: 10;
-}
-
-.slide-status .statusBar{
-  position: relative;
+.Slider-item .view-more{
   display: block;
-  left : 0;
-  width: 10rem;
-  background-color: #fff;
-  height: 100%;
+  width: max-content;
+  height: 3rem;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease-in;
+}
+
+.view-more:hover{
+  border-bottom: 2px solid #fff;
+  transition: all 0.5s ease-in;
+}
+
+.view-more > a {
+  width : 100%;
+  line-height: 3rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
 }

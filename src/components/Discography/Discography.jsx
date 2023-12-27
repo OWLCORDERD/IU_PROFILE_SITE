@@ -33,7 +33,7 @@ const Discography = () => {
           >
             {discoDB.map((item) => {
               return (
-                <li>
+                <li key={item.id}>
                   <a href='#'>
                     <div className='Album-imgBox'>
                       <img src={item.AlbumImg} alt='AlbumImg' />
@@ -54,7 +54,7 @@ const Discography = () => {
           >
             {discoDB.map((item) => {
               return (
-                <li>
+                <li key={item.id}>
                   <a href='#'>
                     <div className='Album-imgBox'>
                       <img src={item.AlbumImg} alt='AlbumImg' />

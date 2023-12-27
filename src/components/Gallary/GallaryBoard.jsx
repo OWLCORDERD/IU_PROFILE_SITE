@@ -59,7 +59,7 @@ const GallaryBoard = () => {
     const total = likes + 1;
 
     try {
-      await axios.patch(`https://api.iuprofile.site/likeUp`, {
+      await axios.patch(`https://iuprofile.site/likeUp`, {
         like: total,
         id: layoutId,
       });

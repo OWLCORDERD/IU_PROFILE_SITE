@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/*SubMenu 최상위 부모 컨테이너*/
+.Submenu-container{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    padding : 4rem 0;
+    background-color: #000;
+}
+
+/*Submenu 제목 소제목 box container*/
+.Submenu-container .Submenu-titleBox{
+    width: 100%;
+    height: 10rem;
+}
+
+.Submenu-titleBox > .Submenu-title{
+    width: 100%;
+    line-height: 5rem;
+    text-align: center;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.Submenu-titleBox > .Submenu-info{
+    width: 100%;
+    line-height: 3rem;
+    text-align: center;
+    font-family: var(--font-family-Noto);
+    font-size: 1rem;
+    color: #fff;
+}
+
+/*Submenu wrap 부모 셀렉터*/
+.Submenu-container .Submenu-wrap{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap : 6.25rem;
+    width: 100%;
+    height: max-content;
+    padding: 5rem 6.25rem;
+    overflow: hidden;
+}
+
+.Submenu-wrap .Product-card{
+    position: relative;
+    width: 100%;
+    height: max-content;
+}
+
+.Product-card .Product-imgBox{
+    position: relative;
+    width: 100%;
+    height: 25rem;
+}
+
+.Product-imgBox > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Product-imgBox .view-Product{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.Product-imgBox:hover .view-Product{
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+
+.view-Product > span{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    font-family: var(--font-family-Noto);
+}
+
+.Product-card .Product-contentBox{
+    width: 100%;
+    height: 16rem;
+    padding: 2rem 0;
+}
+
+.Product-contentBox .Product-subTitle{
+    position: relative;
+    width: 100%;
+    height: 2rem;
+}
+
+.Product-subTitle > span{
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    font-family: var(--font-family);
+}
+
+.Product-contentBox .Product-info{
+    position: relative;
+    width: 100%;
+    height: 10rem;
+}
+
+.Product-info > h2{
+    line-height: 6rem;
+    font-size: 1.8rem;
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 300;
+}
+
+.Product-info > p {
+    width: 80%;
+    height: 4rem;
+    font-size: 15px;
+    word-break: keep-all;
+    color: #fff;
+    font-weight: 300;
+    font-family: var(--font-family-Noto);
+}

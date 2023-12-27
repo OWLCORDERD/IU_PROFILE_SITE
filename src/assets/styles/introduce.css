@@ -195,13 +195,12 @@
 }
 
 .Social-list .Social-item{
-    font-size: 30px;
+    font-size: 25px;
     color: #000;
 }
 
 .Social-item:hover{
     cursor: pointer;
-    font-size: 35px;
 }
 
 /*About ContentBox*/
