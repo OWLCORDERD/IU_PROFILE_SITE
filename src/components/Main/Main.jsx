@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "components/Banner/Banner";
 import styled from "styled-components";
-import Introduce from "components/Introduce/Introduce";
+import History from "components/History/History";
 import AboutIndex from "components/AboutIndex/AboutIndex";
 import Youtube from "components/Youtube/Youtube";
 import Navbar from "components/navbar/navbar";
@@ -48,7 +48,7 @@ const Main = ({ loading }) => {
         </Section>
 
         <Section>
-          <Introduce />
+          <History />
         </Section>
 
         <Section>

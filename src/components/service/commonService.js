@@ -36,6 +36,11 @@ const example = {
       url: "/SubMenu",
     }).then((res) => res.data);
   },
+  getHistory: () => {
+    return service({
+      url: "/History",
+    }).then((res) => res.data);
+  },
 };
 
 export default example;

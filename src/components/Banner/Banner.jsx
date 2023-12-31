@@ -3,7 +3,6 @@ import "assets/styles/mainBanner.css";
 import { useEffect } from "react";
 import Slide from "./Slide";
 import { commonService } from "../service";
-import { Oval } from "react-loader-spinner";
 import "assets/styles/slick/slick.css";
 import Slider from "react-slick";
 import NextArrow from "components/slideButton/NextArrow";
@@ -11,7 +10,6 @@ import PrevArrow from "components/slideButton/PrevArrow";
 
 const Banner = () => {
   const [SlideData, setSlideData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const bannerRef = useRef(null);
 
@@ -19,10 +17,6 @@ const Banner = () => {
     commonService.getMainSlider().then((res) => {
       setSlideData(res);
     });
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 6000);
   }, []);
 
   const settings = {
@@ -37,24 +31,6 @@ const Banner = () => {
 
   return (
     <div className='Banner-container' ref={bannerRef}>
-      {loading === true ? (
-        <div className='Data-Loading'>
-          <Oval
-            height={80}
-            width={80}
-            color='#fff'
-            wrapperStyle={{}}
-            wrapperClass=''
-            visible={true}
-            ariaLabel='oval-loading'
-            secondaryColor='#E5E5E5'
-            strokeWidth={2}
-            strokeWidthSecondary={2}
-          />
-
-          <div className='loading-content'>Banner slider loading...</div>
-        </div>
-      ) : null}
       <div className='slider-container'>
         <Slider {...settings}>
           {SlideData.map((item) => {
