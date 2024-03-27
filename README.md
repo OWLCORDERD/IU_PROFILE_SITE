@@ -38,16 +38,21 @@ AWS EC2의 Ubuntu Linux 기반 환경 인스턴스를 생성하여 서버를 생
 
 ```
 
-#### Used install Packages
+#### Used Library
 
 - Gsap (Javascript Animation Library)
+  
+1. install
 ```bash
 npm install gsap
 ```
-- Safe Plugin Gsap ScrollTrigger (Gsap 추가 기능 ScrollTrigger 플러그인)
+2. Safe Plugin Gsap ScrollTrigger (Gsap 추가 기능 ScrollTrigger 플러그인)
 ```bash
 gsap.registerPlugin(ScrollTrigger);
 ```
 
-
+- React-Slick (React 기반 slick-slide Library)
+```bash
+npm install react-slick --save
+```
 
