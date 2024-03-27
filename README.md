@@ -16,7 +16,7 @@
 
 ## Previews
 
-### 소개
+#### Introduce
 ```
 ## UI 디자인 템플릿
 https://www.figma.com/file/3T5r81YtQ02zXhhtNsTDll/I'YOU-PROJECT?type=design&node-id=0%3A1&mode=design&t=3146sbxSg8Nzaxgm-1
@@ -39,7 +39,7 @@ AWS EC2의 Ubuntu Linux 기반 환경 인스턴스를 생성하여 서버를 생
 ```
 
 #### Used Library
-
+<br/>
 - Gsap (Javascript Animation Library)
   
 1. install
@@ -50,8 +50,10 @@ npm install gsap
 ```bash
 gsap.registerPlugin(ScrollTrigger);
 ```
-
+<br/>
 - React-Slick (React 기반 slick-slide Library)
+
+1. install
 ```bash
 npm install react-slick --save
 ```
