@@ -4,7 +4,7 @@ import GallaryBanner from "./GallaryBanner";
 import GallaryList from "./GallaryList";
 import Loading from "../Loading/Loading";
 import styled from "styled-components";
-import Navbar from "../navbar/navbar";
+import Navbar from "../navbar/Navbar";
 import Footer from "../Footer/Footer";
 import ScrollTop from "../hooks/ScrollTop";
 

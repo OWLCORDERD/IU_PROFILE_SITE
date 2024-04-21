@@ -5,12 +5,12 @@ const Slide = ({ slideData }) => {
   return (
     <div className='Slider-item'>
       <div className='Slider-background'>
-        <img src={slideData.thumbNail} alt='slide-image' />
+        <img src={slideData.thumbNail} alt={`${slideData.title} 배너 이미지`} />
       </div>
 
       <div className='Slider-contents'>
         <div className='slide-index'>
-          <p>{slideData.category}</p>
+          <h2>{slideData.category}</h2>
         </div>
         <div className='slide-title'>
           <h1>{slideData.title}</h1>

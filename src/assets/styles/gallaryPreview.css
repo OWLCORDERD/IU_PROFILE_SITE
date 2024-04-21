@@ -38,15 +38,16 @@
     width: 100%;
     line-height: 50px;
     font-family: var(--font-family);
-    font-size: 1rem;
+    font-size: 15px;
     margin-bottom: 50px;
+    text-transform: uppercase;
 }
 
 .Preview-titleBox .Preview-title{
     width: 100%;
     line-height: 100px;
     font-family: var(--font-family);
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
 }
 
@@ -95,53 +96,3 @@
     width : 100%;
     height: 100%;
 }
-
-.Preview-GallaryList .Preview-item{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40rem;
-    height: 45rem;
-    border-right: 1px solid #999999;
-}
-
-.Preview-item .Gallary-imgBox{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30rem;
-    height: 35rem;
-    overflow: hidden;
-}
-
-.Gallary-imgBox > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.Preview-item .Gallary-contentBox{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30rem;
-    height: 10rem;
-}
-
-.Gallary-contentBox > span{
-    line-height: 3rem;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: var(--font-family);
-    text-transform: uppercase;
-}
-
-.Gallary-contentBox > h2{
-    line-height: 5rem;
-    font-size: 1.2rem;
-    font-family: var(--font-family-Noto);
-}
-

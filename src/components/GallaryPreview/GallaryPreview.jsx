@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
 import { commonService } from "components/service";
 import { useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
 import { useRef } from "react";
 import { useLayoutEffect } from "react";
 import PreviewItem from "./PreviewItem";
@@ -28,9 +27,7 @@ const GallaryPreview = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const sections = gsap.utils.toArray(
-        ".Preview-GallaryList > .Preview-item"
-      );
+      const sections = gsap.utils.toArray("#preview-item");
 
       if (productRef.current) {
         gsap.to(sections, {
@@ -55,7 +52,7 @@ const GallaryPreview = () => {
 
   return (
     <div className='GallaryPreview-container' ref={component}>
-      <div className='Preview-wrap' id='horizontal' ref={previewRef}>
+      <div className='Preview-wrap' ref={previewRef}>
         <div className='Preview-index'>
           <div className='Preview-titleBox'>
             <h2 className='sub-title'>Gallary</h2>

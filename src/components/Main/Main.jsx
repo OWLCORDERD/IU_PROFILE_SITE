@@ -4,10 +4,10 @@ import styled from "styled-components";
 import History from "components/History/History";
 import AboutIndex from "components/AboutIndex/AboutIndex";
 import Youtube from "components/Youtube/Youtube";
-import Navbar from "components/navbar/navbar";
-import ActorList from "components/ActorList/ActorList";
+import Navbar from "components/navbar/Navbar";
 import Discography from "components/Discography/Discography";
 import GallaryPreview from "components/GallaryPreview/GallaryPreview";
+import Footer from "components/Footer/Footer";
 
 const Container = styled.main`
   position: relative;
@@ -16,53 +16,40 @@ const Container = styled.main`
   top: 0;
   left: 0;
   padding: 0;
-  display: none;
-
-  &#active {
-    display: block;
-  }
-`;
-
-const Section = styled.section`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: block;
+  display: ${(props) => (props.toggle ? "none" : "block")};
 `;
 
 const Main = ({ loading }) => {
   return (
     <>
       <Navbar />
-      <Container id={loading ? "" : "active"}>
-        <Section>
+      <Container toggle={loading}>
+        <section id='banner'>
           <Banner />
-        </Section>
+        </section>
 
-        <Section>
+        <section id='discography'>
           <Discography />
-        </Section>
+        </section>
 
-        <Section>
+        <section id='about'>
           <AboutIndex />
-        </Section>
+        </section>
 
-        <Section>
+        <section id='history'>
           <History />
-        </Section>
+        </section>
 
-        <Section>
+        <section id='youtube'>
           <Youtube />
-        </Section>
+        </section>
 
-        <Section>
+        <section id='gallary_preview'>
           <GallaryPreview />
-        </Section>
-
-        <Section>
-          <ActorList />
-        </Section>
+        </section>
       </Container>
+
+      <Footer />
     </>
   );
 };

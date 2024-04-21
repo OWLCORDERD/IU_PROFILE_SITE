@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "assets/styles/mainBanner.css";
 import { useEffect } from "react";
 import Slide from "./Slide";
@@ -10,8 +10,6 @@ import PrevArrow from "components/slideButton/PrevArrow";
 
 const Banner = () => {
   const [SlideData, setSlideData] = useState([]);
-
-  const bannerRef = useRef(null);
 
   useEffect(() => {
     commonService.getMainSlider().then((res) => {
@@ -30,7 +28,7 @@ const Banner = () => {
   };
 
   return (
-    <div className='Banner-container' ref={bannerRef}>
+    <div className='Banner-container'>
       <div className='slider-container'>
         <Slider {...settings}>
           {SlideData.map((item) => {
@@ -38,15 +36,6 @@ const Banner = () => {
           })}
         </Slider>
       </div>
-
-      {/*
-      <div className='slide-control'>
-        <div className='control-buttons'>
-          <IoIosArrowBack color='#fff' className='control-icon' />
-          <IoIosArrowForward color='#fff' className='control-icon' />
-        </div>
-      </div>
-      */}
     </div>
   );
 };

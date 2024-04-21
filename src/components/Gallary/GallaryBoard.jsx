@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../assets/styles/gallaryBoard.css";
 import { useLocation } from "react-router-dom";
-import Navbar from "../navbar/navbar";
+import Navbar from "../navbar/Navbar";
 import { BsEye, BsFillHeartFill } from "react-icons/bs";
 import { FaCommentAlt } from "react-icons/fa";
 import ScrollTop from "../hooks/ScrollTop";
